@@ -80,11 +80,20 @@ settings-page.png
   → Show both sections: "General Settings" and "System & Maintenance"
   → All fields visible (orientation, font sizes, swatch sizes, debug toggle, delete data toggle)
 
+settings-swatch-size-roundness.png
+  → The General Settings section highlighting the color and image swatch size inputs, as well as the border-roundness controls
+
+settings-system-maintenance.png
+  → The System & Maintenance settings area highlighting the Debug Mode toggle and the Delete Data on Uninstall warning checkbox
+
 ## admin/orders.md
 order-line-item.png
   → A WooCommerce order edit screen
   → One order line item with 2–3 OptionBay custom option rows visible below the product name
   → Example: "Engraving Text: Happy Birthday!" and "Gift Wrap?: Yes"
+
+order-email.png
+  → A WooCommerce HTML email order confirmation receipt showing the custom options rendered under the product name in the items table
 
 cart-item-options.png
   → The WooCommerce cart page
@@ -93,11 +102,16 @@ cart-item-options.png
 ## admin/export-import.md
 export-panel.png
   → The Export panel expanded inline on the Option Groups page
-  → Show the entity checkboxes (Option Groups ✓, Inventory Items ✓, Settings ✓) and "Download JSON" button
+  → Entity checkboxes visible: Option Groups, Inventory Items, Settings
+  → The "Download JSON" button visible
 
 import-panel.png
-  → The Import panel expanded inline
-  → Show the JSON textarea (empty or with sample text) and the file upload button
+  → The Import panel expanded inline on the Option Groups page
+  → The textarea for pasting JSON visible, or the file upload area
+  → The "Import" submit button visible
+
+import-success-toast.png
+  → A success toast message visible at the top of the dashboard confirming successful import of groups, stock items, or settings
 
 ## getting-started/installation.md
 install-upload.png
@@ -483,3 +497,11 @@ field-conditions-tab.png
   → The Conditions tab open inside an expanded field in the Addon Builder
   → Show the full conditions UI: Enable toggle (on), Action dropdown, Match Type, and 2 configured rules with field / operator / value columns visible
   → At least one rule should show a recognisable field name and value (e.g. "Add Engraving?" equals "1")
+
+## admin/troubleshooting.md
+troubleshooting-wp-rest-check.png
+  → Browser window showing the default public output of the WordPress REST API index endpoint `/wp-json/`
+
+troubleshooting-permalink-settings.png
+  → The WordPress Permalinks settings screen highlighting the "Save Changes" button used to flush rewrite rules
+

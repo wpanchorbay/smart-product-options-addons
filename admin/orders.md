@@ -1,43 +1,45 @@
 # Order Management
 
-OptionBay automatically attaches the customer's selected options to every WooCommerce order. No manual setup is required — this happens at checkout.
+OptionBay automatically attaches the customer's selected options to every WooCommerce order. No manual setup or custom development is required — the options data is captured, calculated, and saved seamlessly during the checkout process.
 
 ---
 
 ## How Options Appear on Orders
 
-When a customer adds a product to their cart with custom options selected, those choices are stored in the WooCommerce cart session under the key `optionbay_addons`. At checkout, they are permanently saved as **order item metadata** on the WooCommerce order line item.
+When a customer selects options and adds a product to their cart, those choices are temporarily stored in the customer's WooCommerce cart session under the key `optionbay_addons`.
+
+Upon successful checkout, this session data is transformed into permanent **order item metadata** attached directly to the specific WooCommerce order line item.
 
 ### In the WooCommerce Admin Order Screen
 
-Open any order that contains a product with OptionBay options. In the **Order Items** section, you'll see each selected option listed under the product name:
+When viewing any order containing OptionBay selections, the customer's choices are displayed directly below the product name in the **Order Items** admin panel:
 
 ![WooCommerce order screen showing an order line item with OptionBay custom options listed beneath the product name](../public/img/order-line-item.png)
 
-```
-Handmade Ceramic Mug × 2          $52.00
-  Engraving Text:    Happy Birthday!
-  Gift Wrap?:        Yes
-  File Upload:       https://site.com/uploads/design.png
-```
-
-- **Text, number, and email fields** display their raw value
-- **Choice fields** (select, radio, checkbox) display the selected option's label
-- **File uploads** display a clickable link to the uploaded file
+- **Text, Area, Number, and Email fields:** Display the field's label followed by the customer's typed value (e.g. `Engraving Text: Happy Birthday!`).
+- **Choice-based fields (Dropdowns, Radios, Checkboxes, Swatches):** Display the field's label followed by the text label of the selected choice (e.g. `Gift Wrap?: Yes`).
+- **File Upload fields:** Display the field's label followed by a clickable, secure URL pointing directly to the uploaded file in your WordPress uploads folder (e.g. `File Upload: https://site.com/wp-content/uploads/optionbay/design.png`).
 
 ---
 
 ## Options in Order Emails
 
-WordPress and WooCommerce automatically include order item metadata in order confirmation emails sent to the customer and the admin. Your selected options appear under each line item in the email, exactly as they do in the admin order screen.
+WooCommerce automatically passes all line-item metadata to outgoing emails. 
 
-No additional configuration is needed.
+- **Customer Invoices & Receipts:** Customers receive confirmation of their options listed under each product in their order receipt emails.
+- **Admin Notifications:** Store managers see the custom options inside the "New Order" notification emails, ensuring fulfillment teams know what options were selected without opening the WordPress admin.
+- **Third-Party Email Services:** If you use tools like Mailchimp or Klaviyo for WooCommerce transactional emails, they will ingest these options metadata rows automatically.
+
+![A customer HTML receipt email showing the custom options rendered under the product name in the items table](../public/img/order-email.png)
 
 ---
 
-## Options in Cart and Checkout
+## Options in Cart and Checkout pages
 
-Before the order is placed, customers can review their selected options in the **Cart** and **Checkout** pages. OptionBay adds each selected option as a row beneath the product name in the cart table.
+Before the order is completed, OptionBay displays selected options on frontend transactional pages:
+
+- **Cart Page:** Each selected option appears as a formatted list row beneath the product title in the cart table.
+- **Checkout Page:** The option rows are mirrored in the checkout order review table, giving the customer a final chance to verify their selections before paying.
 
 ![WooCommerce cart page with OptionBay selections listed under the product](../public/img/cart-item-options.png)
 
@@ -45,39 +47,50 @@ Before the order is placed, customers can review their selected options in the *
 
 ## Pricing on Orders
 
-Price additions from custom options are applied directly to the product's price in the cart. WooCommerce treats the adjusted price as the product's actual price — the price breakdown in cart totals, order summaries, and receipts all reflect the final combined price correctly.
+OptionBay bakes option pricing adjustments directly into the product line item price rather than adding them as separate order fees.
 
-::: info No Separate Line Items
-OptionBay does not create separate fee line items for option pricing. The extra cost is baked into the product line item price. This ensures maximum compatibility with all WooCommerce payment gateways, tax plugins, and reporting tools.
+- **Unified Price Calculations:** If a `$50.00` product has a `+$5.00` option checked, WooCommerce treats the product price as `$55.00` inside the cart and checkout. 
+- **Receipt Totals:** The invoice displays the item at `$55.00` (or `$110.00` for quantity 2), with the option labels listed below to explain the surcharge.
+
+::: info Maximum System Compatibility
+By modifying the product line item price directly instead of generating separate "fee lines", OptionBay maintains 100% compatibility with:
+- **Tax Calculators:** Tax calculation plugins (like WooCommerce Tax or TaxJar) compute taxes correctly on the adjusted total.
+- **Payment Gateways:** Gateways (like Stripe, PayPal, or Authorize.Net) process the exact checkout total without mismatch errors.
+- **Invoicing Plugins:** PDF Invoice generators print the correct product pricing automatically.
 :::
 
 ---
 
 ## Stock Reduction on Order Completion
 
-If any selected option is linked to a [Global Stock Item](/stocks/index), OptionBay automatically reduces the stock count when the order's payment is completed (`woocommerce_reduce_order_stock` hook).
+For options linked to a [Global Stock Item](/stocks/index), OptionBay triggers stock deductions during WooCommerce's stock reduction hook (`woocommerce_reduce_order_stock`):
 
-If stock is insufficient at checkout time, the order is halted and an error is displayed to the customer.
+1. **Checkout Check:** OptionBay does a final live stock check at checkout submit.
+2. **Hook Trigger:** Once payment is authorized and WooCommerce reduces catalog stock, OptionBay intercepts the action.
+3. **Inventory Deduction:** The quantities saved in the order item metadata are permanently deducted from the corresponding rows in the `wp_optionbay_inventory` table.
 
 ---
 
 ## Stock Restoration on Cancellation
 
-If an order is **cancelled**, OptionBay automatically restores the stock that was deducted for any OptionBay-linked options. This happens via the `woocommerce_order_status_cancelled` hook. Each restoration is logged and a flag (`_ob_stock_restored`) is saved on the order to prevent double-restoration.
+If a customer cancels their order or a store admin manually changes the status to **Cancelled** or **Refunded**, OptionBay automatically returns the inventory to the global stock pool:
+
+- **Trigger:** The restoration runs during the `woocommerce_order_status_cancelled` and `woocommerce_order_status_refunded` hook triggers.
+- **Read Stock Intents:** OptionBay reads the `_ob_stock_intents` metadata attached to the order line items to know exactly how much inventory to add back.
+- **Duplicate Prevention:** To prevent restoring stock twice if an order status is toggled back and forth, OptionBay writes a `_ob_stock_restored` flag on the order once the restoration completes.
 
 ---
 
-## Viewing Order Meta Directly
+## Viewing Order Metadata Directly
 
-For developers or debugging, raw OptionBay metadata is stored on each order line item:
+For developers, custom integration developers, or troubleshooting purposes, OptionBay stores its raw data on the order line items inside the database:
 
-| Meta Key | Contents |
-|----------|----------|
-| `[Field Label]` | The display value of the selected option (e.g. `Engraving Text → Happy Birthday!`) |
-| `_ob_stock_intents` | Serialised array of stock reduction intents, used for order-level stock management |
+- **Option Display Meta:** The selected options are stored as standard line item metadata, where the key is the **Field Label** and the value is the **Selected Value** (e.g. `Engraving Text` &rarr; `Happy Birthday!`).
+- **`_ob_stock_intents`:** A serialized array stored on the line item meta. It maps the Option IDs to their linked Global Stock Item IDs and the deduction amounts. This is used by OptionBay during status transitions to know how much stock to return on cancellation.
 
-You can view these in **WooCommerce → Orders → [Order] → Order data** using a meta viewer plugin, or via `WP_CLI`:
+You can view these keys using a database client, a WooCommerce meta viewer plugin, or via **WP-CLI**:
 
 ```bash
-wp post meta get <order_id> --keys=_ob_stock_intents
+# Get the stock intent metadata for a specific order item
+wp db query "SELECT meta_value FROM wp_woocommerce_order_itemmeta WHERE order_item_id = <item_id> AND meta_key = '_ob_stock_intents'"
 ```
