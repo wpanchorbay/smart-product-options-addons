@@ -57,7 +57,7 @@ Click the **downward chevron icon** on the right side of any choice card to expa
 ## Layout (Global Settings)
 
 **Note:** The orientation of radio button choices is controlled globally across your entire store to ensure design consistency.
-Go to **WooCommerce → OptionBay → Settings** to configure the **Options Orientation**:
+Go to **WooCommerce → Settings → Products → Options** to configure the **Options Orientation**:
 - **Vertical (default):** Choices stack top to bottom.
 - **Horizontal:** Choices sit side by side in a row.
 

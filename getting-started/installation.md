@@ -52,13 +52,13 @@ The example Option Groups imported on first activation are fully editable. Feel 
 
 ## After Activation
 
-Once activated, OptionBay adds a new submenu under **WooCommerce** in your WordPress admin sidebar:
+Once activated, OptionBay integrates directly into your existing WordPress and WooCommerce admin menus:
 
-- **WooCommerce → OptionBay → Addon Builder** — The main dashboard where you create and manage your [Option Groups](/builder/option-groups).
-- **WooCommerce → OptionBay → Global Stocks** — Manage shared [inventory pools](/stocks/index) that can be linked to any option.
-- **WooCommerce → OptionBay → Settings** — Configure plugin-wide preferences like display position, cart behavior, and data deletion.
+- **Products → Options** — The main dashboard containing the [Option Groups list](/builder/option-groups), Addon Builder interface, and import/export capabilities.
+- **WooCommerce → Settings → Products → Options** — Configure plugin-wide preferences like layout orientation, font sizes, color/image swatches, debug mode, and data deletion.
+- **Global Inventory Modal** — Managed directly inside the **Products → Options** page by clicking the **View Inventory** (📦) button.
 
-Navigate to **WooCommerce → OptionBay → Addon Builder** to start building your first option group, or follow the [Quick Start Guide](/getting-started/quick-start) for a step-by-step walkthrough.
+Navigate to **Products → Options** to start building your first option group, or follow the [Quick Start Guide](/getting-started/quick-start) for a step-by-step walkthrough.
 
 ---
 
@@ -90,5 +90,5 @@ To remove OptionBay completely from your site:
 ::: warning Data Deletion on Uninstall
 By default, OptionBay **preserves all your data** when the plugin is deleted — option groups, settings, inventory items, and database tables remain intact so you can reinstall later without losing anything.
 
-If you want all data to be **permanently erased** on uninstall, navigate to **WooCommerce → OptionBay → Settings** and enable the **"Delete Data on Uninstall"** option **before** deleting the plugin.
+If you want all data to be **permanently erased** on uninstall, navigate to **WooCommerce → Settings → Products → Options** and enable the **"Delete Data on Uninstall"** option **before** deleting the plugin.
 :::

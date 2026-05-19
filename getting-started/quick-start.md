@@ -14,7 +14,7 @@ By the end of this guide, you'll have a custom option group attached to a produc
 
 ## Step 1 — Open the Addon Builder
 
-In your WordPress admin, navigate to **WooCommerce → OptionBay → Addon Builder**.
+In your WordPress admin, navigate to **Products → Options**.
 
 You'll see the [Option Groups list](/builder/option-groups) — a table showing all of your existing groups. If this is a fresh install, OptionBay has already created a few example groups for you to reference.
 

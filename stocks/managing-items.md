@@ -8,7 +8,7 @@ This page covers creating, editing, adjusting, and deleting your Global Stock It
 
 The inventory manager is a centralized dashboard accessible from your main Option Groups page:
 
-1. Navigate to **WooCommerce → OptionBay → Addon Builder** in your WordPress admin sidebar.
+1. Navigate to **Products → Options** in your WordPress admin sidebar.
 2. Click the **View Inventory** button (📦 icon) located in the top-right controls toolbar.
 3. The inventory manager opens as an overlay modal, allowing you to manage all global stock pools without leaving the page.
 
@@ -31,14 +31,26 @@ The new inventory item is created in the database and immediately appears at the
 
 ---
 
-## Editing an Item
+## Editing Stock Count & Backorders
 
-Keep your stock pools up-to-date by editing their details:
+Keep your stock pools up-to-date by adjusting their details directly in the table:
 
-1. Locate the item in the inventory modal table and click the **Edit** (pencil ✏️) icon on its row.
-2. The row details transform into input fields.
-3. Update the **Name**, adjust the **Stock Count** (useful for topping up inventory when new stock arrives), or toggle the **Allow Backorders** setting.
-4. Click **Save** (diskette icon) to confirm the changes, or click **Cancel** (cross icon) to discard them.
+### Adjusting Stock Count
+To update the available inventory level:
+1. Locate the item in the inventory modal table.
+2. Click either the **Adjust Stock** text button on the right-side Action column, or click the numeric stock status value itself.
+3. The stock status text transforms inline into a number input field with a checkmark (✓) button.
+4. Enter the new stock value and click the **✓** button (or press **Enter**). The change is saved instantly. To discard the edit, press **Escape**.
+
+### Toggling Backorders
+To change backorder permissions:
+1. Locate the item in the inventory modal table.
+2. Under the **Backorders** column, click the status badge (shows either **Allowed** in blue or **Denied** in grey).
+3. The badge toggles instantly on click, communicating the update immediately to the backend.
+
+::: note Immutable Pool Names
+To prevent broken references or developer confusion, the internal **Name** of a Global Stock Item cannot be edited after creation. Choose names carefully when creating new pools.
+:::
 
 ::: tip Adjusting Stock After Manual Refunds
 If you manually refund or return items outside of WooCommerce's standard order cancellation flow (e.g. a manual customer service replacement), remember to open this modal and manually increment the stock count. OptionBay only automatically restores inventory during the official `woocommerce_order_status_cancelled` or `woocommerce_order_status_refunded` events.
@@ -46,21 +58,14 @@ If you manually refund or return items outside of WooCommerce's standard order c
 
 ---
 
-## Deleting an Item
+## Deleting Stock Items
 
-When a resource is no longer tracked, you can delete it:
+To protect integrity and prevent breaking linked option groups, OptionBay does **not** expose a delete action for inventory pools in the admin dashboard. 
 
-1. Locate the item in the inventory modal table and click the **Delete** (trash 🗑️) icon.
-2. A confirmation prompt appears asking you to confirm the deletion.
-3. Click **Confirm** to permanently remove the item.
-
-![A confirmation dialog warning the user before deleting a stock item](../public/img/inventory-modal-delete-confirm.png)
-
-::: warning Removing Linked Items
-Deleting a stock pool does **not** automatically unlink it from the fields or options in your Addon Builder. 
-
-Any field that still references the ID of the deleted stock item will simply skip stock checks. The option will remain fully selectable on the frontend and the checkout validation will pass as if there is no restriction. To avoid confusion, you should open the [Addon Builder](/builder/addon-builder) and manually update or disable the stock link on those fields.
-:::
+If you have a stock pool that is no longer needed:
+1. Simply unlink it from any option settings in the [Addon Builder](/builder/addon-builder).
+2. The pool will remain in the database as a dormant inventory item, but will not impact frontend behavior or perform any active stock checks.
+3. If permanent deletion is absolutely required, it must be performed directly in your WordPress database by removing the corresponding row from the `wp_optionbay_inventory` table. Ensure all option links are removed first.
 
 ---
 

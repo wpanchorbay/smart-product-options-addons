@@ -61,7 +61,7 @@ Click the **downward chevron icon** on the right side of any choice card to expa
 ## Swatch Appearance (Global Settings)
 
 **Note:** The physical shape and size of the image swatches are controlled globally across your entire store to ensure design consistency.
-Go to **WooCommerce → OptionBay → Settings** to configure:
+Go to **WooCommerce → Settings → Products → Options** to configure:
 - **Image Swatch Size:** Default is `64px`.
 - **Image Swatch Roundness:** Change the `border-radius`. Use `50%` for circular thumbnails, or `4px` for gently rounded corners.
 

@@ -1,6 +1,6 @@
 # Global Settings
 
-Manage site-wide display preferences, stylesheet values, and maintenance workflows for OptionBay. Access these settings by navigating to **WooCommerce → OptionBay → Settings** in your WordPress admin dashboard.
+Manage site-wide display preferences, stylesheet values, and maintenance workflows for OptionBay. Access these settings by navigating to **WooCommerce → Settings → Products → Options** in your WordPress admin dashboard.
 
 ![OptionBay Settings page showing General Settings and System & Maintenance sections](../public/img/settings-page.png)
 

@@ -1,6 +1,6 @@
 # Managing Option Groups
 
-The **Option Groups** list is the main dashboard for OptionBay. Navigate here via **WooCommerce → OptionBay → Addon Builder** in your WordPress admin menu.
+The **Option Groups** list is the main dashboard for OptionBay. Navigate here via **Products → Options** in your WordPress admin menu.
 
 ![The Option Groups list screen showing the table, status filters, search bar, and action buttons](../public/img/option-groups-list.png)
 
@@ -14,8 +14,8 @@ The top of the page contains a WordPress-style heading row with several quick-ac
 
 - **Option Groups** *(title):* The page heading. This is always visible.
 - **Add new group:** Click this link to open a fresh [Addon Builder](/builder/addon-builder) and start creating a new option group from scratch.
-- **Import:** Click to expand an inline Import panel directly below the header. Paste or upload a previously exported `.json` file to restore or migrate your data.
-- **Export:** Click to expand an inline Export panel below the header. Download a `.json` file containing your Option Groups, Inventory Items, and/or Settings — useful for backups or migrating between sites.
+- **Import:** Click to expand an inline Import panel directly below the header. Drag and drop or upload a previously exported `.json` file to restore or migrate your option groups.
+- **Export:** Click to expand an inline Export panel below the header. Select which entities (`Option Groups`, `Inventory Pools`, `Plugin Settings`) to bundle and download as a single `.json` file for backups or migrations.
 
 ::: info Import & Export
 Both panels toggle inline — clicking one closes the other. For full instructions on format, compatibility, and best practices, see the dedicated guide.
@@ -42,25 +42,28 @@ Click any tab to filter the list instantly — no page reload required.
 
 ## The List Table
 
-Each row in the table represents one Option Group. By default, you see four columns:
+Each row in the table represents one Option Group. By default, you see several columns:
 
 - **Title:** The internal name of the group. Click the title text to open it in the [Addon Builder](/builder/addon-builder) for editing.
 - **Fields:** A count of how many fields (inputs, swatches, etc.) are configured inside the group.
 - **Assigned To:** A summary of where the group is routed — e.g., "All Products", "3 categories", "2 products".
 - **Status:** A **live toggle switch**. Flip between Published and Draft with a single click — the change takes effect immediately via the API, no page reload needed.
 
-### Optional Columns
+### Column Visibility Customization
 
 ![Column picker popover open, showing the list of toggleable columns](../public/img/option-groups-columns.png)
 
-You can customize which columns are displayed using the **column picker** — click the vertical dots icon (⋮) at the top-right of the table. The available optional columns are:
+You can fully customize which columns are displayed using the **column picker settings menu** — click the vertical dots icon (⋮) at the top-right of the table header. The dropdown allows you to selectively show or hide any of the following columns:
 
+- **Fields** — Field count within the group.
+- **Assigned To** — Assignment routing summary.
+- **Status** — Live toggle switcher.
 - **Created By** — The WordPress user who originally created the group.
 - **Created At** — The date and time the group was first saved.
 - **Updated By** — The WordPress user who last modified the group.
 - **Updated At** — The date and time of the most recent update.
 
-Toggle any column on or off. Your selection persists for the current session.
+Toggle any column on or off. Your preferences will persist automatically for your session.
 
 ---
 
@@ -79,16 +82,16 @@ Use the **search box** in the top-right area (next to the View Inventory button)
 
 ![A table row being hovered, showing the inline action links](../public/img/option-groups-row-actions.png)
 
-Hover over any row to reveal inline action links below the title. The available actions depend on the current status filter view:
+Instead of old-school text links hidden under the title, OptionBay uses a sleek, modern inline actions column with quick-action icons:
 
 **Normal view (All / Published / Draft):**
-- **Edit:** Open the group in the [Addon Builder](/builder/addon-builder).
-- **Duplicate:** Create an exact copy of the group — same fields, same settings, same assignment rules — with "(Copy)" appended to the title. The duplicate starts in the same status as the original.
-- **Move to Trash:** Soft-delete the group. Customers can no longer see it, but you can restore it any time from the Trash view.
+- **Edit (Pencil Icon):** Click to open the group in the [Addon Builder](/builder/addon-builder).
+- **Duplicate (Copy Icon):** Instantly duplicate the group — copying all fields, settings, and assignment rules — with "(Copy)" appended to the title.
+- **Delete (Trash Icon):** Soft-deletes the group, moving it to the Trash tab.
 
 **Trash view:**
-- **Restore:** Move the group back to its previous status (Published or Draft).
-- **Delete Permanently:** Erase the group and all its assignment rules from the database. This action cannot be undone.
+- **Restore (Undo Icon):** Move the group back to its previous status (Published or Draft).
+- **Delete Permanently (Trash Icon):** Erase the group and all its assignment rules from the database. This action cannot be undone.
 
 ::: warning Permanent Deletion
 The "Delete Permanently" action is irreversible. A confirmation modal will always appear before final deletion, with the focus defaulting to the "Cancel" button for safety.

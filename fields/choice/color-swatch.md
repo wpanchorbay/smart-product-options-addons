@@ -61,7 +61,7 @@ Click the **downward chevron icon** on the right side of any choice card to expa
 ## Swatch Appearance (Global Settings)
 
 **Note:** The physical shape and size of the swatches are controlled globally across your entire store to ensure design consistency.
-Go to **WooCommerce → OptionBay → Settings** to configure:
+Go to **WooCommerce → Settings → Products → Options** to configure:
 - **Color Swatch Size:** Default is `32px`.
 - **Color Swatch Roundness:** Change the `border-radius`. Use `50%` for perfect circles, or `4px` for rounded squares.
 

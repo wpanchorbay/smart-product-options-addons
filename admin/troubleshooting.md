@@ -148,7 +148,7 @@ The Option Groups list, Addon Builder, or Settings screen fails to load, showing
 
 For complex issues, use OptionBay's logging engine:
 
-1. Go to **WooCommerce → OptionBay → Settings**.
+1. Go to **WooCommerce → Settings → Products → Options**.
 2. Toggle the **Debug Mode** switch to on and save changes.
 3. Perform the action that is causing the problem on the frontend or backend (e.g. save a group, add to cart, check out).
 4. View the generated logs. You can fetch them using a database plugin to look at the `optionbay_debug_log` option inside your `wp_options` table, or run this **WP-CLI** command:

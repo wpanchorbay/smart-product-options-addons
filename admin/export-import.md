@@ -22,7 +22,7 @@ You can choose to export any combination of the following database objects:
 
 ### How to Export
 
-1. Navigate to **WooCommerce → OptionBay → Addon Builder**.
+1. Navigate to **Products → Options**.
 2. Click the **Export** button in the dashboard's top controls bar.
 3. Use the checkboxes to select which entities to include in the file (Option Groups, Inventory Items, and/or Settings).
 4. Click the **Download JSON** button.
@@ -84,7 +84,7 @@ You can upload a previously exported `.json` configuration file or paste raw JSO
 
 ### How to Import
 
-1. Navigate to **WooCommerce → OptionBay → Addon Builder**.
+1. Navigate to **Products → Options**.
 2. Click the **Import** button in the dashboard's top controls bar.
 3. Import your configuration using one of these two methods:
    - **Upload File:** Drag and drop or browse to select your exported `.json` file.
