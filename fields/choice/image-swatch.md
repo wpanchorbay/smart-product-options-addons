@@ -33,14 +33,22 @@ When you add an Image Swatch field in the Addon Builder, you can configure the f
 
 ![Backend view of Options block for Image Swatch field](../../public/img/field-image-swatch-options.png)
 
-Within the main **Options** block, you define the actual image choices. For each row you add, you can configure:
+Within the main **Options** block, you define the actual image choices by clicking the **Add Choice** button. For each choice card in the list, you have access to inline inputs and an expandable settings panel.
 
-- **Label:** The text name for this choice (e.g. `Herringbone`). Shown in the cart, orders, and on hover.
-- **Value:** The internal, system-friendly value submitted to the server (e.g., `herringbone`).
-- **Image:** A media uploader button that integrates directly with the WordPress Media Library. Select or upload the thumbnail image you want to display.
-- **Price Type:** Choose how this specific image choice is priced (None, Flat Fee, Percentage, Math Formula).
-- **Price Amount:** The surcharge added when this specific image is selected.
-- **Weight:** The shipping weight added when this specific image is selected.
+**Inline Editor (Always Visible):**
+- **Drag Handle:** Use the left-side grip icon to drag and drop choices to reorder how they appear on the frontend.
+- **Image Uploader:** Click the image icon (or existing thumbnail) to open the WordPress Media Library and select/upload the swatch image.
+- **Label:** The primary text shown next to the swatch on the frontend, and in the cart (e.g. `Herringbone`).
+- *(System Value):* OptionBay automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores.
+
+**Expanded Settings Panel:**
+Click the **downward chevron icon** on the right side of any choice card to expand its advanced settings:
+- **Price Type:** Choose how this specific image choice is priced (`None`, `Flat Fee`, `Percentage`, or `Formula`). [Read the Pricing Guide &rarr;](/pricing/index)
+- **Price Amount / Formula Expression:** Appears if a price type is selected. Enter the monetary surcharge or the dynamic math formula.
+- **Weight (kg):** Enter a numeric value to add physical shipping weight to the cart when this option is ticked.
+- **Stock Tracking:** A toggle that, when enabled, opens the per-option inventory controls. [Read the Stock Linking Guide &rarr;](/stocks/field-linking)
+  - *Select Pool:* Choose which Global Stock Item to link this image choice to.
+  - *Reduction Mode:* Choose how stock is deducted (`Per Item Quantity`, `Per Line Item`, or `Formula`).
 
 ### Validation
 

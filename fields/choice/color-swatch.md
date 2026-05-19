@@ -33,14 +33,22 @@ When you add a Color Swatch field in the Addon Builder, you can configure the fo
 
 ![Backend view of Options block for Color Swatch field](../../public/img/field-color-swatch-options.png)
 
-Within the main **Options** block, you define the actual color choices. For each row you add, you can configure:
+Within the main **Options** block, you define the actual color choices by clicking the **Add Choice** button. For each choice card in the list, you have access to inline inputs and an expandable settings panel.
 
-- **Label:** The text name for this color (e.g. `Navy Blue`). Shown in the cart, orders, and on hover.
-- **Value:** The internal, system-friendly value submitted to the server (e.g., `navy-blue`).
-- **Color Value:** A visual color picker where you can select or type the exact Hex/RGBA code for the swatch (e.g. `#1B3A6B`).
-- **Price Type:** Choose how this specific color is priced (None, Flat Fee, Percentage, Math Formula).
-- **Price Amount:** The surcharge added when this specific color is selected.
-- **Weight:** The shipping weight added when this specific color is selected.
+**Inline Editor (Always Visible):**
+- **Drag Handle:** Use the left-side grip icon to drag and drop choices to reorder how they appear on the frontend.
+- **Color Picker:** Click the circular color bubble to open a visual picker, or type the exact Hex/RGBA code (e.g. `#1B3A6B`).
+- **Label:** The primary text shown next to the swatch on the frontend, and in the cart (e.g. `Navy Blue`).
+- *(System Value):* OptionBay automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores.
+
+**Expanded Settings Panel:**
+Click the **downward chevron icon** on the right side of any choice card to expand its advanced settings:
+- **Price Type:** Choose how this specific color is priced (`None`, `Flat Fee`, `Percentage`, or `Formula`). [Read the Pricing Guide &rarr;](/pricing/index)
+- **Price Amount / Formula Expression:** Appears if a price type is selected. Enter the monetary surcharge or the dynamic math formula.
+- **Weight (kg):** Enter a numeric value to add physical shipping weight to the cart when this option is ticked.
+- **Stock Tracking:** A toggle that, when enabled, opens the per-option inventory controls. [Read the Stock Linking Guide &rarr;](/stocks/field-linking)
+  - *Select Pool:* Choose which Global Stock Item to link this color to.
+  - *Reduction Mode:* Choose how stock is deducted (`Per Item Quantity`, `Per Line Item`, or `Formula`).
 
 ### Validation
 
