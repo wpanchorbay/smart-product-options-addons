@@ -111,19 +111,111 @@ field-text-frontend.png
   → A Text Input field on a product page
   → Show the label, text input with placeholder text, and a description below it
 
+field-text-general.png
+  → The Addon Builder backend showing the General settings for a Text field
+  → Highlight the Label, Description, and Placeholder inputs
+
+field-text-validation.png
+  → The Addon Builder backend showing the Validation settings for a Text field
+  → Highlight the "Field is Required" checkbox
+
+field-text-restrictions.png
+  → The Addon Builder backend showing the Restrictions settings for a Text field
+  → Highlight the Min Length and Max Length number inputs
+
+field-text-pricing.png
+  → The Addon Builder backend showing the Pricing Logic settings for a Text field
+  → Highlight the Price Type dropdown and Price Amount (or Formula Expression) input
+
+field-text-conditions.png
+  → The Addon Builder backend showing the Conditions tab for a Text field
+  → Highlight the Enable Conditional Logic toggle and condition rules
+
+field-text-stock.png
+  → The Addon Builder backend showing the Stock tab for a Text field
+  → Highlight the Enable Stock Management toggle and Inventory Item selector
+
 ## fields/input/textarea.md
+field-textarea-general.png
+  → The Addon Builder backend showing the General settings for a Textarea field
+  → Highlight the Label, Description, and Placeholder inputs
+
+field-textarea-validation.png
+  → The Addon Builder backend showing the Validation settings for a Textarea field
+  → Highlight the "Field is Required" checkbox
+
+field-textarea-restrictions.png
+  → The Addon Builder backend showing the Restrictions settings for a Textarea field
+  → Highlight the Min Length and Max Length number inputs
+
+field-textarea-pricing.png
+  → The Addon Builder backend showing the Pricing Logic settings for a Textarea field
+  → Highlight the Price Type dropdown and Price Amount input
+
+field-textarea-conditions.png
+  → The Addon Builder backend showing the Conditions tab for a Textarea field
+  → Highlight the Enable Conditional Logic toggle and condition rules
+
+field-textarea-stock.png
+  → The Addon Builder backend showing the Stock tab for a Textarea field
+  → Highlight the Enable Stock Management toggle and Inventory Item selector
+
 field-textarea-frontend.png
   → A Textarea field on a product page
   → Show the label and a multi-line textarea with placeholder
   → Description text visible below
 
 ## fields/input/number.md
+field-number-general.png
+  → The Addon Builder backend showing the General settings for a Number field
+  → Highlight the Label, Description, and Placeholder inputs
+
+field-number-validation.png
+  → The Addon Builder backend showing the Validation settings for a Number field
+  → Highlight the "Field is Required" checkbox
+
+field-number-restrictions.png
+  → The Addon Builder backend showing the Restrictions settings for a Number field
+  → Highlight the Min Value, Max Value, and Step inputs
+
+field-number-pricing.png
+  → The Addon Builder backend showing the Pricing Logic settings for a Number field
+  → Highlight the Price Type dropdown and Price Amount input
+
+field-number-conditions.png
+  → The Addon Builder backend showing the Conditions tab for a Number field
+  → Highlight the Enable Conditional Logic toggle and condition rules
+
+field-number-stock.png
+  → The Addon Builder backend showing the Stock tab for a Number field
+  → Highlight the Enable Stock Management toggle and Inventory Item selector
+
 field-number-frontend.png
   → A Number input field on a product page
   → Show the label, number input with up/down spinners
   → Min/max description below the field
 
 ## fields/input/email.md
+field-email-general.png
+  → The Addon Builder backend showing the General settings for an Email field
+  → Highlight the Label, Description, and Placeholder inputs
+
+field-email-validation.png
+  → The Addon Builder backend showing the Validation settings for an Email field
+  → Highlight the "Field is Required" checkbox
+
+field-email-pricing.png
+  → The Addon Builder backend showing the Pricing Logic settings for an Email field
+  → Highlight the Price Type dropdown and Price Amount input
+
+field-email-conditions.png
+  → The Addon Builder backend showing the Conditions tab for an Email field
+  → Highlight the Enable Conditional Logic toggle and condition rules
+
+field-email-stock.png
+  → The Addon Builder backend showing the Stock tab for an Email field
+  → Highlight the Enable Stock Management toggle and Inventory Item selector
+
 field-email-frontend.png
   → An Email input field on a product page
   → Show the label and email input

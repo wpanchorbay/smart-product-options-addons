@@ -2,8 +2,6 @@
 
 A single-line free-text input — the most common field for short customer-typed entries like names, messages, or monograms.
 
-![Text Input field on a product page showing a label, placeholder, and helper description below](../../public/img/field-text-frontend.png)
-
 ---
 
 ## When to Use
@@ -15,78 +13,116 @@ A single-line free-text input — the most common field for short customer-typed
 
 ---
 
-## General Settings
+## Configuration Settings
 
-| Setting | Description |
-|---------|-------------|
-| **Label** | Text label displayed above the input |
-| **Placeholder** | Grey hint text inside the input (e.g. `Max 30 characters`) |
-| **Tooltip** | Hover `?` tooltip |
-| **Description** | Helper text shown below the input |
-| **Required** | Field must be filled before add-to-cart |
+When you add a Text Input field in the Addon Builder, you can configure the following inputs across different sections:
+
+### General Settings
+
+![Backend view of General settings for Text field](../../public/img/field-text-general.png)
+
+- **Label:** The main text heading displayed above the input field on the product page. Used to identify the field in the cart and order details.
+- **Description:** Additional helper text shown below the input. Useful for providing instructions or examples to the customer.
+- **Placeholder:** Grey hint text that appears inside the empty input field (e.g., `Max 30 characters`). It disappears once the customer starts typing.
+
+### Validation
+
+![Backend view of Validation settings for Text field](../../public/img/field-text-validation.png)
+
+- **Field is Required:** A checkbox toggle. When enabled, the customer is forced to type something into this field before they are allowed to add the product to their cart. Whitespace-only values are rejected.
+
+### Restrictions
+
+![Backend view of Restrictions settings for Text field](../../public/img/field-text-restrictions.png)
+
+- **Min Length:** The minimum number of characters the customer must type. If set, an error is shown if they type fewer characters.
+- **Max Length:** The absolute maximum number of characters allowed. The browser will physically prevent the customer from typing more than this limit.
 
 ---
 
-## Pricing
+## Pricing Logic
 
-Open the **Pricing** tab to charge for this field.
+![Backend view of Pricing settings for Text field](../../public/img/field-text-pricing.png)
 
-| Price Type | Effect |
-|------------|--------|
-| **None** | No charge |
-| **Flat Fee** | Fixed charge whenever the customer types anything |
-| **Percentage** | % of product base price whenever the field is filled |
-| **Character Count** | Charge per character typed — updates live as they type |
-| **Math Formula** | Advanced — use `[char_count]`, `[base_price]`, `[quantity]` |
+You can charge extra when a customer fills out the Text Input field. Configure this in the **Pricing** tab of the field.
 
-**Most common pairing:** Character Count — ideal for engraving:
-```
-Amount: 0.50  → charges $0.50 per character typed
-```
+**Available Inputs:**
+- **Price Type:** Choose how the price is calculated.
+  - *None:* No charge.
+  - *Flat Fee:* A fixed charge added whenever the customer types anything.
+  - *Percentage:* A percentage of the product's base price added whenever the field is filled.
+  - *Character Count:* Charges a set amount per character typed. The price updates live on the frontend as the customer types. This is the **most common pairing** for engraving.
+  - *Math Formula:* For advanced dynamic pricing using placeholders like `[char_count]`, `[base_price]`, and `[quantity]`.
+- **Price Amount / Formula Expression:** Depending on the Price Type selected, enter the dollar amount, percentage value, character rate, or the exact math formula.
 
-→ Full reference: [Pricing Strategies](/pricing/index)
+::: info Master the Pricing Engine
+OptionBay includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+
+**[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
+:::
 
 ---
 
 ## Conditions
 
-Open the **Conditions** tab to show or hide this field based on another field's value.
+![Backend view of Conditions tab for Text field](../../public/img/field-text-conditions.png)
 
-**Example:** Show "Engraving Text" only when the customer ticks "Add Engraving?":
+Open the **Conditions** tab to dynamically show or hide this Text field based on what the customer has selected in other fields. 
 
-| Part | Value |
-|------|-------|
-| Action | Show this field when… |
-| Match | ALL |
-| Field | Add Engraving? |
-| Operator | == (equals) |
-| Value | `1` |
+**Available Inputs:**
+- **Enable Conditional Logic:** Toggle to turn conditions on or off.
+- **Action:** Choose whether to *Show* or *Hide* this field when conditions are met.
+- **Match Type:** Choose *ALL* (every rule must match) or *ANY* (at least one rule must match).
+- **Rules:** Define the specific field to watch, the comparison operator (e.g., `==`, `is not empty`), and the value to check against.
 
-When hidden, this field is excluded from validation, pricing, and order data — so a hidden required field will never block the customer.
+*Example:* Show the "Engraving Text" input only when a customer checks the "Add Engraving?" checkbox.
 
-→ Full reference: [Field Conditions](/fields/conditions)
+::: info Learn More About Conditions
+Conditional logic lets you build dynamic, branching forms that adapt as the customer interacts. See the full list of operators and examples in our detailed guide.
+
+**[Read the Field Conditions Reference &rarr;](/fields/conditions)**
+:::
 
 ---
 
 ## Stock
 
-Text input fields are not typically linked to stock, but you can do so if the act of entering text consumes a resource (e.g. "Design Slot").
+![Backend view of Stock tab for Text field](../../public/img/field-text-stock.png)
 
-→ Full reference: [Linking Options to Stock](/stocks/field-linking)
+While less common for text inputs, you can link the act of filling out this field to a global inventory pool using the **Stock** tab. This is useful if entering text consumes a physical resource, like a "Custom Design Slot".
 
----
+**Available Inputs:**
+- **Enable Stock Management:** Toggle to activate inventory tracking for this field.
+- **Inventory Item:** Search and select an existing Global Stock Item, or create a new one directly from the dropdown.
+- **Reduction Mode:** Choose how stock is deducted (Per Item Quantity, Per Line Item, or Formula).
 
-## Validation
+::: tip Global Stock Management
+OptionBay lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
 
-- **Required** — the field must not be empty (whitespace-only values are rejected)
-- **Sanitization** — value is processed with `sanitize_text_field()`: strips HTML tags and trims extra whitespace
+**[Read the Guide: Linking Options to Stock &rarr;](/stocks/field-linking)**
+:::
 
----
+## Example & Frontend Display
 
-## Cart & Order Display
+To see how this comes together, let's look at a common scenario: **Selling a personalized watch**. You want to let customers type a message, and charge them $0.50 per character.
+
+You would configure the Text Input field like this:
+- **Label:** `Engraving Text`
+- **Description:** `Enter the message to be engraved on the back of the watch.`
+- **Placeholder:** `Max 30 characters`
+- **Price Type:** `Character Count`
+- **Price Amount:** `0.50`
+
+**Frontend Product Page View:**
+With those settings, here is how the field renders on your product page for customers to interact with:
+
+![Text Input field rendered on the frontend product page](../../public/img/field-text-frontend.png)
+
+When a customer fills out the field and adds the product to their cart, the data is safely sanitized using WordPress's `sanitize_text_field()` (which strips HTML and trims extra whitespace). 
+
+**Cart & WooCommerce Order View:**
+The field label and the customer's typed text will appear clearly on the cart page, checkout, and in your WooCommerce admin order screen exactly like this:
 
 ```
 Engraving Text:   Happy Birthday, Sarah!
 ```
-
-The raw typed value is stored and displayed on the cart page, checkout, and in the WooCommerce order screen.
