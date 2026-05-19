@@ -32,7 +32,7 @@ Download the `optionbay.zip` file from your purchase confirmation email or your 
 3. Click **Choose File** and select the `optionbay.zip` you downloaded.
 4. Click **Install Now** and wait for the upload to complete.
 
-![WordPress admin Upload Plugin screen showing the Choose File button and Install Now button](../public/img/install-upload.png)
+![WordPress admin Upload Plugin screen showing the Choose File button and Install Now button](../public/install-upload.png)
 
 ### Step 3 — Activate the Plugin
 

@@ -14,7 +14,7 @@ Upon successful checkout, this session data is transformed into permanent **orde
 
 When viewing any order containing OptionBay selections, the customer's choices are displayed directly below the product name in the **Order Items** admin panel:
 
-![WooCommerce order screen showing an order line item with OptionBay custom options listed beneath the product name](../public/img/order-line-item.png)
+![WooCommerce order screen showing an order line item with OptionBay custom options listed beneath the product name](../public/order-line-item.png)
 
 - **Text, Area, Number, and Email fields:** Display the field's label followed by the customer's typed value (e.g. `Engraving Text: Happy Birthday!`).
 - **Choice-based fields (Dropdowns, Radios, Checkboxes, Swatches):** Display the field's label followed by the text label of the selected choice (e.g. `Gift Wrap?: Yes`).
@@ -24,13 +24,13 @@ When viewing any order containing OptionBay selections, the customer's choices a
 
 ## Options in Order Emails
 
-WooCommerce automatically passes all line-item metadata to outgoing emails. 
+WooCommerce automatically passes all line-item metadata to outgoing emails.
 
 - **Customer Invoices & Receipts:** Customers receive confirmation of their options listed under each product in their order receipt emails.
 - **Admin Notifications:** Store managers see the custom options inside the "New Order" notification emails, ensuring fulfillment teams know what options were selected without opening the WordPress admin.
 - **Third-Party Email Services:** If you use tools like Mailchimp or Klaviyo for WooCommerce transactional emails, they will ingest these options metadata rows automatically.
 
-![A customer HTML receipt email showing the custom options rendered under the product name in the items table](../public/img/order-email.png)
+![A customer HTML receipt email showing the custom options rendered under the product name in the items table](../public/order-email.png)
 
 ---
 
@@ -41,7 +41,7 @@ Before the order is completed, OptionBay displays selected options on frontend t
 - **Cart Page:** Each selected option appears as a formatted list row beneath the product title in the cart table.
 - **Checkout Page:** The option rows are mirrored in the checkout order review table, giving the customer a final chance to verify their selections before paying.
 
-![WooCommerce cart page with OptionBay selections listed under the product](../public/img/cart-item-options.png)
+![WooCommerce cart page with OptionBay selections listed under the product](../public/cart-item-options.png)
 
 ---
 
@@ -49,15 +49,16 @@ Before the order is completed, OptionBay displays selected options on frontend t
 
 OptionBay bakes option pricing adjustments directly into the product line item price rather than adding them as separate order fees.
 
-- **Unified Price Calculations:** If a `$50.00` product has a `+$5.00` option checked, WooCommerce treats the product price as `$55.00` inside the cart and checkout. 
+- **Unified Price Calculations:** If a `$50.00` product has a `+$5.00` option checked, WooCommerce treats the product price as `$55.00` inside the cart and checkout.
 - **Receipt Totals:** The invoice displays the item at `$55.00` (or `$110.00` for quantity 2), with the option labels listed below to explain the surcharge.
 
 ::: info Maximum System Compatibility
 By modifying the product line item price directly instead of generating separate "fee lines", OptionBay maintains 100% compatibility with:
+
 - **Tax Calculators:** Tax calculation plugins (like WooCommerce Tax or TaxJar) compute taxes correctly on the adjusted total.
 - **Payment Gateways:** Gateways (like Stripe, PayPal, or Authorize.Net) process the exact checkout total without mismatch errors.
 - **Invoicing Plugins:** PDF Invoice generators print the correct product pricing automatically.
-:::
+  :::
 
 ---
 

@@ -1,0 +1,98 @@
+# OptionBay Screenshot Grouping Plan
+
+This plan groups the screenshots from `image.txt` into logical batches. Each batch corresponds to a single page or state, allowing you to capture multiple images in one sitting.
+
+## Group 1: Option Groups List (The Dashboard)
+**Location:** WooCommerce -> OptionBay -> Addon Builder (List View)
+**Strategy:** Capture the base list first, then trigger interactive elements (hover, popover, modals).
+
+1.  `option-groups-list.png` (Base view)
+2.  `option-groups-header.png` (Static highlight)
+3.  `option-groups-filters.png` (Static highlight)
+4.  `quick-start-step1.png` (Highlight "Add new group")
+5.  `option-groups-row-actions.png` (Hover over a row)
+6.  `option-groups-columns.png` (Click the ⋮ column picker)
+7.  `option-groups-bulk-confirm.png` (Select items -> Bulk Action -> Move to Trash)
+8.  `option-groups-inventory-btn.png` (Highlight 📦 icon)
+9.  `export-panel.png` (Click "Export" button)
+10. `import-panel.png` (Click "Import" button)
+11. `import-success-toast.png` (Trigger a successful import)
+
+## Group 2: Addon Builder (Structure & Layout)
+**Location:** WooCommerce -> OptionBay -> Addon Builder (Editing a Group)
+**Strategy:** Capture the overall container and global sections of the builder.
+
+1.  `addon-builder-full.png` (Full viewport)
+2.  `addon-builder-header.png` (Top bar focus)
+3.  `addon-builder-title.png` (Title input focus)
+4.  `addon-builder-sidebar.png` (Right sidebar focus)
+5.  `addon-builder-field-collapsed.png` (Focus on the canvas with several fields)
+6.  `addon-builder-drag-reorder.png` (Mid-drag capture)
+
+## Group 3: Assignment Rules (Logic Area)
+**Location:** Inside Addon Builder -> Assignment Rules section
+**Strategy:** This area is complex enough to merit its own batch of state changes.
+
+1.  `addon-builder-assignment-rules.png` (Base section view)
+2.  `assignments-panel.png` (Showing a mix of rules)
+3.  `assignments-add-rule.png` (Dropdown open or "Add Rule" highlighted)
+4.  `quick-start-step4.png` (Highlighting a specific product assignment)
+
+## Group 4: Field Tab Patterns (The "Reference" Field)
+**Location:** Expanded Field Row (Pick a 'Select' or 'Radio' field as the master example)
+**Strategy:** Use one field to show all possible tab layouts used across the plugin.
+
+1.  `addon-builder-field-expanded.png` (General Tab)
+2.  `pricing-tab.png` (Pricing Tab - Type dropdown open)
+3.  `pricing-tab-flat.png` (Pricing Tab - Flat fee state)
+4.  `pricing-tab-percentage.png` (Pricing Tab - % state)
+5.  `pricing-tab-character.png` (Pricing Tab - Char count state)
+6.  `pricing-tab-formula.png` (Pricing Tab - Formula state)
+7.  `visibility-tab.png` / `field-conditions-tab.png` (Visibility Tab with rules)
+8.  `stock-field-link.png` (Stock Tab - Base)
+9.  `stock-field-link-reduction.png` (Stock Tab - Reduction dropdown open)
+10. `stock-field-link-formula.png` (Stock Tab - Custom formula)
+11. `inventory-create-inline.png` (Stock Tab - Search box showing 'Create New')
+
+## Group 5: Field Type Specifics (General & Options)
+**Location:** Expanded Field Rows for each type.
+**Strategy:** Iterate through every field type to capture their unique inputs (General/Options/Validation).
+
+*   **Choice Fields:** `field-select-*`, `field-radio-*`, `field-checkbox-*`, `field-checkboxes-*`, `field-color-swatch-*`, `field-image-swatch-*`.
+*   **Input Fields:** `field-text-*`, `field-textarea-*`, `field-number-*`, `field-email-*`.
+*   **Advanced:** `field-file-*`, `field-static-*`.
+
+## Group 6: Frontend Product Page
+**Location:** Any WooCommerce Product page.
+**Strategy:** Capture the visual rendering of every field and the pricing totals block.
+
+1.  `quick-start-result.png` / `quick-start-step6.png` (The "Hero" frontend shot)
+2.  `pricing-frontend-totals.png` (Focus on the totals block)
+3.  `stock-frontend-outofstock.png` (Show a disabled out-of-stock option)
+4.  Individual field shots: `field-select-frontend.png`, `field-radio-frontend.png`, etc.
+
+## Group 7: Inventory Modal
+**Location:** Click "View Inventory" (📦) from the Dashboard.
+**Strategy:** Capture the modal states.
+
+1.  `inventory-modal.png` / `inventory-modal-open.png` (Base table view)
+2.  `inventory-modal-add.png` (Click "Add Item")
+3.  `inventory-modal-edit.png` (Click "Edit" on a row)
+4.  `inventory-modal-delete-confirm.png` (Click "Delete" on a row)
+
+## Group 8: Settings & Admin
+**Location:** WooCommerce -> OptionBay -> Settings / WP Admin.
+
+1.  `settings-page.png` (Full page)
+2.  `settings-swatch-size-roundness.png` (General tab detail)
+3.  `settings-system-maintenance.png` (System tab detail)
+4.  `install-upload.png` (Plugins -> Add New -> Upload)
+5.  `troubleshooting-permalink-settings.png` (Settings -> Permalinks)
+6.  `troubleshooting-wp-rest-check.png` (External URL check)
+
+## Group 9: Order Lifecycle
+**Location:** Cart Page / WooCommerce Order Screen / Email Inbox.
+
+1.  `cart-item-options.png` (Cart page)
+2.  `order-line-item.png` (Edit Order screen)
+3.  `order-email.png` (Email client view)

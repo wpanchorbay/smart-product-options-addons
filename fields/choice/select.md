@@ -2,7 +2,7 @@
 
 A native HTML `<select>` dropdown — customers pick **one option** from a collapsed list. Best when you have many choices and want to save vertical space on the product page.
 
-![A Select Dropdown field on a WooCommerce product page, dropdown open showing price-labelled options](../../public/img/field-select-frontend.png)
+![A Select Dropdown field on a WooCommerce product page, dropdown open showing price-labelled options](../../public/field-select-frontend.png)
 
 ---
 
@@ -21,7 +21,7 @@ When you add a Select field in the Addon Builder, you can configure the followin
 
 ### General Settings
 
-![Backend view of General settings for Select field](../../public/img/field-select-general.png)
+![Backend view of General settings for Select field](../../public/field-select-general.png)
 
 - **Label:** The text heading displayed above the dropdown. Used to identify the field in the cart and order details.
 - **Description:** Additional helper text shown below the dropdown. Useful for providing instructions.
@@ -29,27 +29,29 @@ When you add a Select field in the Addon Builder, you can configure the followin
 
 ### Options Configuration
 
-![Backend view of Options block for Select field](../../public/img/field-select-options.png)
+![Backend view of Options block for Select field](../../public/field-select-options.png)
 
 Within the main **Options** block, you define the actual dropdown choices by clicking the **Add Choice** button. For each choice card in the list, you have access to inline inputs and an expandable settings panel.
 
 **Inline Editor (Always Visible):**
+
 - **Drag Handle:** Use the left-side grip icon to drag and drop choices to reorder how they appear on the frontend.
 - **Label:** The primary text shown inside the dropdown menu on the frontend, and in the cart (e.g. `16GB RAM`).
-- *(System Value):* OptionBay automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores.
+- _(System Value):_ OptionBay automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores.
 
 **Expanded Settings Panel:**
 Click the **downward chevron icon** on the right side of any choice card to expand its advanced settings:
+
 - **Price Type:** Choose how this specific option is priced (`None`, `Flat Fee`, `Percentage`, or `Formula`). [Read the Pricing Guide &rarr;](/pricing/index)
 - **Price Amount / Formula Expression:** Appears if a price type is selected. Enter the monetary surcharge or the dynamic math formula.
 - **Weight (kg):** Enter a numeric value to add physical shipping weight to the cart when this option is selected.
 - **Stock Tracking:** A toggle that, when enabled, opens the per-option inventory controls. [Read the Stock Linking Guide &rarr;](/stocks/field-linking)
-  - *Select Pool:* Choose which Global Stock Item to link this choice to.
-  - *Reduction Mode:* Choose how stock is deducted (`Per Item Quantity`, `Per Line Item`, or `Formula`).
+  - _Select Pool:_ Choose which Global Stock Item to link this choice to.
+  - _Reduction Mode:_ Choose how stock is deducted (`Per Item Quantity`, `Per Line Item`, or `Formula`).
 
 ### Validation
 
-![Backend view of Validation settings for Select field](../../public/img/field-select-validation.png)
+![Backend view of Validation settings for Select field](../../public/field-select-validation.png)
 
 - **Field is Required:** A checkbox toggle. When enabled, the customer is forced to pick a valid option (they cannot submit the form if the Placeholder is still selected).
 
@@ -61,13 +63,14 @@ OptionBay automatically renders your placeholder text as the first, disabled `<o
 
 ## Pricing Logic
 
-![Backend view of Pricing settings for Select field](../../public/img/field-select-pricing.png)
+![Backend view of Pricing settings for Select field](../../public/field-select-pricing.png)
 
-You can charge a fee globally for the field, or individually per option. 
+You can charge a fee globally for the field, or individually per option.
 
 **Per-Option Pricing:** (Recommended) Set specific price deltas on individual choices (e.g. "+$100 for 32GB") inside the Options block.
 
-**Field-Level Pricing:** Open the **Pricing** tab to set a flat charge that applies *no matter which option is selected*. 
+**Field-Level Pricing:** Open the **Pricing** tab to set a flat charge that applies _no matter which option is selected_.
+
 - **Price Type:** (None, Flat Fee, Percentage, Math Formula).
 - **Price Amount / Formula Expression:** The fee applied when any non-empty option is chosen.
 
@@ -81,17 +84,18 @@ OptionBay includes five different pricing strategies, including dynamic math for
 
 ## Conditions
 
-![Backend view of Conditions tab for Select field](../../public/img/field-select-conditions.png)
+![Backend view of Conditions tab for Select field](../../public/field-select-conditions.png)
 
-Open the **Conditions** tab to dynamically show or hide this dropdown based on what the customer has selected in other fields. 
+Open the **Conditions** tab to dynamically show or hide this dropdown based on what the customer has selected in other fields.
 
 **Available Inputs:**
+
 - **Enable Conditional Logic:** Toggle to turn conditions on or off.
-- **Action:** Choose whether to *Show* or *Hide* this field when conditions are met.
-- **Match Type:** Choose *ALL* (every rule must match) or *ANY* (at least one rule must match).
+- **Action:** Choose whether to _Show_ or _Hide_ this field when conditions are met.
+- **Match Type:** Choose _ALL_ (every rule must match) or _ANY_ (at least one rule must match).
 - **Rules:** Define the specific field to watch, the comparison operator, and the value to check against.
 
-*Example:* Show the "Engraving Font" dropdown only if the customer checked the "Add Engraving" checkbox.
+_Example:_ Show the "Engraving Font" dropdown only if the customer checked the "Add Engraving" checkbox.
 
 ::: info Learn More About Conditions
 Conditional logic lets you build dynamic, branching forms that adapt as the customer interacts. See the full list of operators and examples in our detailed guide.
@@ -103,13 +107,14 @@ Conditional logic lets you build dynamic, branching forms that adapt as the cust
 
 ## Stock
 
-![Backend view of Stock tab for Select field](../../public/img/field-select-stock.png)
+![Backend view of Stock tab for Select field](../../public/field-select-stock.png)
 
-Because a Select field contains multiple distinct options, stock is typically linked **per option** instead of for the whole field. 
+Because a Select field contains multiple distinct options, stock is typically linked **per option** instead of for the whole field.
 
 Open the **Stock** tab to link individual choices to their respective inventory pools.
 
 **Available Inputs:**
+
 - **Enable Stock Management:** Toggle to activate inventory tracking.
 - **Per-Option Links:** You will see a row for every option you created. For each row, you can select an existing Global Stock Item and define the Reduction Mode (Per Item Quantity, Per Line Item, or Formula).
 
@@ -126,6 +131,7 @@ OptionBay lets you share stock pools across multiple options and products, compl
 To see how this comes together, let's look at a common scenario: **Selecting RAM size for a custom PC**. You want customers to pick one RAM size, and charge a different price based on what they choose.
 
 You would configure the Select field like this:
+
 - **Label:** `RAM Capacity`
 - **Placeholder:** `Choose memory size...`
 - **Option 1:** Label `16GB (Included)`, Price Type `None`
@@ -135,7 +141,7 @@ You would configure the Select field like this:
 **Frontend Product Page View:**
 With those settings, here is how the field renders on your product page for customers to interact with:
 
-![A Select Dropdown field on a WooCommerce product page, dropdown open showing price-labelled options](../../public/img/field-select-frontend.png)
+![A Select Dropdown field on a WooCommerce product page, dropdown open showing price-labelled options](../../public/field-select-frontend.png)
 
 When a customer makes a selection and adds the product to their cart, OptionBay validates that the submitted value exactly matches one of the allowed options you defined, preventing malicious injections.
 

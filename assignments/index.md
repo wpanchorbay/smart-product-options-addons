@@ -2,7 +2,7 @@
 
 **Assignments** control which products an Option Group appears on. Each group can have multiple assignment rules that combine to determine its visibility across your store.
 
-![Assignment Rules panel inside the Addon Builder showing global, category, product, and tag rules in a table](../public/img/assignments-panel.png)
+![Assignment Rules panel inside the Addon Builder showing global, category, product, and tag rules in a table](../public/assignments-panel.png)
 
 ---
 
@@ -18,12 +18,12 @@ The result is a prioritised, deduplicated list of groups to render — resolved 
 
 Each assignment rule targets one of four scopes:
 
-| Target | Description |
-|--------|-------------|
-| **Global** | The group appears on **all** products site-wide |
-| **Specific Product** | The group appears on one or more individually selected products |
-| **Category** | The group appears on all products in one or more selected categories |
-| **Tag** | The group appears on all products with one or more selected tags |
+| Target               | Description                                                          |
+| -------------------- | -------------------------------------------------------------------- |
+| **Global**           | The group appears on **all** products site-wide                      |
+| **Specific Product** | The group appears on one or more individually selected products      |
+| **Category**         | The group appears on all products in one or more selected categories |
+| **Tag**              | The group appears on all products with one or more selected tags     |
 
 You can add multiple rules of any type. OptionBay evaluates them all together.
 
@@ -33,12 +33,12 @@ You can add multiple rules of any type. OptionBay evaluates them all together.
 
 Inside the Addon Builder, open the **Assignment Rules** section. Click **Add Rule** to add a new row.
 
-![Assignment Rules panel with the Add Rule button and a dropdown to choose target type](../public/img/assignments-add-rule.png)
+![Assignment Rules panel with the Add Rule button and a dropdown to choose target type](../public/assignments-add-rule.png)
 
 For each rule, configure:
 
 1. **Target Type** — Select Global, Product, Category, or Tag from the dropdown
-2. **Target** — *(Not applicable for Global)* Search and select the specific product, category, or tag
+2. **Target** — _(Not applicable for Global)_ Search and select the specific product, category, or tag
 3. **Type** — Choose **Include** or **Exclude** (see below)
 4. **Priority** — A number (default: `10`). Lower numbers have higher priority.
 
@@ -46,16 +46,16 @@ For each rule, configure:
 
 ## Inclusion vs. Exclusion Rules
 
-Rules can be either **inclusions** (the group *should* appear) or **exclusions** (the group *should not* appear).
+Rules can be either **inclusions** (the group _should_ appear) or **exclusions** (the group _should not_ appear).
 
 ### Example
 
 Imagine you want a group to appear on all products in the "Jewellery" category **except** for the product "Silver Ring".
 
-| Rule | Target | Type |
-|------|--------|------|
-| Category | Jewellery | Include |
-| Product | Silver Ring | Exclude |
+| Rule     | Target      | Type    |
+| -------- | ----------- | ------- |
+| Category | Jewellery   | Include |
+| Product  | Silver Ring | Exclude |
 
 OptionBay processes both rules together. Since the exclusion rule exists for "Silver Ring", the group will not appear on that product even though the category rule would otherwise include it.
 
@@ -86,11 +86,11 @@ Click the **× Remove** button at the end of any rule row to delete it. Unsaved 
 
 On the [Option Groups list](/builder/option-groups), the **Assigned To** column shows a human-readable summary of where each group is assigned:
 
-| Summary shown | Meaning |
-|---------------|---------|
-| `All Products` | At least one Global rule exists |
+| Summary shown              | Meaning                                            |
+| -------------------------- | -------------------------------------------------- |
+| `All Products`             | At least one Global rule exists                    |
 | `3 categories, 2 products` | Category and/or product-specific rules (no global) |
-| `None` | No assignment rules — the group never appears |
+| `None`                     | No assignment rules — the group never appears      |
 
 ::: warning Groups with no assignments never appear
 A group must have at least one inclusion rule to display on any product page. A group with zero assignment rules is effectively invisible.

@@ -16,9 +16,10 @@ Unlike WooCommerce's built-in stock system which tracks inventory per product va
 
 ## How It Works
 
-Instead of tracking stock per product, Global Stock Items are **shared pools** that any option (across any product) can draw from. 
+Instead of tracking stock per product, Global Stock Items are **shared pools** that any option (across any product) can draw from.
 
 When a customer selects an option linked to a stock item:
+
 1. **Real-Time Reservation:** The stock item's available quantity is reserved in real time while the item sits in their cart, protecting against double-reserving the last remaining items.
 2. **Permanent Deduction:** On order completion, the reserved stock is permanently deducted from the stock item's count.
 3. **Automatic Restoration:** If the order is cancelled or refunded, the deducted stock is automatically restored to the pool.
@@ -29,7 +30,7 @@ When a customer selects an option linked to a stock item:
 
 You can access the inventory manager from the [Option Groups](/builder/option-groups) list page by clicking the **View Inventory** button (📦 icon) in the top-right controls area.
 
-![The View Inventory modal showing a table of stock items with name, stock count, backorders toggle, and edit/delete actions](../public/img/inventory-modal.png)
+![The View Inventory modal showing a table of stock items with name, stock count, backorders toggle, and edit/delete actions](../public/inventory-modal.png)
 
 The modal provides a centralized table showing all your Global Stock Items with the following columns:
 
@@ -44,7 +45,7 @@ The modal provides a centralized table showing all your Global Stock Items with 
 
 Click the **Add Item** button at the top of the inventory modal to expand the creation form.
 
-![The Add Item form open inside the inventory modal](../public/img/inventory-modal-add.png)
+![The Add Item form open inside the inventory modal](../public/inventory-modal-add.png)
 
 - **Name:** Enter a descriptive internal name (e.g., "Gift Wrap Sheets", "Engraving Slots").
 - **Stock Count:** Enter the starting inventory count. This can be a whole integer or a decimal number.
@@ -61,7 +62,7 @@ You can also create new inventory items directly inside the **Stock tab** of any
 Manage existing stock items directly within the inventory modal table:
 
 - **Editing an Item:** Click **Edit** on any row to open the inline editor. You can change the item's name or adjust the stock count to reflect physical inventory updates. Click **Save** to apply.
-  - ![Editing a stock item inline inside the inventory modal table](../public/img/inventory-modal-edit.png)
+  - ![Editing a stock item inline inside the inventory modal table](../public/inventory-modal-edit.png)
 - **Deleting an Item:** Click **Delete** on any row to remove the stock pool.
   - ::: warning Deletion Effects
     Deleting a stock item removes it permanently from the database. Any options currently linked to this stock item will have their stock management disabled automatically.

@@ -12,7 +12,7 @@ The inventory manager is a centralized dashboard accessible from your main Optio
 2. Click the **View Inventory** button (📦 icon) located in the top-right controls toolbar.
 3. The inventory manager opens as an overlay modal, allowing you to manage all global stock pools without leaving the page.
 
-![The inventory modal opened from the Option Groups list, showing the table and Add Item button](../public/img/inventory-modal-open.png)
+![The inventory modal opened from the Option Groups list, showing the table and Add Item button](../public/inventory-modal-open.png)
 
 ---
 
@@ -36,14 +36,18 @@ The new inventory item is created in the database and immediately appears at the
 Keep your stock pools up-to-date by adjusting their details directly in the table:
 
 ### Adjusting Stock Count
+
 To update the available inventory level:
+
 1. Locate the item in the inventory modal table.
 2. Click either the **Adjust Stock** text button on the right-side Action column, or click the numeric stock status value itself.
 3. The stock status text transforms inline into a number input field with a checkmark (✓) button.
 4. Enter the new stock value and click the **✓** button (or press **Enter**). The change is saved instantly. To discard the edit, press **Escape**.
 
 ### Toggling Backorders
+
 To change backorder permissions:
+
 1. Locate the item in the inventory modal table.
 2. Under the **Backorders** column, click the status badge (shows either **Allowed** in blue or **Denied** in grey).
 3. The badge toggles instantly on click, communicating the update immediately to the backend.
@@ -60,9 +64,10 @@ If you manually refund or return items outside of WooCommerce's standard order c
 
 ## Deleting Stock Items
 
-To protect integrity and prevent breaking linked option groups, OptionBay does **not** expose a delete action for inventory pools in the admin dashboard. 
+To protect integrity and prevent breaking linked option groups, OptionBay does **not** expose a delete action for inventory pools in the admin dashboard.
 
 If you have a stock pool that is no longer needed:
+
 1. Simply unlink it from any option settings in the [Addon Builder](/builder/addon-builder).
 2. The pool will remain in the database as a dormant inventory item, but will not impact frontend behavior or perform any active stock checks.
 3. If permanent deletion is absolutely required, it must be performed directly in your WordPress database by removing the corresponding row from the `wp_optionbay_inventory` table. Ensure all option links are removed first.
@@ -78,11 +83,11 @@ You do not need to pre-create all your inventory pools in the modal first. Optio
 3. Toggle **Enable Stock Management** on.
 4. Click into the **Inventory Item** search select box and start typing the name of the new stock item you want to create.
 5. If no matching item exists, a special option appears at the bottom of the dropdown: **Create new "[name]"**.
-6. Click that option. OptionBay immediately creates the new global stock pool with a starting count of `0` and links it to your field. 
+6. Click that option. OptionBay immediately creates the new global stock pool with a starting count of `0` and links it to your field.
 
 You can configure the starting stock count or enable backorders for this newly created item later by opening the main inventory modal.
 
-![Stock tab inside the Addon Builder showing the inventory search input with a "Create new" option in the dropdown](../public/img/inventory-create-inline.png)
+![Stock tab inside the Addon Builder showing the inventory search input with a "Create new" option in the dropdown](../public/inventory-create-inline.png)
 
 ---
 
@@ -101,4 +106,4 @@ The inventory modal allows you to adjust stock counts to any integer or decimal 
 The table in the inventory modal always displays the **live** current count as recorded in the database. This value accounts for all completed checkout orders that have permanently deducted stock.
 
 - **Available Stock vs. Cart Reserved:** The stock count shown in the modal table is the absolute count in your database. It does **not** subtract items that are currently sitting in active, unpurchased customer carts.
-- **Real Availability Checks:** While the table shows the absolute database value, the frontend product page and add-to-cart validations *do* account for cart reservations. If a customer is viewing the product page, OptionBay subtracts active reservations to determine if they can select the option.
+- **Real Availability Checks:** While the table shows the absolute database value, the frontend product page and add-to-cart validations _do_ account for cart reservations. If a customer is viewing the product page, OptionBay subtracts active reservations to determine if they can select the option.

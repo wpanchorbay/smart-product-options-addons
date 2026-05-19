@@ -2,7 +2,7 @@
 
 **Conditional Visibility** lets you show or hide fields based on what the customer has already selected in the same Option Group. Use it to build branching option flows that adapt in real time as the customer interacts.
 
-![Visibility tab inside the Addon Builder showing condition rules configured for a field](../public/img/visibility-tab.png)
+![Visibility tab inside the Addon Builder showing condition rules configured for a field](../public/visibility-tab.png)
 
 ---
 
@@ -13,6 +13,7 @@ Each field has a **Visibility** tab in the Addon Builder. You configure a set of
 On the **frontend**, the JavaScript engine re-evaluates all conditions in real time as the customer interacts. Fields appear and disappear without any page reload.
 
 On the **backend** (at cart submission), the same conditions are re-evaluated server-side by `ConditionEvaluator.php` to ensure:
+
 - Hidden fields are not validated as required
 - Hidden fields do not contribute to pricing calculations
 - Hidden fields are not saved to the cart or order
@@ -29,44 +30,44 @@ Toggle **Enable Conditional Logic** to on.
 
 ### Step 2 — Choose the Action
 
-| Action | Effect |
-|--------|--------|
+| Action                    | Effect                                                         |
+| ------------------------- | -------------------------------------------------------------- |
 | **Show this field when…** | Field is hidden by default; shown only when conditions are met |
-| **Hide this field when…** | Field is visible by default; hidden when conditions are met |
+| **Hide this field when…** | Field is visible by default; hidden when conditions are met    |
 
 ### Step 3 — Set Match Type
 
-| Match Type | Logic |
-|------------|-------|
+| Match Type    | Logic                                                    |
+| ------------- | -------------------------------------------------------- |
 | **ALL** (AND) | Every single rule must be true for the action to trigger |
-| **ANY** (OR) | At least one rule must be true for the action to trigger |
+| **ANY** (OR)  | At least one rule must be true for the action to trigger |
 
 ### Step 4 — Add Rules
 
 Click **Add Rule**. Each rule has three parts:
 
-| Part | Description |
-|------|-------------|
-| **Field** | Select which other field in the group to watch |
-| **Operator** | The comparison to perform |
-| **Value** | The value to compare against |
+| Part         | Description                                    |
+| ------------ | ---------------------------------------------- |
+| **Field**    | Select which other field in the group to watch |
+| **Operator** | The comparison to perform                      |
+| **Value**    | The value to compare against                   |
 
 ---
 
 ## Supported Operators
 
-| Operator | Meaning | Works With |
-|----------|---------|-----------|
-| `==` (equals) | Value exactly matches | All fields |
-| `!=` (not equals) | Value does not match | All fields |
-| `>` (greater than) | Numeric comparison | Number fields |
-| `<` (less than) | Numeric comparison | Number fields |
-| `>=` (greater than or equal) | Numeric | Number fields |
-| `<=` (less than or equal) | Numeric | Number fields |
-| `contains` | Value appears in the selection | Checkbox (multi), text |
-| `not contains` | Value does not appear in selection | Checkbox (multi), text |
-| `is empty` | No value submitted | All fields |
-| `is not empty` | A value has been submitted | All fields |
+| Operator                     | Meaning                            | Works With             |
+| ---------------------------- | ---------------------------------- | ---------------------- |
+| `==` (equals)                | Value exactly matches              | All fields             |
+| `!=` (not equals)            | Value does not match               | All fields             |
+| `>` (greater than)           | Numeric comparison                 | Number fields          |
+| `<` (less than)              | Numeric comparison                 | Number fields          |
+| `>=` (greater than or equal) | Numeric                            | Number fields          |
+| `<=` (less than or equal)    | Numeric                            | Number fields          |
+| `contains`                   | Value appears in the selection     | Checkbox (multi), text |
+| `not contains`               | Value does not appear in selection | Checkbox (multi), text |
+| `is empty`                   | No value submitted                 | All fields             |
+| `is not empty`               | A value has been submitted         | All fields             |
 
 ---
 
@@ -143,6 +144,7 @@ When the product page loads, OptionBay sets the initial visibility of each condi
 ## Conditions and Validation
 
 Fields that are hidden by conditions are **fully skipped** during:
+
 - Required field validation at add-to-cart
 - Pricing calculations
 - Cart session storage

@@ -7,6 +7,7 @@ Diagnose and resolve common configuration, display, and integration issues with 
 ## Options Not Showing on Product Pages
 
 ### Symptom
+
 You have configured an Option Group and saved it, but no custom fields appear when viewing the product page on your store's frontend.
 
 ### Troubleshooting Checklist
@@ -39,6 +40,7 @@ You have configured an Option Group and saved it, but no custom fields appear wh
 ## Options Show But Prices Are Incorrect
 
 ### Symptom
+
 The custom fields appear on the product page, but the price adjustments do not match what you configured, or adding options doesn't adjust the price total.
 
 ### Troubleshooting Checklist
@@ -66,6 +68,7 @@ The custom fields appear on the product page, but the price adjustments do not m
 ## File Upload Failures
 
 ### Symptom
+
 Customers click the file upload button but the upload fails silently, shows an error, or the file link is broken in the order backend.
 
 ### Troubleshooting Checklist
@@ -91,6 +94,7 @@ Customers click the file upload button but the upload fails silently, shows an e
 ## Stock Deductions Not Occurring
 
 ### Symptom
+
 Orders are placed with linked options, but the inventory count inside your Global Stock Items remains unchanged.
 
 ### Troubleshooting Checklist
@@ -115,6 +119,7 @@ Orders are placed with linked options, but the inventory count inside your Globa
 ## REST API Errors in Admin Dashboard
 
 ### Symptom
+
 The Option Groups list, Addon Builder, or Settings screen fails to load, showing a blank area or alerts like "Failed to load option groups."
 
 ### Troubleshooting Checklist
@@ -124,7 +129,7 @@ The Option Groups list, Addon Builder, or Settings screen fails to load, showing
    - If the endpoint returns a raw JSON document showing site information, the REST API is functional.
    - If you get a `404 Not Found` error, a `403 Forbidden` error, or are redirected to the homepage, a security plugin or firewall rule is blocking REST access.
 
-   ![Browser window showing the default public output of the WordPress REST API index endpoint](../public/img/troubleshooting-wp-rest-check.png)
+   ![Browser window showing the default public output of the WordPress REST API index endpoint](../public/troubleshooting-wp-rest-check.png)
 
 2. **Check Security Plugin Rule Blocks:**
    - Plugins like Wordfence, iThemes Security (Solid Security), or Sucuri have settings to "Restrict REST API access."
@@ -136,7 +141,7 @@ The Option Groups list, Addon Builder, or Settings screen fails to load, showing
    - Make sure your settings are set to **Post Name** or another structure (the default "Plain" query-parameter style can sometimes conflict with API endpoints).
    - Click the **Save Changes** button at the bottom of the Permalinks page. This flushes and rebuilds your site's rewrite rules, correcting broken endpoint routing.
 
-   ![The WordPress Permalinks settings screen highlighting the Save Changes button](../public/img/troubleshooting-permalink-settings.png)
+   ![The WordPress Permalinks settings screen highlighting the Save Changes button](../public/troubleshooting-permalink-settings.png)
 
 4. **Verify User Permissions:**
    - The OptionBay API endpoints require authentication and authorization.

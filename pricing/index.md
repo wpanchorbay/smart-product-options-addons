@@ -2,7 +2,7 @@
 
 OptionBay supports five pricing strategies that control how a price adjustment is calculated for a field or individual choice. Every field has a **Price Type** setting in its Pricing tab (or option configuration accordion), and each strategy does something distinct.
 
-![Pricing tab inside the Addon Builder showing the Price Type dropdown and Amount input](../public/img/pricing-tab.png)
+![Pricing tab inside the Addon Builder showing the Price Type dropdown and Amount input](../public/pricing-tab.png)
 
 ---
 
@@ -33,10 +33,10 @@ No price is applied. The field collects customer selections or text entries but 
 Adds a fixed, static surcharge to the product price whenever the field is filled or the choice is selected.
 
 - **Formula:** `price delta = configured_amount`
-- **Admin Configuration:** 
+- **Admin Configuration:**
   - Set Price Type to **Flat Fee**.
   - Enter the numerical value (e.g. `5.00`) in the Price Amount input.
-  - ![Flat fee pricing input](../public/img/pricing-tab-flat.png)
+  - ![Flat fee pricing input](../public/pricing-tab-flat.png)
 - **Use Case Example:** A checkbox for `Add Gift Wrapping` charging a flat `+$5.00`.
 - **Works on:** All field types (Text, Textarea, Number, Email, File Upload, Radio Buttons, Dropdown, Checkboxes, Swatches).
 - **Frontend Display:** The price adjustment is formatted using your WooCommerce store's currency settings:
@@ -54,7 +54,7 @@ Adds a dynamic charge calculated as a percentage of the product's base price.
 - **Admin Configuration:**
   - Set Price Type to **Percentage**.
   - Enter the percentage number (e.g. `10` for 10%) in the Price Amount input.
-  - ![Percentage pricing input](../public/img/pricing-tab-percentage.png)
+  - ![Percentage pricing input](../public/pricing-tab-percentage.png)
 - **Use Case Example:** A `Priority Processing` selection that adds `10%` to the base price of whatever product it's attached to.
 - **Frontend Display:** The price adjustment is appended as a percentage:
   ```
@@ -75,7 +75,7 @@ Multiplies a per-character rate by the number of characters the customer types. 
 - **Admin Configuration:**
   - Set Price Type to **Character Count**.
   - Enter the per-character rate (e.g. `0.50` for 50 cents per letter) in the Price Amount input.
-  - ![Character count pricing rate input](../public/img/pricing-tab-character.png)
+  - ![Character count pricing rate input](../public/pricing-tab-character.png)
 - **Use Case Example:** A Text Input for `Monogram Engraving` that charges `$0.50` per character. Typing `Sarah` adds `5 * $0.50 = +$2.50` to the product price.
 - **Works on:** Text Input, Textarea, Number Input, Email Input (any field accepting typed input).
 - **Frontend Display:** The rate is appended to the label:
@@ -92,7 +92,7 @@ Evaluates a custom mathematical expression at cart add time using the built-in M
 - **Admin Configuration:**
   - Set Price Type to **Math Formula**.
   - Enter the formula expression (e.g. `[char_count] * 0.50`) in the Formula Expression input box.
-  - ![Math formula expression input](../public/img/pricing-tab-formula.png)
+  - ![Math formula expression input](../public/pricing-tab-formula.png)
 - **Frontend Display:** The field displays a dynamic notice indicating that the cost depends on input:
   ```
   Custom Print Size (Dynamic)
@@ -153,12 +153,13 @@ For fields that don't have multiple options (Text, Textarea, Number, Email, File
 For choice-based fields (Dropdown, Radio Buttons, Checkboxes, Color Swatch, Image Swatch), pricing is configured on **each individual option/choice** within the General tab.
 
 This allows you to assign different pricing strategies and amounts to different selections:
+
 - `Small` — Flat Fee: `0.00`
 - `Medium` — Flat Fee: `5.00`
 - `Large` — Flat Fee: `10.00`
 - `XL` — Percentage: `15` (15% of product price)
 
-![Option-level pricing in a choice field configuration accordion](../public/img/pricing-option-level.png)
+![Option-level pricing in a choice field configuration accordion](../public/pricing-option-level.png)
 
 ### Surcharge Compounding
 
@@ -168,7 +169,7 @@ If a choice-based field also has a price configured in its main Pricing tab (fie
 
 ## Frontend Price Summary (Live Totals)
 
-All price adjustments are calculated in real time in the browser as the customer interacts with your fields. 
+All price adjustments are calculated in real time in the browser as the customer interacts with your fields.
 
 - **Live Calculations:** As soon as a user selects a checkbox, chooses a dropdown option, or types in a character-count text box, the pricing engine computes the adjustments.
 - **Totals Block:** OptionBay displays a detailed summary block directly above the **Add to Cart** button. This block breaks down the calculations so the customer knows exactly what they are paying:
@@ -176,4 +177,4 @@ All price adjustments are calculated in real time in the browser as the customer
   - **Options Total:** The sum of all active option surcharges.
   - **Total Price:** The final price (Base + Options).
 
-![Frontend product page view showing the live price totals block](../public/img/pricing-frontend-totals.png)
+![Frontend product page view showing the live price totals block](../public/pricing-frontend-totals.png)
