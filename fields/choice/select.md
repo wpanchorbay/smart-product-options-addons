@@ -63,19 +63,15 @@ OptionBay automatically renders your placeholder text as the first, disabled `<o
 
 ## Pricing Logic
 
-![Backend view of Pricing settings for Select field](../../public/field-select-pricing.png)
+OptionBay choice fields (like the Select Dropdown) do not support field-level pricing. Instead, pricing is configured individually per option within the **General** tab under the **Options Configuration** block.
 
-You can charge a fee globally for the field, or individually per option.
+**Option-Level Pricing:** Set specific price surcharges on individual choices (e.g., "+$2.00 for Birthday Card") by expanding the choice card and selecting a Price Type:
 
-**Per-Option Pricing:** (Recommended) Set specific price deltas on individual choices (e.g. "+$100 for 32GB") inside the Options block.
-
-**Field-Level Pricing:** Open the **Pricing** tab to set a flat charge that applies _no matter which option is selected_.
-
-- **Price Type:** (None, Flat Fee, Percentage, Math Formula).
-- **Price Amount / Formula Expression:** The fee applied when any non-empty option is chosen.
+- **Price Type:** (None, Flat Fee, Percentage, or Math Formula).
+- **Price Amount / Formula Expression:** The fee applied when this specific option is selected.
 
 ::: info Master the Pricing Engine
-OptionBay includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+OptionBay includes multiple pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::

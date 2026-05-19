@@ -68,19 +68,15 @@ Go to **WooCommerce → Settings → Products → Options** to configure the **O
 
 ## Pricing Logic
 
-![Backend view of Pricing settings for Radio Buttons field](../../public/field-radio-pricing.png)
+OptionBay choice fields (like Radio Buttons) do not support field-level pricing. Instead, pricing is configured individually per option within the **General** tab under the **Options Configuration** block.
 
-You can charge a fee globally for the field, or individually per option.
+**Option-Level Pricing:** Set specific price surcharges on individual choices (e.g., "+$4.00 for Express") by expanding the choice card and selecting a Price Type:
 
-**Per-Option Pricing:** (Recommended) Set specific price deltas on individual choices (e.g. "+$10 for Express") inside the Options block.
-
-**Field-Level Pricing:** Open the **Pricing** tab to set a flat charge that applies _no matter which option is selected_.
-
-- **Price Type:** (None, Flat Fee, Percentage, Math Formula).
-- **Price Amount / Formula Expression:** The fee applied when the field is answered.
+- **Price Type:** (None, Flat Fee, Percentage, or Math Formula).
+- **Price Amount / Formula Expression:** The fee applied when this specific option is selected.
 
 ::: info Master the Pricing Engine
-OptionBay includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+OptionBay includes multiple pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::
