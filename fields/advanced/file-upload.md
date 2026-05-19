@@ -1,6 +1,6 @@
 # File Upload
 
-Lets customers attach a file to their order — artwork, a logo, a design brief, or any other document. Files are validated on upload and stored in your WordPress uploads folder via `wp_handle_upload()`.
+Lets customers attach a file to their order — artwork, a logo, a design brief, or any other document. Files are validated on upload and stored securely in your WordPress uploads folder.
 
 ![File upload field on a product page: the native file input, filename shown after selection, and the allowed types + max size hint below](../../public/img/field-file-frontend.png)
 
@@ -15,105 +15,133 @@ Lets customers attach a file to their order — artwork, a logo, a design brief,
 
 ---
 
-## General Settings
+## Configuration Settings
 
-| Setting | Description |
-|---------|-------------|
-| **Label** | Label shown above the file input |
-| **Tooltip** | Hover `?` tooltip |
-| **Description** | Helper text below the input |
-| **Required** | A file must be selected before add-to-cart |
-| **Allowed Types** | Comma-separated file extensions customers may upload (e.g. `.jpg,.png,.pdf,.svg`) |
-| **Max File Size** | Maximum file size in **MB** (default: `5`). Validated client-side and server-side. |
+When you add a File Upload field in the Addon Builder, you can configure the following inputs across different sections:
+
+### General Settings
+
+![Backend view of General settings for File Upload field](../../public/img/field-file-general.png)
+
+- **Label:** The main heading shown above the file input. Used to identify the field in the cart and order details.
+- **Description:** Additional helper text shown below the input. Useful for providing instructions (e.g. "Please upload a high-resolution PDF").
+
+### Validation
+
+![Backend view of Validation settings for File Upload field](../../public/img/field-file-validation.png)
+
+- **Field is Required:** A checkbox toggle. When enabled, the customer is forced to select and attach a file before they are allowed to add the product to their cart.
+
+### Restrictions
+
+![Backend view of Restrictions settings for File Upload field](../../public/img/field-file-restrictions.png)
+
+- **Allowed Types:** A comma-separated list of file extensions the customer is allowed to upload (e.g., `.jpg,.png,.pdf,.svg`). Files with unlisted extensions will be rejected on both the frontend and server.
+- **Max File Size:** The maximum permitted file size in megabytes (**MB**). The default is `5`.
 
 ::: tip Allowed Types Format
-List extensions with leading dots, comma-separated, no spaces:
+List extensions with leading dots, comma-separated, with no spaces:
 `.jpg,.jpeg,.png,.gif,.pdf,.ai,.eps,.svg`
+:::
+
+::: warning Server Limits Apply
+Your PHP `upload_max_filesize` and `post_max_size` directives are the hard ceiling. Even if you set 50 MB in OptionBay, the server won't accept more than its PHP configuration allows. Check **Tools → Site Health → Info → Server** to verify your hosting limits.
 :::
 
 ---
 
-## Pricing
+## Pricing Logic
 
-Attach a flat fee for file-handling:
+![Backend view of Pricing settings for File Upload field](../../public/img/field-file-pricing.png)
 
-| Price Type | Effect |
-|------------|--------|
-| **None** | No charge |
-| **Flat Fee** | Fixed artwork handling fee (e.g. +$5.00 per upload) |
-| **Percentage** | % of product base price |
-| **Math Formula** | Advanced formula |
+Open the **Pricing** tab to apply a flat charge when the customer uploads a file. This is useful for artwork handling or setup fees.
 
-**Common pattern:** A single checkbox "Upload my own artwork (+$0)" reveals this file upload field via conditions, and the pricing on the file field (or on the checkbox) covers the handling fee.
+**Available Inputs:**
+- **Price Type:** (None, Flat Fee, Percentage, Math Formula).
+- **Price Amount / Formula Expression:** The fee applied when a file is successfully attached to the field.
 
-→ Full reference: [Pricing Strategies](/pricing/index)
+::: info Master the Pricing Engine
+OptionBay includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+
+**[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
+:::
 
 ---
 
 ## Conditions
 
-Open the **Conditions** tab to show or hide this upload field based on another selection.
+![Backend view of Conditions tab for File Upload field](../../public/img/field-file-conditions.png)
 
-**Example:** Only show "Upload Artwork" if the customer selects "Custom Print":
+Open the **Conditions** tab to dynamically show or hide this upload field based on what the customer has selected in other fields. 
 
-| Part | Value |
-|------|-------|
-| Action | Show this field when… |
-| Match | ALL |
-| Field | Design Source |
-| Operator | == (equals) |
-| Value | `custom-print` |
+**Available Inputs:**
+- **Enable Conditional Logic:** Toggle to turn conditions on or off.
+- **Action:** Choose whether to *Show* or *Hide* this field when conditions are met.
+- **Match Type:** Choose *ALL* (every rule must match) or *ANY* (at least one rule must match).
+- **Rules:** Define the specific field to watch, the comparison operator, and the value to check against.
 
-When hidden, the field is excluded from required validation and pricing — customers following the standard path are never blocked by a hidden upload field.
+*Example:* Only show the "Upload Logo" field if the customer ticks a "Custom Print (+$10)" checkbox. When hidden, the field is excluded from validation, ensuring customers are not blocked by a hidden required field.
 
-→ Full reference: [Field Conditions](/fields/conditions)
+::: info Learn More About Conditions
+Conditional logic lets you build dynamic, branching forms that adapt as the customer interacts. See the full list of operators and examples in our detailed guide.
+
+**[Read the Field Conditions Reference &rarr;](/fields/conditions)**
+:::
 
 ---
 
 ## Stock
 
-File upload fields are not typically linked to inventory, but the setting is available if uploading a file consumes a production slot.
+![Backend view of Stock tab for File Upload field](../../public/img/field-file-stock.png)
 
-→ Full reference: [Linking Options to Stock](/stocks/field-linking)
+File upload fields are not typically linked to inventory, but the setting is available if uploading a file consumes a production slot or machine quota.
 
----
+Open the **Stock** tab to link the act of uploading a file to an inventory pool.
 
-## Validation
+**Available Inputs:**
+- **Enable Stock Management:** Toggle to activate inventory tracking.
+- **Select Pool:** Choose which Global Stock Item to link this field to.
+- **Reduction Mode:** Choose how stock is deducted (Per Item Quantity, Per Line Item, or Formula).
 
-Server-side validation (before the file is moved to uploads):
+::: tip Global Stock Management
+OptionBay lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
 
-1. **Required** — a file must be present if the field is marked required
-2. **File extension** — the uploaded file's extension must be in the Allowed Types list. Extensions outside the list are rejected with an error.
-3. **File size** — file must be ≤ Max File Size (in MB)
-
-::: warning Server Limits Apply
-Your PHP `upload_max_filesize` and `post_max_size` directives are the hard ceiling — even if you set 50 MB in OptionBay, the server won't accept more than its PHP limit. Check **Tools → Site Health → Info → Server** for your current limits.
+**[Read the Guide: Linking Fields to Stock &rarr;](/stocks/field-linking)**
 :::
 
 ---
 
-## File Storage
+## Example & Frontend Display
 
-Files are stored in the standard WordPress uploads directory:
+To see how this comes together, let's look at a common scenario: **Selling custom printed coffee mugs**. You want the customer to optionally upload their own artwork, and you charge a $5.00 setup fee if they do.
+
+You would configure the File Upload field like this:
+- **Label:** `Custom Artwork`
+- **Allowed Types:** `.jpg,.png,.pdf`
+- **Max File Size:** `10`
+- **Pricing:** `Flat Fee`, Amount `5.00`
+
+**Frontend Product Page View:**
+With those settings, here is how the field renders on your product page. The allowed types and max size are clearly printed below the button to help the customer:
+
+![File upload field on a product page: the native file input, filename shown after selection, and the allowed types + max size hint below](../../public/img/field-file-frontend.png)
+
+When a customer attaches a file and adds the product to their cart, OptionBay validates the file extension and size securely via AJAX before passing it to the server.
+
+**File Storage:**
+Files are securely stored in the standard WordPress uploads directory:
+`wp-content/uploads/YYYY/MM/filename.ext`
+*(Note: OptionBay does not clutter your WordPress Media Library with these customer uploads. The raw URL is saved directly to the order metadata).*
+
+**Cart & WooCommerce Order View:**
+The field label and the file name will appear clearly on the cart page and checkout:
 
 ```
-wp-content/uploads/YYYY/MM/filename.ext
+Custom Artwork:   my-company-logo.pdf
 ```
 
-OptionBay does **not** create WordPress media library attachments for uploaded files. The file URL is saved directly to the cart session and order item metadata.
+In the WooCommerce admin order screen, the full URL is stored so you can click through to download the file:
 
----
-
-## Cart & Order Display
-
-On the **cart page:**
 ```
-Design File:   my-logo.pdf  ← shown as filename
+Custom Artwork:   https://yoursite.com/wp-content/uploads/2026/05/my-company-logo.pdf
 ```
-
-In the **WooCommerce order screen:**
-```
-Design File:   https://yoursite.com/wp-content/uploads/2026/05/my-logo.pdf
-```
-
-The full URL is stored, so you can click through in the admin order screen to download the file.

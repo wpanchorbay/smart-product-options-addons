@@ -1,26 +1,14 @@
 # Quick Start Guide
 
-Get OptionBay working on your store in under 10 minutes. This guide walks from zero to a live product option on a product page.
+Get OptionBay working on your store in under 10 minutes. This guide walks you from zero to a live product option on a real product page — no prior experience with the plugin required.
 
 ---
 
 ## What You'll Build
 
-By the end of this guide you'll have a custom option group attached to a product. Customers will see it on the product page, directly above the **Add to Cart** button, like this:
+By the end of this guide, you'll have a custom option group attached to a product. Customers will see it on the product page, directly above the **Add to Cart** button, with a text input for engraving and a radio button for gift wrapping with a $4.00 surcharge.
 
-```
-┌────────────────────────────────────────────────┐
-│ 🖊 Personalization                             │
-│                                                │
-│ Engraving Text                                 │
-│ [ Enter your message here...            ]      │
-│                                                │
-│ Gift Wrap?                                     │
-│ ○ No   ● Yes (+$4.00)                          │
-│                                                │
-│                     [ Add to Cart ]            │
-└────────────────────────────────────────────────┘
-```
+![Quick start result — a product page showing the Engraving Text input and Gift Wrap radio buttons above the Add to Cart button](../public/img/quick-start-result.png)
 
 ---
 
@@ -28,107 +16,117 @@ By the end of this guide you'll have a custom option group attached to a product
 
 In your WordPress admin, navigate to **WooCommerce → OptionBay → Addon Builder**.
 
-You'll see the list of all your Option Groups. If this is a fresh install, OptionBay has already created a few example groups for you to reference.
+You'll see the [Option Groups list](/builder/option-groups) — a table showing all of your existing groups. If this is a fresh install, OptionBay has already created a few example groups for you to reference.
 
-Click **Create New Group** to start fresh.
+Click the **Add new group** button at the top of the page to open a blank [Addon Builder](/builder/addon-builder).
+
+![The Option Groups list with the "Add new group" button highlighted](../public/img/quick-start-step1.png)
 
 ---
 
 ## Step 2 — Name Your Group
 
-Give your group a clear, descriptive name. This name is for admin reference only — it is never shown to customers on the product page.
+Type a clear, descriptive name into the **Group Title** input at the top of the builder. This name is for admin reference only — it is **never shown to customers** on the product page.
 
-**Example:** `Personalization Options`
+- **Example:** `Personalization Options`
 
-Set the **Status** to **Active** (Published) so it appears on the frontend.
+Set the **Status** toggle in the header bar to **Published** so the group is immediately live when saved.
 
 ---
 
 ## Step 3 — Add Your Fields
 
-Click **Add Field** and choose a field type from the panel:
+Look at the **Add Fields** sidebar on the right. Click any field type button to add a new field to the canvas. For this quick start, we'll add two fields:
 
-| Field Type | Use Case |
-|------------|----------|
-| **Text Input** | Short custom text (names, messages) |
-| **Textarea** | Longer custom text (instructions, notes) |
-| **Select Dropdown** | Choose one from a list |
-| **Radio Buttons** | Single-choice visual selector |
-| **Checkboxes** | Multiple choice with optional pricing per choice |
-| **Color Swatch** | Visual color picker |
-| **Image Swatch** | Image-based choice selector |
-| **File Upload** | Let customers upload a file |
-| **Number Input** | Quantity or numeric inputs |
-| **Email Input** | Validated email address field |
-| **Static Content** | Display HTML content or an alert banner |
+### Add a Text Input (Engraving)
 
-For this example, add a **Text Input** field:
+1. Click the **Text Input** button in the sidebar. A new field row appears in the fields list.
+2. Click the row to expand its configuration panel.
+3. Set the following values:
+   - **Label:** `Engraving Text`
+   - **Placeholder:** `Enter your message (max 30 characters)`
+   - **Max Length** *(Restrictions tab):* `30`
+4. *(Optional)* Enable **Field is Required** in the Validation section if the customer must fill this field.
 
-1. Set the **Label** to `Engraving Text`
-2. Set the **Placeholder** to `Enter your message (max 30 characters)`
-3. Optionally, enable **Required** if the field must be filled
+### Add Radio Buttons (Gift Wrap)
 
-Then add a **Radio Buttons** field:
+1. Click the **Radio Buttons** button in the sidebar.
+2. Expand the new field row and set:
+   - **Label:** `Gift Wrap?`
+3. In the **Options** block, click **Add Choice** twice to create two options:
+   - **Option 1:** Label `No` — leave the Price Type as `None`.
+   - **Option 2:** Label `Yes` — expand the settings panel (click the chevron), set Price Type to `Flat Fee`, and enter `4.00` as the amount.
 
-1. Set the **Label** to `Gift Wrap?`
-2. Add two options:
-   - `No` — Price: `none`
-   - `Yes` — Price type: `Flat Fee`, Amount: `4.00`
+![The Addon Builder with two configured fields — Text Input and Radio Buttons](../public/img/quick-start-step3.png)
+
+::: tip Explore All Field Types
+OptionBay supports 12 different field types — from color swatches to file uploads. See the full [Field Types Reference](/fields/input/text) to explore what's available.
+:::
 
 ---
 
 ## Step 4 — Assign the Group to Products
 
-Switch to the **Assignments** tab inside the Addon Builder.
+Scroll up to the **Assignment Rules** section in the builder. This controls which products the option group will appear on.
 
-You can assign an Option Group to:
+You have two choices:
+- **Apply to all products** *(Global):* The group appears on every product in your store. Great for quick testing.
+- **Apply to specific products, categories, or tags** *(Targeted):* The group appears only on the items you select.
 
-| Target | Description |
-|--------|-------------|
-| **Global** | Appears on **all** products |
-| **Specific Products** | Only appears on the products you pick |
-| **Categories** | Appears on all products in selected categories |
-| **Tags** | Appears on all products with selected tags |
+For this quick start, select **"Apply to specific products, categories, or tags"**, then use the **Products** search field in the **Reach** section to find and select any product in your store.
 
-You can combine multiple rules. You can also create **Exclusion** rules to hide a group from specific products even if a broader rule would include them.
+![The Assignment Rules panel with a specific product selected in the Reach section](../public/img/quick-start-step4.png)
 
-For this quick start, set a single assignment to a **Specific Product** and search for any product on your store.
+::: info Learn More About Assignments
+Assignment Rules support powerful include/exclude logic. You can target entire categories, exclude individual products, and combine multiple rules.
+
+**[Read the Assignment Rules Guide &rarr;](/builder/assignments)**
+:::
 
 ---
 
 ## Step 5 — Save the Group
 
-Click **Save** (or use the native WooCommerce **Save changes** button at the top of the page).
+Click the **Create Group** button (or **Update Group** if editing) in the builder header bar.
 
-OptionBay saves:
-- The field schema as JSON in post meta (`_ob_schema`)
-- The assignment rules in the `wp_optionbay_assignments` database table
+OptionBay validates your configuration before saving. If anything is missing (empty labels, no assignment targets), inline error messages will appear and the first problematic field will be automatically expanded.
+
+Once saved successfully, a success toast notification will appear at the top of the page.
 
 ---
 
 ## Step 6 — View It on the Product Page
 
-Navigate to the product page you assigned the group to in Step 4. You should see your fields rendered directly above the **Add to Cart** button.
+Open the product you assigned the group to in Step 4. Navigate to the product's frontend page (the page your customers see). You should see your fields rendered directly above the **Add to Cart** button.
+
+![The frontend product page showing the Engraving Text input and Gift Wrap radio buttons](../public/img/quick-start-step6.png)
 
 ::: tip Not showing up?
-- Make sure the group's **Status** is **Active** (Published)
-- Confirm the assignment is correctly set to the product you're viewing
-- Clear any page caching if you use a caching plugin (WP Rocket, LiteSpeed Cache, etc.)
+If the fields aren't visible, check these common issues:
+- Make sure the group's **Status** is **Published** (not Draft).
+- Confirm the assignment is correctly set to the product you're viewing.
+- Clear any **page caching** if you use a caching plugin (WP Rocket, LiteSpeed Cache, W3 Total Cache, etc.).
+- Make sure the product is a **Simple** or **Variable** product type — OptionBay renders on standard WooCommerce product pages.
 :::
 
 ---
 
 ## Step 7 — Test Adding to Cart
 
-Fill in your custom options and click **Add to Cart**. Then open the cart — you'll see the selected options listed under the product name:
+Fill in your custom options on the product page:
+1. Type a message into the "Engraving Text" input (e.g., `Happy Birthday!`).
+2. Select "Yes" for Gift Wrap.
+3. Click **Add to Cart**.
+
+Open the cart page — you'll see the selected options listed clearly under the product name:
 
 ```
 Handmade Ceramic Mug × 1
-  Engraving Text:  "Happy Birthday!"
-  Gift Wrap?:      Yes
+  Engraving Text:   Happy Birthday!
+  Gift Wrap?:       Yes
 ```
 
-The `+$4.00` gift wrap price is automatically added to the cart total.
+The `+$4.00` gift wrap price is automatically added to the cart total and displayed on the checkout and order screens.
 
 ---
 
@@ -136,8 +134,8 @@ The `+$4.00` gift wrap price is automatically added to the cart total.
 
 Now that you've got the basics working, explore more of what OptionBay can do:
 
-- [Managing Option Groups](/builder/addon-builder) — Duplicate, reorder, bulk-activate groups
-- [Pricing Strategies](/pricing/index) — Flat fees, percentages, character-count pricing, and math formulas
-- [Conditional Visibility](/visibility/index) — Show or hide fields based on what the customer has selected
-- [Smart Routing (Assignments)](/assignments/index) — Advanced include/exclude rules with priority ordering
-- [Global Stock Management](/stocks/index) — Limit how many times a specific option can be ordered
+- **[The Addon Builder](/builder/addon-builder)** — Learn the full builder interface: drag-and-drop reordering, duplication, and validation.
+- **[Pricing Strategies](/pricing/index)** — Flat fees, percentages, per-character pricing, and dynamic math formulas.
+- **[Conditional Logic](/fields/conditions)** — Show or hide fields based on what the customer has selected.
+- **[Assignment Rules](/builder/assignments)** — Advanced include/exclude targeting with categories, tags, and product-level overrides.
+- **[Global Stock Management](/stocks/index)** — Limit how many times a specific option can be ordered across your entire store.

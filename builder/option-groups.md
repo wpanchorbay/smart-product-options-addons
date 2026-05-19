@@ -1,61 +1,97 @@
 # Managing Option Groups
 
-The **Option Groups** list is the main dashboard for OptionBay. Navigate here via **WooCommerce → OptionBay → Addon Builder**.
+The **Option Groups** list is the main dashboard for OptionBay. Navigate here via **WooCommerce → OptionBay → Addon Builder** in your WordPress admin menu.
 
 ![The Option Groups list screen showing the table, status filters, search bar, and action buttons](../public/img/option-groups-list.png)
 
 ---
 
-## The List Table
+## Page Header
 
-Each row in the table represents one Option Group. The columns are:
+![The page header showing the title, Add new group link, Import and Export buttons](../public/img/option-groups-header.png)
 
-| Column | Description |
-|--------|-------------|
-| **Title** | The internal name of the group. Click to open it in the Addon Builder. |
-| **Fields** | Number of fields (inputs, swatches, etc.) inside the group. |
-| **Assigned To** | Where the group is routed — e.g. "All Products", "3 categories", "2 products". |
-| **Status** | A live toggle — flip between **Published** and **Draft** in one click. |
+The top of the page contains a WordPress-style heading row with several quick-action buttons:
 
-You can show or hide additional columns (Created By, Created At, Updated By, Updated At) using the **column picker** icon (⋮) at the top-right of the table.
+- **Option Groups** *(title):* The page heading. This is always visible.
+- **Add new group:** Click this link to open a fresh [Addon Builder](/builder/addon-builder) and start creating a new option group from scratch.
+- **Import:** Click to expand an inline Import panel directly below the header. Paste or upload a previously exported `.json` file to restore or migrate your data.
+- **Export:** Click to expand an inline Export panel below the header. Download a `.json` file containing your Option Groups, Inventory Items, and/or Settings — useful for backups or migrating between sites.
 
-![Column picker popover open, showing the list of toggleable columns](../public/img/option-groups-columns.png)
+::: info Import & Export
+Both panels toggle inline — clicking one closes the other. For full instructions on format, compatibility, and best practices, see the dedicated guide.
+
+**[Read the Export & Import Guide &rarr;](/admin/export-import)**
+:::
 
 ---
 
 ## Status Filters
 
-Above the table you'll find quick filter tabs:
+![Status filter tabs showing All, Published, Draft, and Trash with item counts](../public/img/option-groups-filters.png)
 
-- **All** — Shows both Published and Draft groups
-- **Published** — Active groups currently showing on product pages
-- **Draft** — Inactive groups, not visible to customers
-- **Trash** — Deleted groups awaiting permanent deletion (only shown when trash is non-empty)
+Above the table you'll find quick filter tabs that let you narrow the list by status. Each tab shows its item count in parentheses:
 
-Click any tab to filter the list instantly.
+- **All** — Shows every group regardless of status (Published + Draft).
+- **Published** — Only groups that are currently live and visible on product pages.
+- **Draft** — Only groups that are saved but hidden from customers.
+- **Trash** — Groups that have been soft-deleted. This tab only appears when the trash contains at least one group.
+
+Click any tab to filter the list instantly — no page reload required.
+
+---
+
+## The List Table
+
+Each row in the table represents one Option Group. By default, you see four columns:
+
+- **Title:** The internal name of the group. Click the title text to open it in the [Addon Builder](/builder/addon-builder) for editing.
+- **Fields:** A count of how many fields (inputs, swatches, etc.) are configured inside the group.
+- **Assigned To:** A summary of where the group is routed — e.g., "All Products", "3 categories", "2 products".
+- **Status:** A **live toggle switch**. Flip between Published and Draft with a single click — the change takes effect immediately via the API, no page reload needed.
+
+### Optional Columns
+
+![Column picker popover open, showing the list of toggleable columns](../public/img/option-groups-columns.png)
+
+You can customize which columns are displayed using the **column picker** — click the vertical dots icon (⋮) at the top-right of the table. The available optional columns are:
+
+- **Created By** — The WordPress user who originally created the group.
+- **Created At** — The date and time the group was first saved.
+- **Updated By** — The WordPress user who last modified the group.
+- **Updated At** — The date and time of the most recent update.
+
+Toggle any column on or off. Your selection persists for the current session.
 
 ---
 
 ## Searching Groups
 
-Use the **search box** in the top-right to find groups by name. Press **Enter** or click **Search groups** to run the search.
+Use the **search box** in the top-right area (next to the View Inventory button) to find groups by name:
+
+- Type your search query into the text input.
+- Press **Enter** on your keyboard, or click the **Search groups** button.
+- The table filters to show only groups whose titles match your query.
+- Clear the search box and press Enter again to reset the view.
 
 ---
 
 ## Row Actions
 
-Hover over any row to reveal inline actions:
+![A table row being hovered, showing the inline action links](../public/img/option-groups-row-actions.png)
 
-| Action | Description |
-|--------|-------------|
-| **Edit** | Open the group in the Addon Builder |
-| **Duplicate** | Create an exact copy of the group (same fields, same assignments) with the title suffix "(Copy)" |
-| **Move to Trash** | Soft-delete the group (customers can no longer see it; restore it any time) |
-| **Restore** | *(Trash view only)* Move the group back to its previous status |
-| **Delete Permanently** | *(Trash view only)* Erase the group and all its assignment rules from the database |
+Hover over any row to reveal inline action links below the title. The available actions depend on the current status filter view:
 
-::: info Status Toggle
-The **Status** column contains a live toggle switch. Flipping it immediately publishes or drafts the group — no page reload required.
+**Normal view (All / Published / Draft):**
+- **Edit:** Open the group in the [Addon Builder](/builder/addon-builder).
+- **Duplicate:** Create an exact copy of the group — same fields, same settings, same assignment rules — with "(Copy)" appended to the title. The duplicate starts in the same status as the original.
+- **Move to Trash:** Soft-delete the group. Customers can no longer see it, but you can restore it any time from the Trash view.
+
+**Trash view:**
+- **Restore:** Move the group back to its previous status (Published or Draft).
+- **Delete Permanently:** Erase the group and all its assignment rules from the database. This action cannot be undone.
+
+::: warning Permanent Deletion
+The "Delete Permanently" action is irreversible. A confirmation modal will always appear before final deletion, with the focus defaulting to the "Cancel" button for safety.
 :::
 
 ---
@@ -64,36 +100,38 @@ The **Status** column contains a live toggle switch. Flipping it immediately pub
 
 To perform an action on multiple groups at once:
 
-1. Check the boxes next to the groups you want to select (or use the header checkbox to **Select All**)
-2. Choose an action from the **Bulk actions** dropdown:
-   - **Publish** — Activate all selected groups
-   - **Draft** — Deactivate all selected groups
-   - **Move to Trash** — Soft-delete all selected groups
-3. Click **Apply**
+1. **Select groups** by checking the boxes on the left of each row. Use the header checkbox to **Select All** visible groups on the current page.
+2. **Choose an action** from the **Bulk actions** dropdown:
+   - *Normal view:* **Publish**, **Draft**, or **Move to Trash**.
+   - *Trash view:* **Restore** or **Delete Permanently**.
+3. Click **Apply**.
 
-A confirmation dialog will appear before any destructive action.
+A count indicator below the dropdown shows how many groups are currently selected (e.g., "3 of 12 selected").
 
 ![Bulk action confirmation modal asking to confirm moving 3 groups to trash](../public/img/option-groups-bulk-confirm.png)
+
+A confirmation modal always appears before any destructive action (Move to Trash, Delete Permanently). For destructive actions, the modal uses a red "Confirm" button and auto-focuses the "Cancel" button to prevent accidental deletion.
 
 ---
 
 ## Pagination
 
-Results are paginated at 20 groups per page. Use the **← Previous** and **Next →** buttons to navigate. The current page and total are displayed between the buttons.
+Results are paginated at **20 groups per page**. The pagination controls appear both above and below the table:
+
+- **Item count:** Shows the total number of groups matching the current filter (e.g., "12 items").
+- **← Previous / Next →:** Navigate between pages.
+- **Page indicator:** Displays the current page and total pages (e.g., "Page 1 of 3").
 
 ---
 
 ## View Inventory
 
-Click the **View Inventory** button (📦 icon) to open the **Global Stock Inventory** modal directly from the list page. See [Global Stocks Overview](/stocks/index) for details on managing inventory items.
+![The View Inventory button in the controls area](../public/img/option-groups-inventory-btn.png)
 
----
+Click the **View Inventory** button (📦 icon) in the top-right controls area to open the **Global Stock Inventory** modal directly from the list page — without navigating away. This gives you a quick overview of all your stock pools, their current quantities, and linked options.
 
-## Import & Export
+::: tip Quick Stock Access
+This is a shortcut to the same inventory data available in the full Stock management section. Use it when you just need a quick glance at inventory levels while managing your groups.
 
-Click **Import** or **Export** at the top of the page to expand the respective panel inline.
-
-- **Export** — Downloads a `.json` file containing your Option Groups, Inventory Items, and/or Settings. Useful for backups or migrating between sites.
-- **Import** — Paste or upload a previously exported JSON file to restore or migrate your data.
-
-See [Export & Import](/admin/export-import) for full instructions.
+**[Read the Global Stocks Overview &rarr;](/stocks/index)**
+:::

@@ -9,6 +9,18 @@ option-groups-list.png
   → Show the table with several groups, status toggles, filter tabs (All / Published / Draft), search bar, and the "Add new group / Import / Export" header buttons
   → At least 4-5 rows visible, one in Draft, rest Published
 
+option-groups-header.png
+  → The top header bar showing the "Option Groups" title, "Add new group" link, "Import" button, and "Export" button
+  → All buttons should be in their default (non-active) state
+
+option-groups-filters.png
+  → The status filter tabs (All / Published / Draft / Trash) with item counts shown in parentheses
+  → The "All" tab should be active/bold
+
+option-groups-row-actions.png
+  → A single table row being hovered, showing the inline action links (Edit | Duplicate | Move to Trash)
+  → The status toggle switch should also be visible in the Status column
+
 option-groups-columns.png
   → The column picker popover open (⋮ icon at top-right of table)
   → Show all 7 column checkboxes: Fields, Assigned To, Status, Created By, Created At, Updated By, Updated At
@@ -17,18 +29,39 @@ option-groups-bulk-confirm.png
   → The confirmation modal open, asking to confirm a bulk action (e.g. "Move to Trash 3 selected items?")
   → Show the red "Confirm" and "Cancel" buttons
 
+option-groups-inventory-btn.png
+  → The "View Inventory" button (📦 icon) highlighted in the top-right controls area next to the search box
+
 ## builder/addon-builder.md
 addon-builder-full.png
   → Full Addon Builder page for a group that has a title, 3+ fields, and assignment rules visible
   → Show the right sidebar with the field type buttons visible
   → Capture the entire viewport (no scrolling)
 
+addon-builder-header.png
+  → The top bar of the Addon Builder showing the "Back to List" link, status toggle (Published/Draft), and the Save/Update button
+  → Highlight the status toggle switch
+
+addon-builder-title.png
+  → The Group Title text input at the top of the builder, with a descriptive name typed in (e.g. "Personalisation Options")
+
+addon-builder-sidebar.png
+  → The "Add Fields" sidebar panel showing the 2-column grid of field type buttons (Text Input, Textarea, Dropdown, Checkboxes, etc.)
+  → All 12 field type buttons should be visible
+
+addon-builder-assignment-rules.png
+  → The Assignment Rules section inside the Addon Builder
+  → Show the Visibility radio toggle (Global vs Targeted), the Reach search fields, and the Exceptions search fields
+
 addon-builder-drag-reorder.png
   → A field row being actively dragged (use a mid-drag screenshot with the row slightly offset)
   → Alternatively: a static shot with the grip handle highlighted
 
+addon-builder-field-collapsed.png
+  → Multiple field rows in their default collapsed state, showing the field icon, label, type badge, and action buttons (expand, delete)
+
 addon-builder-field-expanded.png
-  → One field row in the expanded state showing the tab panel (General, Pricing, Stock, Visibility tabs)
+  → One field row in the expanded state showing the tab panel (General, Pricing, Stock, Conditions tabs)
   → General tab active, showing label, placeholder, description, required fields
 
 ## assignments/index.md
@@ -70,6 +103,26 @@ import-panel.png
 install-upload.png
   → WordPress admin "Add Plugins" screen with the "Upload Plugin" area visible
   → The "Choose File" button and file name input highlighted
+
+## getting-started/quick-start.md
+quick-start-result.png
+  → A WooCommerce product page showing the final result of the Quick Start guide
+  → Show an Engraving Text input and Gift Wrap radio buttons (No / Yes +$4.00) above the Add to Cart button
+
+quick-start-step1.png
+  → The Option Groups list with the "Add new group" button highlighted at the top of the page
+
+quick-start-step3.png
+  → The Addon Builder with two configured fields visible — a Text Input (Engraving Text) and Radio Buttons (Gift Wrap)
+  → Both fields should be in expanded state showing their configuration
+
+quick-start-step4.png
+  → The Assignment Rules panel inside the Addon Builder
+  → "Apply to specific products" is selected, and a product is chosen in the Reach search field
+
+quick-start-step6.png
+  → The frontend product page showing the Engraving Text input and Gift Wrap radio buttons rendered above the Add to Cart button
+  → Show a realistic product with the OptionBay fields integrated naturally
 
 ## fields/choice/select.md
 field-select-general.png
@@ -311,11 +364,43 @@ field-email-frontend.png
   → Optionally show a browser validation tooltip or red border on an invalid entry
 
 ## fields/advanced/file-upload.md
+field-file-general.png
+  → The Addon Builder backend showing the General settings for a File Upload field
+  → Highlight the Label and Description inputs
+
+field-file-validation.png
+  → The Addon Builder backend showing the Validation settings for a File Upload field
+  → Highlight the "Field is Required" checkbox
+
+field-file-restrictions.png
+  → The Addon Builder backend showing the Restrictions settings for a File Upload field
+  → Highlight the Allowed Types and Max File Size inputs
+
+field-file-pricing.png
+  → The Addon Builder backend showing the Pricing Logic settings for a File Upload field
+  → Highlight the field-level Price Type dropdown
+
+field-file-conditions.png
+  → The Addon Builder backend showing the Conditions tab for a File Upload field
+  → Highlight the Enable Conditional Logic toggle and condition rules
+
+field-file-stock.png
+  → The Addon Builder backend showing the Stock tab for a File Upload field
+  → Highlight the Stock pool dropdown
+
 field-file-frontend.png
   → A File Upload field on a product page
   → Show the label, native file input button, and the "Allowed: .jpg,.png,.pdf. Max size: 5 MB." hint text below
 
 ## fields/static.md
+field-static-general.png
+  → The Addon Builder backend showing the General settings for a Static Content field
+  → Highlight the Admin Label and the HTML Content input box
+
+field-static-conditions.png
+  → The Addon Builder backend showing the Conditions tab for a Static Content field
+  → Highlight the conditional rules
+
 field-static-content-frontend.png
   → A Static Content field rendered on a product page
   → Show a styled heading and a short paragraph or notice banner above other fields
@@ -326,16 +411,44 @@ pricing-tab.png
   → Show the Price Type dropdown open with options: None / Flat Fee / Percentage / Character Count / Math Formula
   → Amount input visible below
 
+pricing-tab-flat.png
+  → The Pricing tab with Price Type set to "Flat Fee" and a fixed amount (e.g. 5.00) filled in
+
+pricing-tab-percentage.png
+  → The Pricing tab with Price Type set to "Percentage" and a percentage amount (e.g. 10) filled in
+
+pricing-tab-character.png
+  → The Pricing tab with Price Type set to "Character Count" and a rate (e.g. 0.50) filled in
+
+pricing-tab-formula.png
+  → The Pricing tab with Price Type set to "Math Formula" and a dynamic formula expression (e.g. `[char_count] * 0.50`) filled in
+
+pricing-option-level.png
+  → The General tab of a Choice field (like a Select dropdown or Radio button group) showing the per-option configuration list
+  → Highlight the Price Type and Price Amount fields inside the expanded accordion of one option
+
+pricing-frontend-totals.png
+  → The frontend product page showing how the selected option surcharges are summarized in the live totals block (e.g. "Options Total: +$13.00", "Product Price: $100.00", "Total Price: $113.00") above the add to cart button
+
 ## stocks/index.md
 inventory-modal.png
   → The View Inventory modal fully open
-  → Show the table with 3–4 stock items, columns: Name, Stock Count, Allow Backorders toggle, Edit and Delete buttons
+  → Shows a table of stock items with name, stock count, backorders toggle, and edit/delete actions
+
+inventory-modal-add.png
+  → The "Add Item" form open inside the inventory modal showing Name, Stock Count, and Allow Backorders fields
+
+inventory-modal-edit.png
+  → The edit mode active for a single stock item row in the inventory modal table, with the inputs for Name and Stock Count highlighted
   → One item has a low count to illustrate the use case
 
 ## stocks/managing-items.md
 inventory-modal-open.png
   → Same as inventory-modal.png — the modal opened from the Option Groups list (capture with the list visible in the background)
   → The "Add Item" button clearly visible at the top of the modal
+
+inventory-modal-delete-confirm.png
+  → A browser/UI confirmation dialog showing the warning when a user attempts to delete a stock item
 
 inventory-create-inline.png
   → The Stock tab inside the Addon Builder
@@ -346,9 +459,18 @@ stock-field-link.png
   → The Stock tab inside the Addon Builder for a text or number field
   → Show: Enable Stock toggle (on), inventory item selected ("Gift Wrap Sheets"), Reduction Mode dropdown
 
+stock-field-link-reduction.png
+  → The Stock tab with the Reduction Mode dropdown open, showing the options: Per Item Quantity / Per Line Item / Custom Formula
+
+stock-field-link-formula.png
+  → The Stock tab with the Reduction Mode set to "Custom Formula" and a custom formula expression (e.g. `qty * val`) entered in the formula field
+
 stock-option-link.png
   → An individual choice option expanded inside a Radio or Select field
   → Show the stock sub-settings for that specific option: inventory item search and reduction mode
+
+stock-frontend-outofstock.png
+  → Frontend view of an option on a product page that is out of stock (e.g. a disabled radio button option or dropdown item with "(Out of stock)" next to it)
 
 ## visibility/index.md
 visibility-tab.png
