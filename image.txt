@@ -1,0 +1,182 @@
+# OptionBay Documentation — Required Screenshots
+# Save all screenshots to: docs/public/img/
+# Format: WebP or PNG, width 1280px recommended
+# ─────────────────────────────────────────────────────────────
+
+## builder/option-groups.md
+option-groups-list.png
+  → The full Option Groups list screen
+  → Show the table with several groups, status toggles, filter tabs (All / Published / Draft), search bar, and the "Add new group / Import / Export" header buttons
+  → At least 4-5 rows visible, one in Draft, rest Published
+
+option-groups-columns.png
+  → The column picker popover open (⋮ icon at top-right of table)
+  → Show all 7 column checkboxes: Fields, Assigned To, Status, Created By, Created At, Updated By, Updated At
+
+option-groups-bulk-confirm.png
+  → The confirmation modal open, asking to confirm a bulk action (e.g. "Move to Trash 3 selected items?")
+  → Show the red "Confirm" and "Cancel" buttons
+
+## builder/addon-builder.md
+addon-builder-full.png
+  → Full Addon Builder page for a group that has a title, 3+ fields, and assignment rules visible
+  → Show the right sidebar with the field type buttons visible
+  → Capture the entire viewport (no scrolling)
+
+addon-builder-drag-reorder.png
+  → A field row being actively dragged (use a mid-drag screenshot with the row slightly offset)
+  → Alternatively: a static shot with the grip handle highlighted
+
+addon-builder-field-expanded.png
+  → One field row in the expanded state showing the tab panel (General, Pricing, Stock, Visibility tabs)
+  → General tab active, showing label, placeholder, description, required fields
+
+## assignments/index.md
+assignments-panel.png
+  → The Assignment Rules section inside the Addon Builder
+  → Show 3–4 rules: one Global, one Category include, one Product include, one Product exclude
+  → The table/list with target type, target name, Include/Exclude toggle, priority, and remove button
+
+assignments-add-rule.png
+  → The Assignment Rules panel with the "Add Rule" button visible
+  → Optionally: the target type dropdown open showing Global / Product / Category / Tag options
+
+## admin/settings.md
+settings-page.png
+  → The full OptionBay Settings page
+  → Show both sections: "General Settings" and "System & Maintenance"
+  → All fields visible (orientation, font sizes, swatch sizes, debug toggle, delete data toggle)
+
+## admin/orders.md
+order-line-item.png
+  → A WooCommerce order edit screen
+  → One order line item with 2–3 OptionBay custom option rows visible below the product name
+  → Example: "Engraving Text: Happy Birthday!" and "Gift Wrap?: Yes"
+
+cart-item-options.png
+  → The WooCommerce cart page
+  → One product in the cart with 2–3 OptionBay option rows shown beneath the product name and image
+
+## admin/export-import.md
+export-panel.png
+  → The Export panel expanded inline on the Option Groups page
+  → Show the entity checkboxes (Option Groups ✓, Inventory Items ✓, Settings ✓) and "Download JSON" button
+
+import-panel.png
+  → The Import panel expanded inline
+  → Show the JSON textarea (empty or with sample text) and the file upload button
+
+## getting-started/installation.md
+install-upload.png
+  → WordPress admin "Add Plugins" screen with the "Upload Plugin" area visible
+  → The "Choose File" button and file name input highlighted
+
+## fields/choice/select.md
+field-select-frontend.png
+  → A Select Dropdown field rendered on a WooCommerce product page
+  → Show the native <select> element with the dropdown open showing 3–4 options
+  → One option should have a price badge visible in the label (e.g. "Large (+$10.00)")
+
+## fields/choice/radio.md
+field-radio-frontend.png
+  → A Radio Buttons field on a product page
+  → Show 3 radio choices side by side or stacked, two with price badges
+  → One radio is selected (highlighted / active state)
+
+## fields/choice/checkbox.md
+field-checkbox-single.png
+  → A single checkbox toggle on a product page (no options, just one checkbox)
+  → Show the label, checkbox, and price badge (e.g. "Add gift message? (+$2.00)")
+
+field-checkbox-multi.png
+  → A multi-checkbox group on a product page
+  → Show 3–4 checkboxes, each with its own label and price badge
+  → Two are checked
+
+## fields/choice/color-swatch.md
+field-color-swatch-frontend.png
+  → A Color Swatch field on a product page
+  → Show 5–6 colored square/circle swatches
+  → One is selected (showing a checkmark or highlight ring)
+  → Price badge visible on at least one swatch label on hover or nearby
+
+## fields/choice/image-swatch.md
+field-image-swatch-frontend.png
+  → An Image Swatch field on a product page
+  → Show 4 small image thumbnails as swatch buttons
+  → One is selected (highlighted border or checkmark overlay)
+
+## fields/input/text.md
+field-text-frontend.png
+  → A Text Input field on a product page
+  → Show the label, text input with placeholder text, and a description below it
+
+## fields/input/textarea.md
+field-textarea-frontend.png
+  → A Textarea field on a product page
+  → Show the label and a multi-line textarea with placeholder
+  → Description text visible below
+
+## fields/input/number.md
+field-number-frontend.png
+  → A Number input field on a product page
+  → Show the label, number input with up/down spinners
+  → Min/max description below the field
+
+## fields/input/email.md
+field-email-frontend.png
+  → An Email input field on a product page
+  → Show the label and email input
+  → Optionally show a browser validation tooltip or red border on an invalid entry
+
+## fields/advanced/file-upload.md
+field-file-frontend.png
+  → A File Upload field on a product page
+  → Show the label, native file input button, and the "Allowed: .jpg,.png,.pdf. Max size: 5 MB." hint text below
+
+## fields/static.md
+field-static-content-frontend.png
+  → A Static Content field rendered on a product page
+  → Show a styled heading and a short paragraph or notice banner above other fields
+
+## pricing/index.md
+pricing-tab.png
+  → The Pricing tab open inside the Addon Builder field configuration panel
+  → Show the Price Type dropdown open with options: None / Flat Fee / Percentage / Character Count / Math Formula
+  → Amount input visible below
+
+## stocks/index.md
+inventory-modal.png
+  → The View Inventory modal fully open
+  → Show the table with 3–4 stock items, columns: Name, Stock Count, Allow Backorders toggle, Edit and Delete buttons
+  → One item has a low count to illustrate the use case
+
+## stocks/managing-items.md
+inventory-modal-open.png
+  → Same as inventory-modal.png — the modal opened from the Option Groups list (capture with the list visible in the background)
+  → The "Add Item" button clearly visible at the top of the modal
+
+inventory-create-inline.png
+  → The Stock tab inside the Addon Builder
+  → The inventory search dropdown open with a "Create new 'Engraving Slots'" option visible at the bottom of the results
+
+## stocks/field-linking.md
+stock-field-link.png
+  → The Stock tab inside the Addon Builder for a text or number field
+  → Show: Enable Stock toggle (on), inventory item selected ("Gift Wrap Sheets"), Reduction Mode dropdown
+
+stock-option-link.png
+  → An individual choice option expanded inside a Radio or Select field
+  → Show the stock sub-settings for that specific option: inventory item search and reduction mode
+
+## visibility/index.md
+visibility-tab.png
+  → The Visibility tab open inside a field configuration in the Addon Builder
+  → Show: Enable Conditional Logic toggle (on), Action dropdown ("Show this field when…"), Match Type (ALL), and 2 condition rules configured
+  → Rules should be readable: e.g. Field = "Add Engraving?" | Operator = "equals" | Value = "1"
+
+## fields/conditions.md
+field-conditions-tab.png
+  → The Conditions tab open inside an expanded field in the Addon Builder
+  → Show the full conditions UI: Enable toggle (on), Action dropdown, Match Type, and 2 configured rules with field / operator / value columns visible
+  → At least one rule should show a recognisable field name and value (e.g. "Add Engraving?" equals "1")

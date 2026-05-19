@@ -95,7 +95,10 @@ export default defineConfig({
       },
       {
         text: "Visibility Logic",
-        items: [{ text: "Conditional Visibility", link: "/visibility/index" }],
+        items: [
+          { text: "Conditional Visibility", link: "/visibility/index" },
+          { text: "Field Conditions Reference", link: "/fields/conditions" },
+        ],
       },
       {
         text: "Pricing Strategies",
@@ -111,6 +114,7 @@ export default defineConfig({
         text: "Field Types",
         items: [
           { text: "Static Content (HTML/Alerts)", link: "/fields/static" },
+          { text: "Field Conditions Reference", link: "/fields/conditions" },
           {
             text: "Choice Fields",
             collapsed: true,
