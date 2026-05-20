@@ -12,22 +12,22 @@ export default defineConfig({
       "link",
       {
         rel: "icon",
-        href: "/tubebay/icon.svg",
+        href: "/optionbay/icon.svg",
         type: "image/svg+xml",
       },
     ],
     ["meta", { name: "theme-color", content: "#ff0000" }],
     ["meta", { property: "og:type", content: "website" }],
-    ["meta", { property: "og:title", content: "TubeBay Documentation" }],
+    ["meta", { property: "og:title", content: "OptionBay Documentation" }],
     [
       "meta",
       {
         property: "og:description",
         content:
-          "Official documentation for TubeBay — the bridge between YouTube and WooCommerce.",
+          "Official documentation for OptionBay — the bridge between YouTube and WooCommerce.",
       },
     ],
-    ["meta", { property: "og:image", content: "/tubebay/logo.svg" }],
+    ["meta", { property: "og:image", content: "/optionbay/logo.svg" }],
   ],
 
   themeConfig: {
@@ -161,13 +161,13 @@ export default defineConfig({
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/wpanchorbay/tubebay",
+        link: "https://github.com/wpanchorbay/optionbay",
       },
       { icon: "wordpress", link: "https://wordpress.org/plugins/optionbay/" },
       { icon: "facebook", link: "https://facebook.com/wpanchorbay" },
       {
         icon: {
-          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><image href="/tubebay/wpanchorbay.png" width="24" height="24" /></svg>',
+          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><image href="/optionbay/wpanchorbay.png" width="24" height="24" /></svg>',
         },
         link: "https://wpanchorbay.com/",
         ariaLabel: "WPAnchorBay",
