@@ -24,7 +24,7 @@ export default defineConfig({
       {
         property: "og:description",
         content:
-          "Official documentation for OptionBay — the bridge between YouTube and WooCommerce.",
+          "Official documentation for OptionBay — Advanced product options and addons for WooCommerce.",
       },
     ],
     ["meta", { property: "og:image", content: "/optionbay/logo.svg" }],
@@ -40,7 +40,7 @@ export default defineConfig({
         items: [
           {
             text: "v1.0.0 (Latest)",
-            link: "/guide/introduction",
+            link: "/getting-started/quick-start",
             activeMatch: "^/(?!v\\d)",
           },
           {
@@ -49,9 +49,7 @@ export default defineConfig({
           },
         ],
       },
-      { text: "Guide", link: "/guide/introduction" },
-      { text: "Features", link: "/features/connection" },
-      { text: "Developer", link: "/developer/architecture" },
+      { text: "Guide", link: "/getting-started/quick-start" },
       {
         text: "More",
         items: [
