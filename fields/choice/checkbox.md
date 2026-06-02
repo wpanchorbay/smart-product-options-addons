@@ -50,7 +50,7 @@ You can charge a fee when the customer ticks the checkbox. Configure this in the
 - **Price Amount / Formula Expression:** Depending on the Price Type selected, enter the dollar amount, percentage value, or the exact math formula.
 
 ::: info Master the Pricing Engine
-OptionBay includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+Smart Product Options and Addons includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::
@@ -93,7 +93,7 @@ You can link the act of ticking this checkbox to a global inventory pool using t
 - **Reduction Mode:** Choose how stock is deducted (Per Item Quantity, Per Line Item, or Formula).
 
 ::: tip Global Stock Management
-OptionBay lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
+Smart Product Options and Addons lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
 
 **[Read the Guide: Linking Options to Stock &rarr;](/stocks/field-linking)**
 :::
@@ -116,7 +116,7 @@ With those settings, here is how the field renders on your product page for cust
 
 ![A single checkbox toggle on a product page: "Add gift message? (+$2.00)" with the checkbox ticked](/public/field-checkbox-frontend.png)
 
-When a customer ticks the box and adds the product to their cart, OptionBay submits the value `"1"` to indicate it was checked. If left unchecked, the field is treated as empty and ignored.
+When a customer ticks the box and adds the product to their cart, Smart Product Options and Addons submits the value `"1"` to indicate it was checked. If left unchecked, the field is treated as empty and ignored.
 
 **Cart & WooCommerce Order View:**
 The field label and a "Yes" value will appear clearly on the cart page, checkout, and in your WooCommerce admin order screen exactly like this:

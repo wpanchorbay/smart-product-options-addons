@@ -60,7 +60,7 @@ You can charge extra when a customer fills out the Textarea field. Configure thi
 - **Price Amount / Formula Expression:** Depending on the Price Type selected, enter the dollar amount, percentage value, character rate, or the exact math formula.
 
 ::: info Master the Pricing Engine
-OptionBay includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+Smart Product Options and Addons includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::
@@ -103,7 +103,7 @@ While less common for text inputs, you can link the act of filling out this fiel
 - **Reduction Mode:** Choose how stock is deducted (Per Item Quantity, Per Line Item, or Formula).
 
 ::: tip Global Stock Management
-OptionBay lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
+Smart Product Options and Addons lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
 
 **[Read the Guide: Linking Options to Stock &rarr;](/stocks/field-linking)**
 :::

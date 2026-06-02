@@ -137,7 +137,7 @@ Rule 2:
 
 ## Initial Render (No Layout Shift)
 
-When the product page loads, OptionBay sets the initial visibility of each conditional field **server-side** before the page renders. Fields set to "show when…" start hidden (CSS class `ob-hidden`). This prevents the flash of an incorrect state while JavaScript initialises.
+When the product page loads, Smart Product Options and Addons sets the initial visibility of each conditional field **server-side** before the page renders. Fields set to "show when…" start hidden (CSS class `ob-hidden`). This prevents the flash of an incorrect state while JavaScript initialises.
 
 ---
 

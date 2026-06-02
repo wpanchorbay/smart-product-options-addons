@@ -64,7 +64,7 @@ You can charge extra based on the number the customer enters. Configure this in 
 - **Price Amount / Formula Expression:** Depending on the Price Type selected, enter the multiplier or the exact math formula.
 
 ::: info Master the Pricing Engine
-OptionBay includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+Smart Product Options and Addons includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::
@@ -110,7 +110,7 @@ You can link the customer's numeric entry directly to inventory pools using the 
   - _Formula:_ Use `[value]` to deduct stock based on the number the customer typed. (e.g. if they enter `5`, deduct 5 units from stock).
 
 ::: tip Global Stock Management
-OptionBay lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
+Smart Product Options and Addons lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
 
 **[Read the Guide: Linking Options to Stock &rarr;](/stocks/field-linking)**
 :::

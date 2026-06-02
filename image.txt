@@ -1,4 +1,4 @@
-# OptionBay Documentation — Required Screenshots
+# Smart Product Options and Addons Documentation — Required Screenshots
 # Save all screenshots to: docs/public/img/
 # Format: WebP or PNG, width 1280px recommended
 # ─────────────────────────────────────────────────────────────
@@ -76,7 +76,7 @@ assignments-add-rule.png
 
 ## admin/settings.md
 settings-page.png
-  → The full OptionBay Settings page
+  → The full Smart Product Options and Addons Settings page
   → Show both sections: "General Settings" and "System & Maintenance"
   → All fields visible (orientation, font sizes, swatch sizes, debug toggle, delete data toggle)
 
@@ -89,7 +89,7 @@ settings-system-maintenance.png
 ## admin/orders.md
 order-line-item.png
   → A WooCommerce order edit screen
-  → One order line item with 2–3 OptionBay custom option rows visible below the product name
+  → One order line item with 2–3 Smart Product Options and Addons custom option rows visible below the product name
   → Example: "Engraving Text: Happy Birthday!" and "Gift Wrap?: Yes"
 
 order-email.png
@@ -97,7 +97,7 @@ order-email.png
 
 cart-item-options.png
   → The WooCommerce cart page
-  → One product in the cart with 2–3 OptionBay option rows shown beneath the product name and image
+  → One product in the cart with 2–3 Smart Product Options and Addons option rows shown beneath the product name and image
 
 ## admin/export-import.md
 export-panel.png
@@ -136,7 +136,7 @@ quick-start-step4.png
 
 quick-start-step6.png
   → The frontend product page showing the Engraving Text input and Gift Wrap radio buttons rendered above the Add to Cart button
-  → Show a realistic product with the OptionBay fields integrated naturally
+  → Show a realistic product with the Smart Product Options and Addons fields integrated naturally
 
 ## fields/choice/select.md
 field-select-general.png

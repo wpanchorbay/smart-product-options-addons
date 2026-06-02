@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Diagnose and resolve common configuration, display, and integration issues with OptionBay.
+Diagnose and resolve common configuration, display, and integration issues with Smart Product Options and Addons.
 
 ---
 
@@ -32,7 +32,7 @@ You have configured an Option Group and saved it, but no custom fields appear wh
    - Clear your plugin and server caches, then test the page in a browser Incognito window or using a hard refresh (`Ctrl + F5` or `Cmd + Shift + R`).
 
 5. **Confirm WooCommerce is Activated:**
-   - OptionBay relies on WooCommerce hooks (such as `woocommerce_before_add_to_cart_button`) to inject the fields.
+   - Smart Product Options and Addons relies on WooCommerce hooks (such as `woocommerce_before_add_to_cart_button`) to inject the fields.
    - Go to **Plugins → Installed Plugins** and verify that WooCommerce is installed and active.
 
 ---
@@ -53,15 +53,15 @@ The custom fields appear on the product page, but the price adjustments do not m
 2. **Check Option-Level Pricing for Choice Fields:**
    - For choice fields (Select Dropdown, Radio Buttons, Checkboxes, Color Swatch, Image Swatch), pricing is set at the **option level** inside the General tab, not at the field level.
    - Expand the field row, locate the options configuration accordion, and click the chevron to expand each choice option.
-   - Confirm the Price Type and Price Amount are set correctly on each individual option. If the field-level pricing is set but the option-level pricing is left blank, OptionBay will default to no surcharge.
+   - Confirm the Price Type and Price Amount are set correctly on each individual option. If the field-level pricing is set but the option-level pricing is left blank, Smart Product Options and Addons will default to no surcharge.
 
 3. **Understand Percentage Surcharge Logic:**
    - Percentage pricing is calculated against the product's **base price** before other options are added.
-   - For example, if your product's base price is `$50.00` and you set a percentage surcharge of `10`, OptionBay will add exactly `$5.00` to the price. It will not compound with other flat fees or percentage fees.
+   - For example, if your product's base price is `$50.00` and you set a percentage surcharge of `10`, Smart Product Options and Addons will add exactly `$5.00` to the price. It will not compound with other flat fees or percentage fees.
 
 4. **Audit Math Formulas:**
    - If using **Math Formula** pricing, verify that the expression is mathematically valid and only uses supported placeholders: `[base_price]`, `[char_count]`, `[quantity]`, or `[value]` (value is only supported on Number inputs).
-   - If a formula has a syntax error or references an invalid placeholder, OptionBay's safety engine will silently catch the exception and return a surcharge of `$0.00`.
+   - If a formula has a syntax error or references an invalid placeholder, Smart Product Options and Addons's safety engine will silently catch the exception and return a surcharge of `$0.00`.
 
 ---
 
@@ -74,7 +74,7 @@ Customers click the file upload button but the upload fails silently, shows an e
 ### Troubleshooting Checklist
 
 1. **Verify PHP Upload Settings:**
-   - OptionBay uploads files using standard WordPress processes, which are governed by your server's PHP configuration.
+   - Smart Product Options and Addons uploads files using standard WordPress processes, which are governed by your server's PHP configuration.
    - Go to **Tools → Site Health → Info → Server** and check the following settings:
      - **File Uploads (`file_uploads`):** Must be set to `On`.
      - **Max Upload Size (`upload_max_filesize`):** Must be larger than the file sizes you want customers to upload.
@@ -86,7 +86,7 @@ Customers click the file upload button but the upload fails silently, shows an e
    - Ensure the customer's file extension is explicitly listed (e.g. `jpg, png, pdf`). If the extension is omitted, the upload is blocked for security.
 
 3. **Verify Upload Directory Permissions:**
-   - OptionBay saves uploaded files to the standard WordPress uploads directory.
+   - Smart Product Options and Addons saves uploaded files to the standard WordPress uploads directory.
    - Ensure the server has permission to write to `/wp-content/uploads/`. The directory permissions must be set to `755` (or `775` depending on your host) and the files owned by the web server user (usually `www-data` or `apache`).
 
 ---
@@ -105,7 +105,7 @@ Orders are placed with linked options, but the inventory count inside your Globa
    - For choice fields, make sure you expanded the individual option accordion and verified the stock link under the option's Stock sub-tab.
 
 2. **Verify Order Status triggers:**
-   - OptionBay deducts inventory only when WooCommerce triggers the `woocommerce_reduce_order_stock` hook.
+   - Smart Product Options and Addons deducts inventory only when WooCommerce triggers the `woocommerce_reduce_order_stock` hook.
    - This hook runs when an order transitions to a paid status (typically **Processing** or **Completed**). Pending, on-hold, or failed orders will not deduct stock.
    - Verify that your payment gateway is successfully transitioning orders to Processing.
 
@@ -131,23 +131,23 @@ The Option Groups list, Addon Builder, or Settings screen fails to load, showing
 
 2. **Check Security Plugin Rule Blocks:**
    - Plugins like Wordfence, iThemes Security (Solid Security), or Sucuri have settings to "Restrict REST API access."
-   - Disable these settings temporarily to see if OptionBay loads. If it does, whitelist the OptionBay API namespace: `/wp-json/smart-product-options-addons/v1/`.
+   - Disable these settings temporarily to see if Smart Product Options and Addons loads. If it does, whitelist the Smart Product Options and Addons API namespace: `/wp-json/smart-product-options-addons/v1/`.
 
 3. **Flush URL Rewrites (Permalinks):**
-   - OptionBay's API requires custom URL rewrites to resolve endpoints.
+   - Smart Product Options and Addons's API requires custom URL rewrites to resolve endpoints.
    - Go to WordPress Admin **Settings → Permalinks**.
    - Make sure your settings are set to **Post Name** or another structure (the default "Plain" query-parameter style can sometimes conflict with API endpoints).
    - Click the **Save Changes** button at the bottom of the Permalinks page. This flushes and rebuilds your site's rewrite rules, correcting broken endpoint routing.
 
 4. **Verify User Permissions:**
-   - The OptionBay API endpoints require authentication and authorization.
+   - The Smart Product Options and Addons API endpoints require authentication and authorization.
    - Make sure you are logged in as a user with the **Administrator** role, or a role containing the `manage_smart_product_options_addons` capability. Unauthenticated requests or requests from editors/customers are blocked.
 
 ---
 
 ## Enable Debug Logging
 
-For complex issues, use OptionBay's logging engine which integrates directly with WooCommerce logs:
+For complex issues, use Smart Product Options and Addons's logging engine which integrates directly with WooCommerce logs:
 
 1. Go to **WooCommerce → Settings → Products → Options**.
 2. Toggle the **Debug Mode** switch to on and save changes.
@@ -162,5 +162,5 @@ For complex issues, use OptionBay's logging engine which integrates directly wit
 If you have completed the checklists and still require assistance, visit the support portal at [wpanchorbay.com](https://wpanchorbay.com) or open a ticket. When submitting a request, provide the following details:
 
 - **System Context:** Your WordPress version, WooCommerce version, and PHP version (found under **Tools → Site Health → Info → Server**).
-- **Log Files:** The contents of your WooCommerce log file for OptionBay collected during the issue.
+- **Log Files:** The contents of your WooCommerce log file for Smart Product Options and Addons collected during the issue.
 - **Steps to Reproduce:** A step-by-step description of what you clicked or configured to trigger the problem.

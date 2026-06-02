@@ -19,7 +19,7 @@ The Addon Builder is divided into distinct areas, each serving a specific purpos
 - **Add Fields Sidebar** _(right column):_ A sticky panel with buttons for every available field type. Click any button to instantly add that field to the canvas.
 
 ::: tip Mobile-Friendly FAB
-On smaller screens where the sidebar scrolls out of view, OptionBay displays a **floating action button** (blue circle with a `+` icon) in the bottom-right corner. Tapping it opens a popover with the same field-type grid, so you can always add new fields no matter where you are on the page.
+On smaller screens where the sidebar scrolls out of view, Smart Product Options and Addons displays a **floating action button** (blue circle with a `+` icon) in the bottom-right corner. Tapping it opens a popover with the same field-type grid, so you can always add new fields no matter where you are on the page.
 :::
 
 ---
@@ -96,7 +96,7 @@ We've created a dedicated guide with advanced examples, edge cases, and troubles
 
 ![The Add Fields sidebar showing the 2-column grid of field type buttons](/public/addon-builder-sidebar.png)
 
-The right-hand sidebar contains a **2-column grid** of buttons — one for every field type OptionBay supports. Click any button to instantly add a new field of that type to the bottom of the Fields List.
+The right-hand sidebar contains a **2-column grid** of buttons — one for every field type Smart Product Options and Addons supports. Click any button to instantly add a new field of that type to the bottom of the Fields List.
 
 **Choice Fields:**
 
@@ -169,7 +169,7 @@ Click the **trash icon** (🗑) on the right side of any collapsed field row to 
 
 ## Saving & Validation
 
-Click the **Save** / **Update Group** button in the header bar to persist all changes. Before saving, OptionBay runs a comprehensive validation pass:
+Click the **Save** / **Update Group** button in the header bar to persist all changes. Before saving, Smart Product Options and Addons runs a comprehensive validation pass:
 
 - **Group Title** must not be empty.
 - **Assignment Rules** must have at least one target (when in Targeted mode).
@@ -192,6 +192,6 @@ If you navigate away with unsaved changes, a browser confirmation dialog will wa
 
 You don't need to rebuild common configurations from scratch. From the [Option Groups list](/builder/option-groups), hover over any group row and click **Duplicate**.
 
-OptionBay creates a complete copy — same fields, same settings, same assignment rules — with "(Copy)" appended to the title. The duplicate starts in the same status (Published/Draft) as the original.
+Smart Product Options and Addons creates a complete copy — same fields, same settings, same assignment rules — with "(Copy)" appended to the title. The duplicate starts in the same status (Published/Draft) as the original.
 
 This is especially useful when you want to create similar option sets for different product categories with minor tweaks.

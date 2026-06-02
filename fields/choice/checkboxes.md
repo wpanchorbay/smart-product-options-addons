@@ -36,7 +36,7 @@ Within the main **Options** block, you define the actual checkbox choices by cli
 
 - **Drag Handle:** Use the left-side grip icon to drag and drop choices to reorder how they appear on the frontend.
 - **Label:** The primary text shown next to the checkbox on the frontend.
-- _(System Value):_ OptionBay automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores (e.g., "Carrying Case" becomes `carrying_case`).
+- _(System Value):_ Smart Product Options and Addons automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores (e.g., "Carrying Case" becomes `carrying_case`).
 
 **Expanded Settings Panel:**
 Click the **downward chevron icon** on the right side of any choice card to expand its advanced settings:
@@ -97,7 +97,7 @@ If you enable **Stock Tracking** inside any individual choice card under the **G
 :::
 
 ::: tip Global Stock Management
-OptionBay lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
+Smart Product Options and Addons lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
 
 **[Read the Guide: Linking Options to Stock &rarr;](/stocks/field-linking)**
 :::
@@ -121,7 +121,7 @@ With those settings, here is how the field renders on your product page for cust
 
 ![A multi-checkbox group showing four add-on options, two of which are ticked, each with a price badge](/public/field-checkboxes-frontend.png)
 
-When a customer ticks multiple boxes and adds the product to their cart, OptionBay validates that every submitted value exists in the predefined allowed options list (preventing tampering).
+When a customer ticks multiple boxes and adds the product to their cart, Smart Product Options and Addons validates that every submitted value exists in the predefined allowed options list (preventing tampering).
 
 **Cart & WooCommerce Order View:**
 The field label and a comma-separated list of the selected option labels will appear clearly on the cart page, checkout, and in your WooCommerce admin order screen exactly like this:

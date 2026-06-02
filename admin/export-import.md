@@ -1,6 +1,6 @@
 # Export & Import
 
-OptionBay features a built-in migration utility that can export your configuration to a single JSON file and import it back. This is highly useful for creating backups, staging-to-production site migrations, or sharing pre-configured options between separate WooCommerce stores.
+Smart Product Options and Addons features a built-in migration utility that can export your configuration to a single JSON file and import it back. This is highly useful for creating backups, staging-to-production site migrations, or sharing pre-configured options between separate WooCommerce stores.
 
 You can access the Export & Import tools from the top toolbar on the main [Option Groups list](/builder/option-groups) dashboard. Clicking **Export Data** or **Import Data** expands their respective panels inline directly above your list of groups.
 
@@ -79,7 +79,7 @@ The exported file is a standard JSON object containing root keys for each select
 
 ## Importing Data
 
-You can upload a previously exported `.json` configuration file or paste raw JSON directly to import OptionBay entities.
+You can upload a previously exported `.json` configuration file or paste raw JSON directly to import Smart Product Options and Addons entities.
 
 ![The Import panel with a textarea for pasting JSON and a file upload button](/public/import-panel.png)
 
@@ -91,27 +91,27 @@ You can upload a previously exported `.json` configuration file or paste raw JSO
    - **Upload File:** Drag and drop or browse to select your exported `.json` file.
    - **Paste Raw JSON:** Paste the raw text content of an export directly into the JSON textarea input.
 4. Click the **Import** button.
-5. OptionBay validates the JSON structure. If successful, a toast notification confirms the counts of successfully imported items.
+5. Smart Product Options and Addons validates the JSON structure. If successful, a toast notification confirms the counts of successfully imported items.
 
 ![Success toast confirming data was imported successfully](/public/import-success-toast.png)
 
 ### What Happens During Import
 
-When OptionBay imports a JSON package, it processes each entity type using specific database routines:
+When Smart Product Options and Addons imports a JSON package, it processes each entity type using specific database routines:
 
-- **Option Groups:** Imported groups are created as new custom posts. OptionBay does **not** check for pre-existing titles; it will not overwrite or replace matching groups. If a group with the same title already exists, a new, duplicate group is created.
+- **Option Groups:** Imported groups are created as new custom posts. Smart Product Options and Addons does **not** check for pre-existing titles; it will not overwrite or replace matching groups. If a group with the same title already exists, a new, duplicate group is created.
 - **Inventory Items:** Imported stock items are added as new rows in the `wp_smart_product_options_addons_inventory` custom database table.
 - **Plugin Settings:** Settings keys from the file are merged into your database option array. Existing settings not mentioned in the import file are left untouched. Only overlapping settings keys are overwritten with the new values.
 
 ::: warning Import Processes Do Not Overwrite (Duplicates Created)
-Because OptionBay imports groups and inventory as fresh records rather than matching and replacing, re-importing the same file multiple times will generate duplicate entries in your list. Always check your **Option Groups list** and the **View Inventory** modal after importing to prune any unwanted duplicate rows.
+Because Smart Product Options and Addons imports groups and inventory as fresh records rather than matching and replacing, re-importing the same file multiple times will generate duplicate entries in your list. Always check your **Option Groups list** and the **View Inventory** modal after importing to prune any unwanted duplicate rows.
 :::
 
 ---
 
 ## Migration Workflow (Staging to Production)
 
-OptionBay makes it simple to prepare options on a staging clone of your site and migrate them safely to your live production store:
+Smart Product Options and Addons makes it simple to prepare options on a staging clone of your site and migrate them safely to your live production store:
 
 1. **Build and Test:** Build and test all your field groups, pricing rules, and conditional visibility flows on your **staging** site.
 2. **Export Configuration:** Open the Export panel on the staging dashboard, select all checkboxes (Groups, Inventory, and Settings), and download the JSON file.

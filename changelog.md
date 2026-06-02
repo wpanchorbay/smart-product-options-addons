@@ -1,11 +1,11 @@
 # Changelog
 
-All notable changes to the OptionBay plugin will be documented in this file.
+All notable changes to the Smart Product Options and Addons plugin will be documented in this file.
 
 ## [1.0.0] - 2026-05-20
 
 ### Added
-- Initial release of OptionBay.
+- Initial release of Smart Product Options and Addons.
 - Comprehensive Addon Builder with drag-and-drop interface.
 - 13 Field types including Swatches, File Uploads, and Choice fields.
 - 4 Pricing strategies: Flat fee, Percentage, Character Count, and dynamic Math Formulas.

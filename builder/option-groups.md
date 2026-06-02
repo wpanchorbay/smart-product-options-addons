@@ -1,6 +1,6 @@
 # Managing Option Groups
 
-The **Option Groups** list is the main dashboard for OptionBay. Navigate here via **Products → Options** in your WordPress admin menu.
+The **Option Groups** list is the main dashboard for Smart Product Options and Addons. Navigate here via **Products → Options** in your WordPress admin menu.
 
 ![The Option Groups list screen showing the table, status filters, search bar, and action buttons](/public/option-groups-list.png)
 
@@ -82,7 +82,7 @@ Use the **search box** in the top-right area (next to the View Inventory button)
 
 ![A table row being hovered, showing the inline action links](/public/option-groups-row-actions.png)
 
-Instead of old-school text links hidden under the title, OptionBay uses a sleek, modern inline actions column with quick-action icons:
+Instead of old-school text links hidden under the title, Smart Product Options and Addons uses a sleek, modern inline actions column with quick-action icons:
 
 **Normal view (All / Published / Draft):**
 

@@ -24,7 +24,7 @@ To add a new global inventory pool to your store:
 2. Complete the configuration form:
    - **Name:** Enter a unique, descriptive internal name for the stock pool (e.g. `Gift Wrap Sheets`, `Laser Engraving Slots`). Make it specific enough to identify what resource it tracks.
    - **Stock Count:** Enter the starting available inventory level. Decimals are supported, allowing for fractional stock tracking (e.g. `150.5` meters of fabric or pounds of material).
-   - **Allow Backorders:** Toggle this switch to control out-of-stock behavior. When enabled, customers can continue selecting this option even if stock reaches `0` or negative values. If disabled, OptionBay blocks selection and checkouts as soon as stock is depleted.
+   - **Allow Backorders:** Toggle this switch to control out-of-stock behavior. When enabled, customers can continue selecting this option even if stock reaches `0` or negative values. If disabled, Smart Product Options and Addons blocks selection and checkouts as soon as stock is depleted.
 3. Click the **Save** button.
 
 The new inventory item is created in the database and immediately appears at the top of your list table, ready to be linked to fields.
@@ -57,14 +57,14 @@ To prevent broken references or developer confusion, the internal **Name** of a 
 :::
 
 ::: tip Adjusting Stock After Manual Refunds
-If you manually refund or return items outside of WooCommerce's standard order cancellation flow (e.g. a manual customer service replacement), remember to open this modal and manually increment the stock count. OptionBay only automatically restores inventory during the official `woocommerce_order_status_cancelled` or `woocommerce_order_status_refunded` events.
+If you manually refund or return items outside of WooCommerce's standard order cancellation flow (e.g. a manual customer service replacement), remember to open this modal and manually increment the stock count. Smart Product Options and Addons only automatically restores inventory during the official `woocommerce_order_status_cancelled` or `woocommerce_order_status_refunded` events.
 :::
 
 ---
 
 ## Deleting Stock Items
 
-To protect integrity and prevent breaking linked option groups, OptionBay does **not** expose a delete action for inventory pools in the admin dashboard.
+To protect integrity and prevent breaking linked option groups, Smart Product Options and Addons does **not** expose a delete action for inventory pools in the admin dashboard.
 
 If you have a stock pool that is no longer needed:
 
@@ -76,14 +76,14 @@ If you have a stock pool that is no longer needed:
 
 ## Creating Items Inline from the Builder
 
-You do not need to pre-create all your inventory pools in the modal first. OptionBay lets you create stock items dynamically while you are building your fields:
+You do not need to pre-create all your inventory pools in the modal first. Smart Product Options and Addons lets you create stock items dynamically while you are building your fields:
 
 1. Inside the [Addon Builder](/builder/addon-builder), open the configuration panel of any field.
 2. Switch to the **Stock** tab.
 3. Toggle **Enable Stock Management** on.
 4. Click into the **Inventory Item** search select box and start typing the name of the new stock item you want to create.
 5. If no matching item exists, a special option appears at the bottom of the dropdown: **Create new "[name]"**.
-6. Click that option. OptionBay immediately creates the new global stock pool with a starting count of `0` and links it to your field.
+6. Click that option. Smart Product Options and Addons immediately creates the new global stock pool with a starting count of `0` and links it to your field.
 
 You can configure the starting stock count or enable backorders for this newly created item later by opening the main inventory modal.
 
@@ -106,4 +106,4 @@ The inventory modal allows you to adjust stock counts to any integer or decimal 
 The table in the inventory modal always displays the **live** current count as recorded in the database. This value accounts for all completed checkout orders that have permanently deducted stock.
 
 - **Available Stock vs. Cart Reserved:** The stock count shown in the modal table is the absolute count in your database. It does **not** subtract items that are currently sitting in active, unpurchased customer carts.
-- **Real Availability Checks:** While the table shows the absolute database value, the frontend product page and add-to-cart validations _do_ account for cart reservations. If a customer is viewing the product page, OptionBay subtracts active reservations to determine if they can select the option.
+- **Real Availability Checks:** While the table shows the absolute database value, the frontend product page and add-to-cart validations _do_ account for cart reservations. If a customer is viewing the product page, Smart Product Options and Addons subtracts active reservations to determine if they can select the option.

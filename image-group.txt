@@ -1,9 +1,9 @@
-# OptionBay Screenshot Grouping Plan
+# Smart Product Options and Addons Screenshot Grouping Plan
 
 This plan groups the screenshots from `image.txt` into logical batches. Each batch corresponds to a single page or state, allowing you to capture multiple images in one sitting.
 
 ## Group 1: Option Groups List (The Dashboard)
-**Location:** WooCommerce -> OptionBay -> Addon Builder (List View)
+**Location:** WooCommerce -> Smart Product Options and Addons -> Addon Builder (List View)
 **Strategy:** Capture the base list first, then trigger interactive elements (hover, popover, modals).
 
 1.  `option-groups-list.png` (Base view)
@@ -19,7 +19,7 @@ This plan groups the screenshots from `image.txt` into logical batches. Each bat
 11. `import-success-toast.png` (Trigger a successful import)
 
 ## Group 2: Addon Builder (Structure & Layout)
-**Location:** WooCommerce -> OptionBay -> Addon Builder (Editing a Group)
+**Location:** WooCommerce -> Smart Product Options and Addons -> Addon Builder (Editing a Group)
 **Strategy:** Capture the overall container and global sections of the builder.
 
 1.  `addon-builder-full.png` (Full viewport)
@@ -81,7 +81,7 @@ This plan groups the screenshots from `image.txt` into logical batches. Each bat
 4.  `inventory-modal-delete-confirm.png` (Click "Delete" on a row)
 
 ## Group 8: Settings & Admin
-**Location:** WooCommerce -> OptionBay -> Settings / WP Admin.
+**Location:** WooCommerce -> Smart Product Options and Addons -> Settings / WP Admin.
 
 1.  `settings-page.png` (Full page)
 2.  `settings-swatch-size-roundness.png` (General tab detail)

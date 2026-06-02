@@ -37,7 +37,7 @@ Within the main **Options** block, you define the actual color choices by clicki
 - **Drag Handle:** Use the left-side grip icon to drag and drop choices to reorder how they appear on the frontend.
 - **Color Picker:** Click the circular color bubble to open a visual picker, or type the exact Hex/RGBA code (e.g. `#1B3A6B`).
 - **Label:** The primary text shown next to the swatch on the frontend, and in the cart (e.g. `Navy Blue`).
-- _(System Value):_ OptionBay automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores.
+- _(System Value):_ Smart Product Options and Addons automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores.
 
 **Expanded Settings Panel:**
 Click the **downward chevron icon** on the right side of any choice card to expand its advanced settings:
@@ -85,7 +85,7 @@ Go to **WooCommerce → Settings → Products → Options** to configure:
 
 ## Pricing Logic
 
-OptionBay choice fields (like Color Swatches) do not support field-level pricing. Instead, pricing is configured individually per option within the **General** tab under the **Options Configuration** block.
+Smart Product Options and Addons choice fields (like Color Swatches) do not support field-level pricing. Instead, pricing is configured individually per option within the **General** tab under the **Options Configuration** block.
 
 **Option-Level Pricing:** Set specific price surcharges on individual choices (e.g., "+$5.00 for Gold") by expanding the choice card and selecting a Price Type:
 
@@ -93,7 +93,7 @@ OptionBay choice fields (like Color Swatches) do not support field-level pricing
 - **Price Amount / Formula Expression:** The fee applied when this specific option is selected.
 
 ::: info Master the Pricing Engine
-OptionBay includes multiple pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+Smart Product Options and Addons includes multiple pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::
@@ -143,7 +143,7 @@ If you enable **Stock Tracking** inside any individual choice card under the **G
 _Example:_ Link "Midnight Black" to an inventory item with 50 slots, and "Pearl White" to one with 200.
 
 ::: tip Global Stock Management
-OptionBay lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
+Smart Product Options and Addons lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
 
 **[Read the Guide: Linking Options to Stock &rarr;](/stocks/field-linking)**
 :::
@@ -167,7 +167,7 @@ With those settings, here is how the field renders on your product page for cust
 
 ![Color Swatch field on a product page showing 6 colored swatches, one selected with a checkmark overlay](/public/field-color-swatch-frontend-only.png)
 
-When a customer clicks a swatch and adds the product to their cart, OptionBay validates that the submitted value exactly matches one of the allowed options you defined, preventing forged submissions.
+When a customer clicks a swatch and adds the product to their cart, Smart Product Options and Addons validates that the submitted value exactly matches one of the allowed options you defined, preventing forged submissions.
 
 **Cart & WooCommerce Order View:**
 The field label and the text label of the chosen color (not the hex code) will appear clearly on the cart page, checkout, and in your WooCommerce admin order screen exactly like this:

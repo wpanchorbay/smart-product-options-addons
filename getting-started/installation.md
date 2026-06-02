@@ -1,6 +1,6 @@
 # Installation
 
-This guide walks you through installing OptionBay on your WordPress site, from downloading the plugin to seeing it live in your admin menu.
+This guide walks you through installing Smart Product Options and Addons on your WordPress site, from downloading the plugin to seeing it live in your admin menu.
 
 ---
 
@@ -36,7 +36,7 @@ Download the `smart-product-options-addons.zip` file from your purchase confirma
 
 ### Step 3 — Activate the Plugin
 
-After the installation completes, click **Activate Plugin**. WordPress will run OptionBay's activation routine, which performs the following setup automatically:
+After the installation completes, click **Activate Plugin**. WordPress will run Smart Product Options and Addons's activation routine, which performs the following setup automatically:
 
 - **Database Tables:** Creates two custom tables — `wp_smart_product_options_addons_assignments` (for assignment rules) and `wp_smart_product_options_addons_inventory` (for global stock pools).
 - **Default Settings:** Saves the initial plugin configuration so all settings have safe defaults.
@@ -52,7 +52,7 @@ The example Option Groups imported on first activation are fully editable. Feel 
 
 ## After Activation
 
-Once activated, OptionBay integrates directly into your existing WordPress and WooCommerce admin menus:
+Once activated, Smart Product Options and Addons integrates directly into your existing WordPress and WooCommerce admin menus:
 
 - **Products → Options** — The main dashboard containing the [Option Groups list](/builder/option-groups), Addon Builder interface, and import/export capabilities.
 - **WooCommerce → Settings → Products → Options** — Configure plugin-wide preferences like layout orientation, font sizes, color/image swatches, debug mode, and data deletion.
@@ -64,7 +64,7 @@ Navigate to **Products → Options** to start building your first option group, 
 
 ## Updating the Plugin
 
-When a new version of OptionBay is available:
+When a new version of Smart Product Options and Addons is available:
 
 1. Download the new `.zip` file from [wpanchorbay.com](https://wpanchorbay.com).
 2. Go to **Plugins → Add New Plugin → Upload Plugin**.
@@ -74,21 +74,21 @@ When a new version of OptionBay is available:
 Your data is safe during updates — database tables are automatically migrated using WordPress's `dbDelta()` function, which only applies structural changes without touching your existing rows.
 
 ::: tip Backup Before Updating
-While OptionBay's update process is safe, it's always good practice to create a full site backup before updating any plugin. Use your hosting provider's backup tool or a plugin like UpdraftPlus.
+While Smart Product Options and Addons's update process is safe, it's always good practice to create a full site backup before updating any plugin. Use your hosting provider's backup tool or a plugin like UpdraftPlus.
 :::
 
 ---
 
 ## Uninstalling the Plugin
 
-To remove OptionBay completely from your site:
+To remove Smart Product Options and Addons completely from your site:
 
 1. Go to **Plugins → Installed Plugins**.
-2. Click **Deactivate** next to OptionBay.
+2. Click **Deactivate** next to Smart Product Options and Addons.
 3. Click **Delete** to remove the plugin files.
 
 ::: warning Data Deletion on Uninstall
-By default, OptionBay **preserves all your data** when the plugin is deleted — option groups, settings, inventory items, and database tables remain intact so you can reinstall later without losing anything.
+By default, Smart Product Options and Addons **preserves all your data** when the plugin is deleted — option groups, settings, inventory items, and database tables remain intact so you can reinstall later without losing anything.
 
 If you want all data to be **permanently erased** on uninstall, navigate to **WooCommerce → Settings → Products → Options** and enable the **"Delete Data on Uninstall"** option **before** deleting the plugin.
 :::

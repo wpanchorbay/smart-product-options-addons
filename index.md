@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: OptionBay
+  name: Smart Product Options and Addons
   text: Advanced Product Options
   tagline: Create a personalized shopping experience with ease.
   image:
-    src: /logo-2.png
-    alt: OptionBay Logo
+    src: /logo.png
+    alt: Smart Product Options and Addons Logo
   actions:
     - theme: brand
       text: Get Started

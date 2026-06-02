@@ -8,7 +8,7 @@
 
 ## How Assignments Work
 
-When a customer visits a product page, OptionBay queries the `wp_smart_product_options_addons_assignments` database table using a single indexed lookup. The query checks whether any published Option Groups match the current product's ID, category IDs, or tag IDs.
+When a customer visits a product page, Smart Product Options and Addons queries the `wp_smart_product_options_addons_assignments` database table using a single indexed lookup. The query checks whether any published Option Groups match the current product's ID, category IDs, or tag IDs.
 
 The result is a prioritised, deduplicated list of groups to render — resolved in milliseconds even on large stores.
 
@@ -25,7 +25,7 @@ Each assignment rule targets one of four scopes:
 | **Category**         | The group appears on all products in one or more selected categories |
 | **Tag**              | The group appears on all products with one or more selected tags     |
 
-You can add multiple rules of any type. OptionBay evaluates them all together.
+You can add multiple rules of any type. Smart Product Options and Addons evaluates them all together.
 
 ---
 
@@ -57,7 +57,7 @@ Imagine you want a group to appear on all products in the "Jewellery" category *
 | Category | Jewellery   | Include |
 | Product  | Silver Ring | Exclude |
 
-OptionBay processes both rules together. Since the exclusion rule exists for "Silver Ring", the group will not appear on that product even though the category rule would otherwise include it.
+Smart Product Options and Addons processes both rules together. Since the exclusion rule exists for "Silver Ring", the group will not appear on that product even though the category rule would otherwise include it.
 
 ::: tip Priority Tie-Breaking
 When an exclusion rule and an inclusion rule have the **same priority**, the exclusion wins. Give inclusions a **lower priority number** (e.g. `5`) than exclusions (e.g. `10`) if you want inclusions to override.

@@ -1,7 +1,7 @@
 import { defineConfig } from "vitepress";
 
 export default defineConfig({
-  title: "OptionBay",
+  title: "Smart Product Options and Addons",
   description:
     "Friendly & Helpful Guide to Advanced Product Options for WooCommerce",
   lang: "en-US",
@@ -12,26 +12,26 @@ export default defineConfig({
       "link",
       {
         rel: "icon",
-        href: "/smart-product-options-addons/icon.svg",
+        href: "/smart-product-options-addons/logo.png",
         type: "image/svg+xml",
       },
     ],
     ["meta", { name: "theme-color", content: "#ff0000" }],
     ["meta", { property: "og:type", content: "website" }],
-    ["meta", { property: "og:title", content: "OptionBay Documentation" }],
+    ["meta", { property: "og:title", content: "Smart Product Options and Addons Documentation" }],
     [
       "meta",
       {
         property: "og:description",
         content:
-          "Official documentation for OptionBay — Advanced product options and addons for WooCommerce.",
+          "Official documentation for Smart Product Options and Addons — Advanced product options and addons for WooCommerce.",
       },
     ],
     ["meta", { property: "og:image", content: "/smart-product-options-addons/logo.svg" }],
   ],
 
   themeConfig: {
-    logo: "/icon.svg",
+    logo: "/logo.png",
     siteTitle: false,
 
     nav: [

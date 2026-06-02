@@ -37,7 +37,7 @@ Within the main **Options** block, you define the actual dropdown choices by cli
 
 - **Drag Handle:** Use the left-side grip icon to drag and drop choices to reorder how they appear on the frontend.
 - **Label:** The primary text shown inside the dropdown menu on the frontend, and in the cart (e.g. `16GB RAM`).
-- _(System Value):_ OptionBay automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores.
+- _(System Value):_ Smart Product Options and Addons automatically generates a system-friendly `value` behind the scenes by lowercasing your Label and replacing spaces with underscores.
 
 **Expanded Settings Panel:**
 Click the **downward chevron icon** on the right side of any choice card to expand its advanced settings:
@@ -56,14 +56,14 @@ Click the **downward chevron icon** on the right side of any choice card to expa
 - **Field is Required:** A checkbox toggle. When enabled, the customer is forced to pick a valid option (they cannot submit the form if the Placeholder is still selected).
 
 ::: tip Placeholder Rendering
-OptionBay automatically renders your placeholder text as the first, disabled `<option>` in the HTML dropdown list.
+Smart Product Options and Addons automatically renders your placeholder text as the first, disabled `<option>` in the HTML dropdown list.
 :::
 
 ---
 
 ## Pricing Logic
 
-OptionBay choice fields (like the Select Dropdown) do not support field-level pricing. Instead, pricing is configured individually per option within the **General** tab under the **Options Configuration** block.
+Smart Product Options and Addons choice fields (like the Select Dropdown) do not support field-level pricing. Instead, pricing is configured individually per option within the **General** tab under the **Options Configuration** block.
 
 **Option-Level Pricing:** Set specific price surcharges on individual choices (e.g., "+$2.00 for Birthday Card") by expanding the choice card and selecting a Price Type:
 
@@ -71,7 +71,7 @@ OptionBay choice fields (like the Select Dropdown) do not support field-level pr
 - **Price Amount / Formula Expression:** The fee applied when this specific option is selected.
 
 ::: info Master the Pricing Engine
-OptionBay includes multiple pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+Smart Product Options and Addons includes multiple pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::
@@ -119,7 +119,7 @@ If you enable **Stock Tracking** inside any individual choice card under the **G
 :::
 
 ::: tip Global Stock Management
-OptionBay lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
+Smart Product Options and Addons lets you share stock pools across multiple options and products, complete with cart-reservation to prevent overselling.
 
 **[Read the Guide: Linking Options to Stock &rarr;](/stocks/field-linking)**
 :::
@@ -143,7 +143,7 @@ With those settings, here is how the field renders on your product page for cust
 
 ![A Select Dropdown field on a WooCommerce product page, dropdown open showing price-labelled options](/public/field-select-frontend.png)
 
-When a customer makes a selection and adds the product to their cart, OptionBay validates that the submitted value exactly matches one of the allowed options you defined, preventing malicious injections.
+When a customer makes a selection and adds the product to their cart, Smart Product Options and Addons validates that the submitted value exactly matches one of the allowed options you defined, preventing malicious injections.
 
 **Cart & WooCommerce Order View:**
 The field label and the text label of the chosen option (not the system value) will appear clearly on the cart page, checkout, and in your WooCommerce admin order screen exactly like this:

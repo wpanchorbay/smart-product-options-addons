@@ -2,7 +2,7 @@
 
 The **Global Stock** system lets you track and limit inventory for shared resources that are consumed when customers select specific options — independently of WooCommerce's product stock.
 
-Unlike WooCommerce's built-in stock system which tracks inventory per product variant, OptionBay's Global Stock operates at the option level. This makes it possible to manage inventory for shared physical materials, service capacities, or time slots across different products.
+Unlike WooCommerce's built-in stock system which tracks inventory per product variant, Smart Product Options and Addons's Global Stock operates at the option level. This makes it possible to manage inventory for shared physical materials, service capacities, or time slots across different products.
 
 ---
 
@@ -72,11 +72,11 @@ Manage existing stock items directly within the inventory modal table:
 
 ## Stock Depletion Lifecycle
 
-OptionBay manages stock updates at every stage of the customer shopping journey:
+Smart Product Options and Addons manages stock updates at every stage of the customer shopping journey:
 
-- **Step 1 — Cart Reservation:** When a customer selects a linked option and adds the product to their cart, OptionBay reserves that stock. If they empty their cart or the cart session expires, the reservation is released.
+- **Step 1 — Cart Reservation:** When a customer selects a linked option and adds the product to their cart, Smart Product Options and Addons reserves that stock. If they empty their cart or the cart session expires, the reservation is released.
 - **Step 2 — Checkout Check:** During checkout submission, a final check is run. If stock is depleted, the order is blocked. Otherwise, checkout completes and stock is permanently deducted.
-- **Step 3 — Order Status Sync:** If the order is cancelled, refunded, or failed in WooCommerce, OptionBay reads the line item metadata and automatically restores the stock.
+- **Step 3 — Order Status Sync:** If the order is cancelled, refunded, or failed in WooCommerce, Smart Product Options and Addons reads the line item metadata and automatically restores the stock.
 
 ::: info Learn More: Linking Stock
 To see how to connect your fields and options to these global stock pools, including setting up custom reduction formulas, check out our field linking guide.

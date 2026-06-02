@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-Get OptionBay working on your store in under 10 minutes. This guide walks you from zero to a live product option on a real product page — no prior experience with the plugin required.
+Get Smart Product Options and Addons working on your store in under 10 minutes. This guide walks you from zero to a live product option on a real product page — no prior experience with the plugin required.
 
 ---
 
@@ -16,7 +16,7 @@ By the end of this guide, you'll have a custom option group attached to a produc
 
 In your WordPress admin, navigate to **Products → Options**.
 
-You'll see the [Option Groups list](/builder/option-groups) — a table showing all of your existing groups. If this is a fresh install, OptionBay has already created a few example groups for you to reference.
+You'll see the [Option Groups list](/builder/option-groups) — a table showing all of your existing groups. If this is a fresh install, Smart Product Options and Addons has already created a few example groups for you to reference.
 
 Click the **Add new group** button at the top of the page to open a blank [Addon Builder](/builder/addon-builder).
 
@@ -60,7 +60,7 @@ Look at the **Add Fields** sidebar on the right. Click any field type button to 
 ![The Addon Builder with two configured fields — Text Input and Radio Buttons](/public/quick-start-step3.png)
 
 ::: tip Explore All Field Types
-OptionBay supports 12 different field types — from color swatches to file uploads. See the full [Field Types Reference](/fields/input/text) to explore what's available.
+Smart Product Options and Addons supports 12 different field types — from color swatches to file uploads. See the full [Field Types Reference](/fields/input/text) to explore what's available.
 :::
 
 ---
@@ -90,7 +90,7 @@ Assignment Rules support powerful include/exclude logic. You can target entire c
 
 Click the **Create Group** button (or **Update Group** if editing) in the builder header bar.
 
-OptionBay validates your configuration before saving. If anything is missing (empty labels, no assignment targets), inline error messages will appear and the first problematic field will be automatically expanded.
+Smart Product Options and Addons validates your configuration before saving. If anything is missing (empty labels, no assignment targets), inline error messages will appear and the first problematic field will be automatically expanded.
 
 Once saved successfully, a success toast notification will appear at the top of the page.
 
@@ -108,7 +108,7 @@ If the fields aren't visible, check these common issues:
 - Make sure the group's **Status** is **Published** (not Draft).
 - Confirm the assignment is correctly set to the product you're viewing.
 - Clear any **page caching** if you use a caching plugin (WP Rocket, LiteSpeed Cache, W3 Total Cache, etc.).
-- Make sure the product is a **Simple** or **Variable** product type — OptionBay renders on standard WooCommerce product pages.
+- Make sure the product is a **Simple** or **Variable** product type — Smart Product Options and Addons renders on standard WooCommerce product pages.
   :::
 
 ---
@@ -135,7 +135,7 @@ The `+$4.00` gift wrap price is automatically added to the cart total and displa
 
 ## What's Next?
 
-Now that you've got the basics working, explore more of what OptionBay can do:
+Now that you've got the basics working, explore more of what Smart Product Options and Addons can do:
 
 - **[The Addon Builder](/builder/addon-builder)** — Learn the full builder interface: drag-and-drop reordering, duplication, and validation.
 - **[Pricing Strategies](/pricing/index)** — Flat fees, percentages, per-character pricing, and dynamic math formulas.
