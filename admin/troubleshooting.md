@@ -141,7 +141,7 @@ The Option Groups list, Addon Builder, or Settings screen fails to load, showing
 
 4. **Verify User Permissions:**
    - The OptionBay API endpoints require authentication and authorization.
-   - Make sure you are logged in as a user with the **Administrator** role, or a role containing the `manage_optionbay` capability. Unauthenticated requests or requests from editors/customers are blocked.
+   - Make sure you are logged in as a user with the **Administrator** role, or a role containing the `manage_smart_product_options_addons` capability. Unauthenticated requests or requests from editors/customers are blocked.
 
 ---
 
@@ -153,7 +153,7 @@ For complex issues, use OptionBay's logging engine which integrates directly wit
 2. Toggle the **Debug Mode** switch to on and save changes.
 3. Perform the action that is causing the problem on the frontend or backend (e.g. save a group, add to cart, check out).
 4. View the generated logs by going to **WooCommerce → Status → Logs**.
-5. Select the `optionbay` log from the dropdown (the filename will include the date) and click **View**.
+5. Select the `smart_product_options_addons` log from the dropdown (the filename will include the date) and click **View**.
 
 ---
 

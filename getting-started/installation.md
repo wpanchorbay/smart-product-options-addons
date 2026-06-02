@@ -42,7 +42,7 @@ After the installation completes, click **Activate Plugin**. WordPress will run 
 - **Default Settings:** Saves the initial plugin configuration so all settings have safe defaults.
 - **Demo Data:** Imports a small set of example Option Groups from `assets/preloads/preloads.json`, assigned globally to all products. This lets you explore the plugin immediately on any product page.
 - **Background Tasks:** Schedules WordPress cron tasks for background processing.
-- **Capabilities:** Adds the `manage_optionbay` capability to the Administrator role.
+- **Capabilities:** Adds the `manage_smart_product_options_addons` capability to the Administrator role.
 
 ::: info Demo Data on First Activation
 The example Option Groups imported on first activation are fully editable. Feel free to modify, duplicate, or delete them as you learn the system. They are assigned globally so you can see them on any product page right away.
