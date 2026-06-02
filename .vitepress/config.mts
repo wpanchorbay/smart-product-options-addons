@@ -161,15 +161,7 @@ export default defineConfig({
         icon: "github",
         link: "https://github.com/wpanchorbay/smart-product-options-addons",
       },
-      { icon: "wordpress", link: "https://wordpress.org/plugins/smart-product-options-addons/" },
-      { icon: "facebook", link: "https://facebook.com/wpanchorbay" },
-      {
-        icon: {
-          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><image href="/smart-product-options-addons/wpanchorbay.png" width="24" height="24" /></svg>',
-        },
-        link: "https://wpanchorbay.com/",
-        ariaLabel: "WPAnchorBay",
-      },
+      { icon: "facebook", link: "https://facebook.com/wpanchorbay" }
     ],
 
     footer: {

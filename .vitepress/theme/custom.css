@@ -5,31 +5,31 @@
 
 :root {
   /* Brand colors */
-  --vp-c-brand-1: #ff0000;
-  --vp-c-brand-2: #cc0000;
-  --vp-c-brand-3: #990000;
-  --vp-c-brand-soft: rgba(255, 0, 0, 0.1);
+  --vp-c-brand-1: #1a87ff;
+  --vp-c-brand-2: #006fe6;
+  --vp-c-brand-3: #0059b8;
+  --vp-c-brand-soft: rgba(26, 135, 255, 0.1);
 
   /* Hero gradient */
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg,
-      #ff0000 30%,
-      #ff5555);
+      #1a87ff 30%,
+      #5cb0ff);
   --vp-home-hero-image-background-image: linear-gradient(-45deg,
-      #ff0000dd 50%,
-      #ff555577);
+      #1a87ffdd 50%,
+      #5cb0ff77);
   --vp-home-hero-image-filter: blur(44px);
 }
 
 .dark {
-  --vp-c-brand-1: #ff3333;
-  --vp-c-brand-2: #ff6666;
-  --vp-c-brand-3: #cc0000;
-  --vp-c-brand-soft: rgba(255, 51, 51, 0.14);
+  --vp-c-brand-1: #4d9eff;
+  --vp-c-brand-2: #7ab9ff;
+  --vp-c-brand-3: #1a87ff;
+  --vp-c-brand-soft: rgba(77, 158, 255, 0.14);
 
   --vp-home-hero-image-background-image: linear-gradient(-45deg,
-      #cc0000dd 50%,
-      #ff333377);
+      #1a87ffdd 50%,
+      #4d9eff77);
 }
 
 /* Slightly rounded buttons */
@@ -44,7 +44,7 @@
 
 /* Hero icon border */
 .VPHero .VPImage {
-  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
+  filter: drop-shadow(0 0 10px rgba(26, 135, 255, 0.3));
   width: 280px;
   height: 280px;
 }
