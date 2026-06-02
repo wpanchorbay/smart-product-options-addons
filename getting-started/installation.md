@@ -23,13 +23,13 @@ Check the [System Requirements](/getting-started/requirements) page for a full b
 
 ### Step 1 — Download the Plugin
 
-Download the `optionbay.zip` file from your purchase confirmation email or your account area on [wpanchorbay.com](https://wpanchorbay.com).
+Download the `smart-product-options-addons.zip` file from your purchase confirmation email or your account area on [wpanchorbay.com](https://wpanchorbay.com).
 
 ### Step 2 — Upload the Plugin
 
 1. In your WordPress admin, go to **Plugins → Add New Plugin**.
 2. Click the **Upload Plugin** button at the top of the page.
-3. Click **Choose File** and select the `optionbay.zip` you downloaded.
+3. Click **Choose File** and select the `smart-product-options-addons.zip` you downloaded.
 4. Click **Install Now** and wait for the upload to complete.
 
 ![WordPress admin Upload Plugin screen showing the Choose File button and Install Now button](/public/install-upload.png)
@@ -38,7 +38,7 @@ Download the `optionbay.zip` file from your purchase confirmation email or your 
 
 After the installation completes, click **Activate Plugin**. WordPress will run OptionBay's activation routine, which performs the following setup automatically:
 
-- **Database Tables:** Creates two custom tables — `wp_optionbay_assignments` (for assignment rules) and `wp_optionbay_inventory` (for global stock pools).
+- **Database Tables:** Creates two custom tables — `wp_smart_product_options_addons_assignments` (for assignment rules) and `wp_smart_product_options_addons_inventory` (for global stock pools).
 - **Default Settings:** Saves the initial plugin configuration so all settings have safe defaults.
 - **Demo Data:** Imports a small set of example Option Groups from `assets/preloads/preloads.json`, assigned globally to all products. This lets you explore the plugin immediately on any product page.
 - **Background Tasks:** Schedules WordPress cron tasks for background processing.

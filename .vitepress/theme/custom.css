@@ -91,14 +91,14 @@
 }
 
 /* Custom Navbar Title */
-.optionbay-site-title {
+.smart-product-options-addons-site-title {
   font-size: 1.3rem;
   font-weight: 500;
   margin-left: 10px;
   color: var(--vp-c-text-1);
 }
 
-.optionbay-site-title .tube-bold {
+.smart-product-options-addons-site-title .tube-bold {
   font-weight: 800;
   color: var(--vp-c-brand-1);
 }

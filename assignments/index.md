@@ -8,7 +8,7 @@
 
 ## How Assignments Work
 
-When a customer visits a product page, OptionBay queries the `wp_optionbay_assignments` database table using a single indexed lookup. The query checks whether any published Option Groups match the current product's ID, category IDs, or tag IDs.
+When a customer visits a product page, OptionBay queries the `wp_smart_product_options_addons_assignments` database table using a single indexed lookup. The query checks whether any published Option Groups match the current product's ID, category IDs, or tag IDs.
 
 The result is a prioritised, deduplicated list of groups to render — resolved in milliseconds even on large stores.
 
@@ -100,10 +100,10 @@ A group must have at least one inclusion rule to display on any product page. A 
 
 ## Technical Details
 
-Assignment rules are stored in the `wp_optionbay_assignments` custom database table:
+Assignment rules are stored in the `wp_smart_product_options_addons_assignments` custom database table:
 
 ```sql
-CREATE TABLE wp_optionbay_assignments (
+CREATE TABLE wp_smart_product_options_addons_assignments (
     id          bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     group_id    bigint(20) UNSIGNED NOT NULL,   -- CPT post ID
     target_type varchar(20) NOT NULL DEFAULT 'global',  -- global | product | category | tag

@@ -99,8 +99,8 @@ Controls whether OptionBay erases your store options configuration data when the
 - **Default:** Disabled. Deleting the plugin files leaves your groups and inventory intact so you can update or reinstall without losing data.
 - **When Enabled:** Deleting OptionBay via **Plugins → Installed Plugins → Delete** will trigger a clean-up query that permanently deletes:
   - All Option Groups custom posts and post meta records.
-  - All assignment rule mappings in the `wp_optionbay_assignments` database table.
-  - All Global Stock Items in the `wp_optionbay_inventory` database table.
+  - All assignment rule mappings in the `wp_smart_product_options_addons_assignments` database table.
+  - All Global Stock Items in the `wp_smart_product_options_addons_inventory` database table.
   - All plugin settings configurations saved in your WordPress options database.
 
 ::: danger Irreversible Data Loss

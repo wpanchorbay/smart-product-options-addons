@@ -8,7 +8,7 @@ If you have an idea for a new feature, a new field type, or an improvement to an
 
 Currently, the best way to submit a feature request is through our GitHub repository.
 
-1. Go to the [OptionBay GitHub Issues](https://github.com/wpanchorbay/optionbay/issues) page.
+1. Go to the [OptionBay GitHub Issues](https://github.com/wpanchorbay/smart-product-options-addons/issues) page.
 2. Click on the **New Issue** button.
 3. Select the **Feature Request** template (if available) or simply write a detailed description of what you'd like to see.
 4. Explain *why* this feature is important and how it will help your store.

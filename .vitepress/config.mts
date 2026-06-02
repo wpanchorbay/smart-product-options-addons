@@ -5,14 +5,14 @@ export default defineConfig({
   description:
     "Friendly & Helpful Guide to Advanced Product Options for WooCommerce",
   lang: "en-US",
-  base: "/optionbay/",
+  base: "/smart-product-options-addons/",
 
   head: [
     [
       "link",
       {
         rel: "icon",
-        href: "/optionbay/icon.svg",
+        href: "/smart-product-options-addons/icon.svg",
         type: "image/svg+xml",
       },
     ],
@@ -27,7 +27,7 @@ export default defineConfig({
           "Official documentation for OptionBay — Advanced product options and addons for WooCommerce.",
       },
     ],
-    ["meta", { property: "og:image", content: "/optionbay/logo.svg" }],
+    ["meta", { property: "og:image", content: "/smart-product-options-addons/logo.svg" }],
   ],
 
   themeConfig: {
@@ -159,13 +159,13 @@ export default defineConfig({
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/wpanchorbay/optionbay",
+        link: "https://github.com/wpanchorbay/smart-product-options-addons",
       },
-      { icon: "wordpress", link: "https://wordpress.org/plugins/optionbay/" },
+      { icon: "wordpress", link: "https://wordpress.org/plugins/smart-product-options-addons/" },
       { icon: "facebook", link: "https://facebook.com/wpanchorbay" },
       {
         icon: {
-          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><image href="/optionbay/wpanchorbay.png" width="24" height="24" /></svg>',
+          svg: '<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><image href="/smart-product-options-addons/wpanchorbay.png" width="24" height="24" /></svg>',
         },
         link: "https://wpanchorbay.com/",
         ariaLabel: "WPAnchorBay",

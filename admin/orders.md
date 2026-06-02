@@ -6,7 +6,7 @@ OptionBay automatically attaches the customer's selected options to every WooCom
 
 ## How Options Appear on Orders
 
-When a customer selects options and adds a product to their cart, those choices are temporarily stored in the customer's WooCommerce cart session under the key `optionbay_addons`.
+When a customer selects options and adds a product to their cart, those choices are temporarily stored in the customer's WooCommerce cart session under the key `smart_product_options_addons_addons`.
 
 Upon successful checkout, this session data is transformed into permanent **order item metadata** attached directly to the specific WooCommerce order line item.
 
@@ -18,7 +18,7 @@ When viewing any order containing OptionBay selections, the customer's choices a
 
 - **Text, Area, Number, and Email fields:** Display the field's label followed by the customer's typed value (e.g. `Engraving Text: Happy Birthday!`).
 - **Choice-based fields (Dropdowns, Radios, Checkboxes, Swatches):** Display the field's label followed by the text label of the selected choice (e.g. `Gift Wrap?: Yes`).
-- **File Upload fields:** Display the field's label followed by a clickable, secure URL pointing directly to the uploaded file in your WordPress uploads folder (e.g. `File Upload: https://site.com/wp-content/uploads/optionbay/design.png`).
+- **File Upload fields:** Display the field's label followed by a clickable, secure URL pointing directly to the uploaded file in your WordPress uploads folder (e.g. `File Upload: https://site.com/wp-content/uploads/smart-product-options-addons/design.png`).
 
 ---
 
@@ -58,7 +58,7 @@ For options linked to a [Global Stock Item](/stocks/index), OptionBay triggers s
 
 1. **Checkout Check:** OptionBay does a final live stock check at checkout submit.
 2. **Hook Trigger:** Once payment is authorized and WooCommerce reduces catalog stock, OptionBay intercepts the action.
-3. **Inventory Deduction:** The quantities saved in the order item metadata are permanently deducted from the corresponding rows in the `wp_optionbay_inventory` table.
+3. **Inventory Deduction:** The quantities saved in the order item metadata are permanently deducted from the corresponding rows in the `wp_smart_product_options_addons_inventory` table.
 
 ---
 

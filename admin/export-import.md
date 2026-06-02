@@ -29,7 +29,7 @@ You can choose to export any combination of the following database objects:
 
 A `.json` file is compiled and downloaded by your browser. The filename is generated automatically with a date stamp:
 
-- **Example Filename:** `optionbay-export-2026-05-19.json`
+- **Example Filename:** `smart-product-options-addons-export-2026-05-19.json`
 
 ### Export File Structure
 
@@ -100,7 +100,7 @@ You can upload a previously exported `.json` configuration file or paste raw JSO
 When OptionBay imports a JSON package, it processes each entity type using specific database routines:
 
 - **Option Groups:** Imported groups are created as new custom posts. OptionBay does **not** check for pre-existing titles; it will not overwrite or replace matching groups. If a group with the same title already exists, a new, duplicate group is created.
-- **Inventory Items:** Imported stock items are added as new rows in the `wp_optionbay_inventory` custom database table.
+- **Inventory Items:** Imported stock items are added as new rows in the `wp_smart_product_options_addons_inventory` custom database table.
 - **Plugin Settings:** Settings keys from the file are merged into your database option array. Existing settings not mentioned in the import file are left untouched. Only overlapping settings keys are overwritten with the new values.
 
 ::: warning Import Processes Do Not Overwrite (Duplicates Created)

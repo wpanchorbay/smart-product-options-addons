@@ -70,7 +70,7 @@ If you have a stock pool that is no longer needed:
 
 1. Simply unlink it from any option settings in the [Addon Builder](/builder/addon-builder).
 2. The pool will remain in the database as a dormant inventory item, but will not impact frontend behavior or perform any active stock checks.
-3. If permanent deletion is absolutely required, it must be performed directly in your WordPress database by removing the corresponding row from the `wp_optionbay_inventory` table. Ensure all option links are removed first.
+3. If permanent deletion is absolutely required, it must be performed directly in your WordPress database by removing the corresponding row from the `wp_smart_product_options_addons_inventory` table. Ensure all option links are removed first.
 
 ---
 

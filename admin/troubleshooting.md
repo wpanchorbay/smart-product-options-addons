@@ -109,9 +109,9 @@ Orders are placed with linked options, but the inventory count inside your Globa
    - This hook runs when an order transitions to a paid status (typically **Processing** or **Completed**). Pending, on-hold, or failed orders will not deduct stock.
    - Verify that your payment gateway is successfully transitioning orders to Processing.
 
-3. **Audit the Database Logs:**
+3. **Audit the WooCommerce Logs:**
    - Enable **Debug Mode** in settings.
-   - Place a test order and then inspect the database log option `optionbay_debug_log`.
+   - Place a test order and then inspect the WooCommerce logs (**WooCommerce → Status → Logs**).
    - Search for entries containing `CartManager: Reducing inventory stock` to see if deductions were attempted, or look for `ERROR` codes indicating database lock issues or missing records.
 
 ---
@@ -131,7 +131,7 @@ The Option Groups list, Addon Builder, or Settings screen fails to load, showing
 
 2. **Check Security Plugin Rule Blocks:**
    - Plugins like Wordfence, iThemes Security (Solid Security), or Sucuri have settings to "Restrict REST API access."
-   - Disable these settings temporarily to see if OptionBay loads. If it does, whitelist the OptionBay API namespace: `/wp-json/optionbay/v1/`.
+   - Disable these settings temporarily to see if OptionBay loads. If it does, whitelist the OptionBay API namespace: `/wp-json/smart-product-options-addons/v1/`.
 
 3. **Flush URL Rewrites (Permalinks):**
    - OptionBay's API requires custom URL rewrites to resolve endpoints.
@@ -147,17 +147,13 @@ The Option Groups list, Addon Builder, or Settings screen fails to load, showing
 
 ## Enable Debug Logging
 
-For complex issues, use OptionBay's logging engine:
+For complex issues, use OptionBay's logging engine which integrates directly with WooCommerce logs:
 
 1. Go to **WooCommerce → Settings → Products → Options**.
 2. Toggle the **Debug Mode** switch to on and save changes.
 3. Perform the action that is causing the problem on the frontend or backend (e.g. save a group, add to cart, check out).
-4. View the generated logs. You can fetch them using a database plugin to look at the `optionbay_debug_log` option inside your `wp_options` table, or run this **WP-CLI** command:
-
-```bash
-# Retrieve the detailed logs from WP-CLI
-wp option get optionbay_debug_log
-```
+4. View the generated logs by going to **WooCommerce → Status → Logs**.
+5. Select the `optionbay` log from the dropdown (the filename will include the date) and click **View**.
 
 ---
 
@@ -166,5 +162,5 @@ wp option get optionbay_debug_log
 If you have completed the checklists and still require assistance, visit the support portal at [wpanchorbay.com](https://wpanchorbay.com) or open a ticket. When submitting a request, provide the following details:
 
 - **System Context:** Your WordPress version, WooCommerce version, and PHP version (found under **Tools → Site Health → Info → Server**).
-- **Log Files:** The contents of your `optionbay_debug_log` collected during the issue.
+- **Log Files:** The contents of your WooCommerce log file for OptionBay collected during the issue.
 - **Steps to Reproduce:** A step-by-step description of what you clicked or configured to trigger the problem.
