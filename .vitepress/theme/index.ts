@@ -10,8 +10,8 @@ export default {
 		return h(DefaultTheme.Layout, null, {
 			'nav-bar-title-after': () =>
 				h('span', { class: 'smart-product-options-addons-site-title' }, [
-					h('span', { class: 'tube-bold' }, 'Option'),
-					'Bay',
+					h('span', { class: 'tube-bold' }, 'Smart Product Options and Addons'),
+					'',
 				]),
 		});
 	},

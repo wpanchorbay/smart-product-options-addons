@@ -3,8 +3,7 @@ layout: home
 
 hero:
   name: Smart Product Options and Addons
-  text: Advanced Product Options
-  tagline: Create a personalized shopping experience with ease.
+  tagline: Let customers build the exact product they want.
   image:
     src: /logo.png
     alt: Smart Product Options and Addons Logo
