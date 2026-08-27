@@ -36,8 +36,14 @@ When you add a File Upload field in the Addon Builder, you can configure the fol
 
 ![Backend view of Restrictions settings for File Upload field](/public/field-file-restrictions.png)
 
-- **Allowed Types:** A comma-separated list of file extensions the customer is allowed to upload (e.g., `.jpg,.png,.pdf,.svg`). Files with unlisted extensions are rejected on both the frontend and the server. The server also verifies the file's **actual content type** against this list, so a file renamed to a permitted extension (e.g. a script renamed to `.jpg`) is still rejected.
+- **Allowed Extensions:** A comma-separated list of file extensions the customer is allowed to upload (e.g., `.jpg,.png,.pdf,.svg`). Files with unlisted extensions are rejected on both the frontend and the server. The server also verifies the file's **actual content type** against this list, so a file renamed to a permitted extension (e.g. a script renamed to `.jpg`) is still rejected.
 - **Max File Size:** The maximum permitted file size in megabytes (**MB**). The default is `5`.
+
+::: tip Your Server Sets the Real Ceiling
+The **Max File Size** field shows the limit your hosting actually allows underneath it (for example, "This server accepts up to 8 MB").
+
+Setting a figure above that limit does not raise it. The upload would pass this plugin's own check and then fail inside WordPress with an unhelpful error, so keep the setting at or below the figure shown. Raising it further requires a change to your server's PHP configuration.
+:::
 
 ::: tip Allowed Types Format
 List extensions with leading dots, comma-separated, with no spaces:
@@ -62,7 +68,7 @@ Open the **Pricing** tab to apply a flat charge when the customer uploads a file
 - **Price Amount / Formula Expression:** The fee applied when a file is successfully attached to the field.
 
 ::: info Master the Pricing Engine
-Smart Product Options and Addons includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+Smart Product Options and Addons includes six different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::

@@ -64,7 +64,7 @@ You can charge extra based on the number the customer enters. Configure this in 
 - **Price Amount / Formula Expression:** Depending on the Price Type selected, enter the multiplier or the exact math formula.
 
 ::: info Master the Pricing Engine
-Smart Product Options and Addons includes five different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+Smart Product Options and Addons includes six different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::

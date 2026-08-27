@@ -2,6 +2,36 @@
 
 All notable changes to the Smart Product Options and Addons plugin will be documented in this file.
 
+## [1.0.3] - 2026-08-27
+
+_Free plugin `1.0.3`, Pro add-on `1.0.2`. Pro 1.0.2 requires the free plugin at 1.0.3 or later._
+
+### Added
+
+- **URL** and **Telephone** field types. URLs are restricted to `http` and `https`; telephone validation is deliberately permissive so international formats are not rejected.
+- **Heading** and **Separator** display fields, with a configurable heading level (`H2`–`H5`) so the product page keeps a correct heading outline.
+- **Word Count pricing** (Pro) — charge per word, counted Unicode-aware so non-Latin scripts are handled correctly.
+- **Math Formula pricing on individual options** (Pro), with a new `[option_price]` placeholder. Formula pricing is now available on every field type, not only the dedicated Formula field.
+- **File Upload** now has configurable **Allowed Extensions** and **Max File Size**, and shows the server's real upload ceiling.
+
+### Fixed
+
+- Option-level formula pricing saved the price type but discarded the formula, so the option silently charged nothing.
+- Add-on stock is now released for cancelled, pending and refunded orders, including partial refunds. Previously only cancellation released it, and a cancel/reinstate/cancel cycle leaked stock permanently.
+- Cancelling an unpaid order — or a failed payment returning it to pending — credited stock that was never taken, inflating global pools and allowing overselling.
+- A discount option larger than the product price could produce a negative cart line. Totals are now floored at zero.
+- With the Pro add-on deactivated, a field saved with a Pro pricing strategy charged its amount as a flat fee at checkout while the product page showed no charge.
+- A conditional-logic group whose rules all targeted display-only fields could hide the field permanently. Such rules are now ignored and the field stays visible.
+- Display-only fields (Static Content, Heading, Separator) can no longer be chosen as conditional-logic triggers, where they matched permanently.
+- Cart-reserved stock now honours custom reduction formulas, so the availability check and the actual deduction agree.
+- Discount options with a negative price can now be saved.
+- Frontend CSS and JS are now cached by browsers instead of being re-fetched on every page view.
+
+### Changed
+
+- **Exclusion** rules and **priority** are documented more precisely — see [Assignment Rules](/assignments/index).
+- Deleting a refund does not take add-on stock back out of its pool, matching how WooCommerce treats product stock.
+
 ## [1.0.2] - 2026-08-11
 
 _Free plugin `1.0.2`, Pro add-on `1.0.1`._

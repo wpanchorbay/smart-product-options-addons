@@ -4,13 +4,19 @@ Static Content outputs a fixed block of HTML directly on the product page. It is
 
 ![Static Content field on a product page showing a styled heading and an information callout above the product option fields](/public/field-static-content-frontend.png)
 
+::: tip Prefer a Heading or Separator Where They Fit
+For a plain section title use a [Heading](/fields/heading), and for a plain dividing line use a [Separator](/fields/separator). Both are configured with a single setting and render consistently across themes, where Static Content requires you to write and maintain the markup yourself.
+
+Reach for Static Content when you need something those two cannot express — a callout box, a list, links, or any multi-element block.
+:::
+
 ---
 
 ## When to Use
 
-- Section headings to divide a long group into logical parts
+- Rich or formatted content that the dedicated display fields cannot express
 - Informational banners (e.g. "⚠️ Allow 3–5 business days for custom orders")
-- Horizontal dividers between groups of fields
+- Terms, disclaimers or instructions with links and formatting
 - Terms or instructions the customer should read before selecting options
 - Decorative separators or callout blocks
 

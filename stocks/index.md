@@ -76,7 +76,12 @@ Smart Product Options and Addons manages stock updates at every stage of the cus
 
 - **Step 1 — Cart Reservation:** When a customer selects a linked option and adds the product to their cart, Smart Product Options and Addons reserves that stock. If they empty their cart or the cart session expires, the reservation is released.
 - **Step 2 — Checkout Check:** During checkout submission, a final check is run. If stock is depleted, the order is blocked. Otherwise, checkout completes and stock is permanently deducted.
-- **Step 3 — Order Status Sync:** If the order is cancelled, refunded, or failed in WooCommerce, Smart Product Options and Addons reads the line item metadata and automatically restores the stock.
+- **Step 3 — Order Status Sync:** When an order is **cancelled**, or returns to **pending** after a failed payment, any add-on stock that was actually deducted is returned to its pool. Stock is only ever given back if it was taken in the first place — an order that was never paid deducted nothing, so cancelling it changes no pool.
+- **Step 4 — Refunds:** When you refund an order and tick **Restock refunded items**, the add-on stock for the refunded units is returned too. Partial refunds return only their own share, and repeated partial refunds never return more than was originally deducted. Refunds made without that box ticked return nothing.
+
+::: info Deleting a Refund
+Deleting a refund record does **not** take add-on stock back out of the pool, which matches how WooCommerce treats the product's own stock. If you delete a refund that restocked items, adjust the pool by hand.
+:::
 
 ::: info Learn More: Linking Stock
 To see how to connect your fields and options to these global stock pools, including setting up custom reduction formulas, check out our field linking guide.

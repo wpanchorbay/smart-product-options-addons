@@ -105,6 +105,7 @@ export default defineConfig({
           { text: "Flat Fee", link: "/pricing/index#flat-fee" },
           { text: "Percentage", link: "/pricing/index#percentage" },
           { text: "Character Count", link: "/pricing/index#character-count" },
+          { text: "Word Count", link: "/pricing/index#word-count" },
           { text: "Math Formula", link: "/pricing/index#math-formula" },
         ],
       },
@@ -112,6 +113,8 @@ export default defineConfig({
         text: "Field Types",
         items: [
           { text: "Static Content (HTML/Alerts)", link: "/fields/static" },
+          { text: "Heading", link: "/fields/heading" },
+          { text: "Separator", link: "/fields/separator" },
           { text: "Field Conditions Reference", link: "/fields/conditions" },
           {
             text: "Choice Fields",
@@ -133,6 +136,8 @@ export default defineConfig({
               { text: "Textarea", link: "/fields/input/textarea" },
               { text: "Number Input", link: "/fields/input/number" },
               { text: "Email Input", link: "/fields/input/email" },
+              { text: "URL Input", link: "/fields/input/url" },
+              { text: "Telephone Input", link: "/fields/input/telephone" },
             ],
           },
           {

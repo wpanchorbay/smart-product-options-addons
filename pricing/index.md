@@ -14,6 +14,7 @@ Rather than a simple lookup, here is how each strategy behaves and where it is b
 - **Flat Fee:** Adds a fixed surcharge to the product. Best for one-off physical items or service surcharges (e.g. adding a gift box or rush handling).
 - **Percentage:** Adds a dynamic surcharge calculated as a percentage of the product's base price. Best for optional value-adds that scale with the item value (e.g. extended warranty or premium material grades).
 - **Character Count:** Calculates a live price adjustment based on the length of text typed. Best for custom engravings, monograms, or printed text inputs.
+- **Word Count:** Calculates a live price adjustment based on the number of words typed. Best for copywriting, translation or personalised-message services priced per word.
 - **Math Formula:** Evaluates a custom mathematical expression at cart add time. Best for complex calculations that depend on quantity, numeric input, or character length (e.g. charging per square inch, tiered copy fees, or quantity-scaled pricing).
 
 ---
@@ -105,6 +106,8 @@ You can use the following variables in brackets inside your formulas:
 - **`[base_price]` or `[price]`:** The product's original base price before any custom option surcharges.
 - **`[quantity]`:** The line item quantity the customer is adding to the cart.
 - **`[char_count]`:** The number of characters currently typed into the text field (ideal for tiered engraving rates).
+- **`[word_count]`:** The number of words currently typed into the text field. Words are separated by any run of whitespace, so extra spaces never inflate the count, and the rule is Unicode-aware — it counts non-Latin scripts such as Bengali, Arabic and Cyrillic correctly.
+- **`[option_price]`:** The price configured on the **individual option** the formula belongs to. Only meaningful in an option-level formula; in a field-level formula it always resolves to `0`.
 - **`[value]`:** The customer's entered numeric input. This is only available on **Number Input** fields.
 
 ### Supported Operators
@@ -158,8 +161,21 @@ This allows you to assign different pricing strategies and amounts to different 
 - `Medium` — Flat Fee: `5.00`
 - `Large` — Flat Fee: `10.00`
 - `XL` — Percentage: `15` (15% of product price)
+- `Custom` — Math Formula: `[option_price] * 2`
 
 ![Option-level pricing in a choice field configuration accordion](/public/pricing-option-level.png)
+
+::: tip Which Strategies Are Available Per Option
+Not every strategy appears in the per-option dropdown. **Character Count** and **Word Count** are offered on the field only, never on an individual option.
+
+An option's value is a label you author in the builder, not something the customer types — counting the characters or words in `red` would charge by your own wording. Choosing **Math Formula** on an option gives you `[option_price]`, which is the option's own configured price.
+:::
+
+::: warning Discount Options
+An option's price may be **negative**, which subtracts from the product price — useful for "No gift wrap (−2.00)" style choices.
+
+The cart total never falls below zero. If discounts exceed the product's price, the line is charged at `0.00` rather than going negative.
+:::
 
 ### Surcharge Compounding
 

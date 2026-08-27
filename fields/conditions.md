@@ -101,6 +101,14 @@ When a field is hidden by its conditions:
 
 This is enforced **server-side** by `ConditionEvaluator.php`, so it cannot be bypassed by disabling JavaScript.
 
+::: warning Display-Only Fields Cannot Be Triggers
+[Static Content](/fields/static), [Separator](/fields/separator) and [Heading](/fields/heading) cannot be selected as the watched field in a rule.
+
+They submit no value, so every comparison would run against an empty string — `is empty` and `== ""` would match permanently, and every other operator would never match. Either way the rule tells you nothing.
+
+If a rule saved by an older version still points at one of these, it is ignored by the browser and the server alike. The builder keeps showing it, marked _(no longer supported)_, so you can see and remove it rather than having it silently rewritten. A group whose rules are **all** ignored this way behaves as though conditional logic were switched off, and the field stays visible.
+:::
+
 ::: tip Chained Conditions Cascade
 If a field you are watching is **itself hidden** by its own conditions, its value counts as **empty** — exactly what the customer sees on the page. A hidden trigger field therefore cannot indirectly reveal a field further down the chain. The server re-evaluates this cascade when the product is added to the cart, so it holds even if the submitted form data is tampered with.
 :::
