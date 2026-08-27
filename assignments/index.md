@@ -59,20 +59,22 @@ Imagine you want a group to appear on all products in the "Jewellery" category *
 
 Smart Product Options and Addons processes both rules together. Since the exclusion rule exists for "Silver Ring", the group will not appear on that product even though the category rule would otherwise include it.
 
-::: tip Priority Tie-Breaking
-When an exclusion rule and an inclusion rule have the **same priority**, the exclusion wins. Give inclusions a **lower priority number** (e.g. `5`) than exclusions (e.g. `10`) if you want inclusions to override.
+::: tip Exclusions Always Win
+An **exclusion always takes precedence over an inclusion** for the same group — regardless of priority. If any exclusion rule matches the current product (directly, or through one of its categories or tags), the group is hidden on that product even when an inclusion rule would otherwise show it. Priority does **not** let an inclusion override an exclusion.
 :::
 
 ---
 
 ## Priority
 
-Priority is a number that controls which rule "wins" when two conflicting rules apply to the same group:
+Priority is a number that controls the **order** in which applicable groups are rendered on a product page when several groups match:
 
-- **Lower number = Higher priority** (e.g. priority `1` beats priority `10`)
+- **Lower number = Higher priority** (e.g. a group with priority `1` is rendered before one with priority `10`)
 - Default priority is `10`
 
-**Use case:** You have a Global rule that includes a group on all products (priority 10) and a Product-specific exclusion to hide it from "Widget A" (priority 5). Since 5 < 10, the exclusion wins and the group is hidden on "Widget A".
+Priority orders **included groups** relative to one another. It does **not** resolve inclusion-vs-exclusion conflicts — an exclusion always wins (see above).
+
+**Use case:** Two groups both apply to a product. Give the more important group a lower priority number (e.g. `5`) so it appears above the other (e.g. `10`) in the options list.
 
 ---
 

@@ -36,7 +36,7 @@ When you add a File Upload field in the Addon Builder, you can configure the fol
 
 ![Backend view of Restrictions settings for File Upload field](/public/field-file-restrictions.png)
 
-- **Allowed Types:** A comma-separated list of file extensions the customer is allowed to upload (e.g., `.jpg,.png,.pdf,.svg`). Files with unlisted extensions will be rejected on both the frontend and server.
+- **Allowed Types:** A comma-separated list of file extensions the customer is allowed to upload (e.g., `.jpg,.png,.pdf,.svg`). Files with unlisted extensions are rejected on both the frontend and the server. The server also verifies the file's **actual content type** against this list, so a file renamed to a permitted extension (e.g. a script renamed to `.jpg`) is still rejected.
 - **Max File Size:** The maximum permitted file size in megabytes (**MB**). The default is `5`.
 
 ::: tip Allowed Types Format
@@ -108,7 +108,7 @@ With those settings, here is how the field renders on your product page. The all
 
 ![File upload field on a product page: the native file input, filename shown after selection, and the allowed types + max size hint below](/public/field-file-frontend.png)
 
-When a customer attaches a file and adds the product to their cart, Smart Product Options and Addons validates the file extension and size securely via AJAX before passing it to the server.
+When a customer attaches a file and adds the product to their cart, the file is submitted with the standard add-to-cart form (multipart/form-data). On the server, Smart Product Options and Addons validates the file's extension, size, and real content type against the field's allowed types before the file is accepted and stored.
 
 **File Storage:**
 Files are securely stored in the standard WordPress uploads directory:

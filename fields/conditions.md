@@ -101,6 +101,10 @@ When a field is hidden by its conditions:
 
 This is enforced **server-side** by `ConditionEvaluator.php`, so it cannot be bypassed by disabling JavaScript.
 
+::: tip Chained Conditions Cascade
+If a field you are watching is **itself hidden** by its own conditions, its value counts as **empty** — exactly what the customer sees on the page. A hidden trigger field therefore cannot indirectly reveal a field further down the chain. The server re-evaluates this cascade when the product is added to the cart, so it holds even if the submitted form data is tampered with.
+:::
+
 ---
 
 ## Initial Render (No Flicker)
