@@ -1,6 +1,6 @@
 # Pricing Strategies
 
-Smart Product Options and Addons supports five pricing strategies that control how a price adjustment is calculated for a field or individual choice. Every field has a **Price Type** setting in its Pricing tab (or option configuration accordion), and each strategy does something distinct.
+OptionBay supports five pricing strategies that control how a price adjustment is calculated for a field or individual choice. Every field has a **Price Type** setting in its Pricing tab (or option configuration accordion), and each strategy does something distinct.
 
 ![Pricing tab inside the Addon Builder showing the Price Type dropdown and Amount input](/public/pricing-tab.png)
 
@@ -88,7 +88,7 @@ Multiplies a per-character rate by the number of characters the customer types. 
 
 ## Math Formula
 
-Evaluates a custom mathematical expression at cart add time using the built-in MathParser library. This is Smart Product Options and Addons's most powerful pricing strategy, letting you build complex calculations using placeholders.
+Evaluates a custom mathematical expression at cart add time using the built-in MathParser library. This is OptionBay's most powerful pricing strategy, letting you build complex calculations using placeholders.
 
 - **Admin Configuration:**
   - Set Price Type to **Math Formula**.
@@ -130,12 +130,12 @@ You can use standard mathematical operators and grouping parentheses to control 
 
 ### Calculation Safety & Fallbacks
 
-To prevent broken checkouts or database errors from invalid formula strings, Smart Product Options and Addons runs a multi-step safety routine before evaluating any formula:
+To prevent broken checkouts or database errors from invalid formula strings, OptionBay runs a multi-step safety routine before evaluating any formula:
 
 1. **Placeholder Replacement:** Replaces all `[...]` placeholders with their real numeric values. If a placeholder is not supported on the current field type (e.g. `[value]` on a text input), it is replaced with `0`.
 2. **Character Sanitization:** Strips all characters except numbers, `+`, `-`, `*`, `/`, `.`, `(`, `)`, and spaces to block malicious code injection.
 3. **Division by Zero:** Detects division-by-zero expressions (e.g., `5 / 0`) and returns `$0.00` safely.
-4. **Silent Failure:** If the formula syntax is invalid and cannot be parsed by MathParser, Smart Product Options and Addons catches the error and silently returns a `$0.00` surcharge rather than showing PHP errors or crashing the cart page.
+4. **Silent Failure:** If the formula syntax is invalid and cannot be parsed by MathParser, OptionBay catches the error and silently returns a `$0.00` surcharge rather than showing PHP errors or crashing the cart page.
 
 ::: warning Test Your Formulas
 Because formula errors silently default to a `$0.00` surcharge, always test your custom formula expressions on a staging site to verify they calculate the expected values before publishing them live.
@@ -174,7 +174,9 @@ An option's value is a label you author in the builder, not something the custom
 ::: warning Discount Options
 An option's price may be **negative**, which subtracts from the product price — useful for "No gift wrap (−2.00)" style choices.
 
-The cart total never falls below zero. If discounts exceed the product's price, the line is charged at `0.00` rather than going negative.
+The cart total never falls below zero. If discounts exceed the product's price, the line is charged at `0.00` rather than going negative. The live price preview on the product page follows the same rule and never shows a total below zero.
+
+A flat price of `0` is rejected when saving a field-level price (the builder asks for a price amount); to charge nothing, set the Price Type to `None`. Negative amounts are accepted.
 :::
 
 ### Surcharge Compounding
@@ -188,7 +190,7 @@ If a choice-based field also has a price configured in its main Pricing tab (fie
 All price adjustments are calculated in real time in the browser as the customer interacts with your fields.
 
 - **Live Calculations:** As soon as a user selects a checkbox, chooses a dropdown option, or types in a character-count text box, the pricing engine computes the adjustments.
-- **Totals Block:** Smart Product Options and Addons displays a detailed summary block directly above the **Add to Cart** button. This block breaks down the calculations so the customer knows exactly what they are paying:
+- **Totals Block:** OptionBay displays a detailed summary block directly above the **Add to Cart** button. This block breaks down the calculations so the customer knows exactly what they are paying:
   - **Product Price:** The base price of the item.
   - **Options Total:** The sum of all active option surcharges.
   - **Total Price:** The final price (Base + Options).

@@ -1,8 +1,8 @@
 # Global Settings
 
-Manage site-wide display preferences, stylesheet values, and maintenance workflows for Smart Product Options and Addons. Access these settings by navigating to **WooCommerce → Settings → Products → Options** in your WordPress admin dashboard.
+Manage site-wide display preferences, stylesheet values, and maintenance workflows for OptionBay. Access these settings by navigating to **WooCommerce → Settings → Products → Options** in your WordPress admin dashboard.
 
-![Smart Product Options and Addons Settings page showing General Settings and System & Maintenance sections](/public/settings-page.png)
+![OptionBay Settings page showing General Settings and System & Maintenance sections](/public/settings-page.png)
 
 Settings are structured into tabs and sections. To apply your adjustments, click the native WooCommerce **Save changes** button at the top or bottom of the settings screen.
 
@@ -79,7 +79,7 @@ Configure internal developer logging and control plugin deletion behaviors.
 
 ### Debug Mode
 
-When enabled, Smart Product Options and Addons records detailed debugging logs to the database during operations. This is useful for developers troubleshooting issues.
+When enabled, OptionBay records detailed debugging logs to the database during operations. This is useful for developers troubleshooting issues.
 
 - **Default:** Disabled.
 - **What is logged:**
@@ -94,15 +94,24 @@ Keep Debug Mode disabled on live, high-traffic stores. Logging every add-to-cart
 
 ### Delete Data on Uninstall
 
-Controls whether Smart Product Options and Addons erases your store options configuration data when the plugin is deactivated and uninstalled.
+Controls whether OptionBay erases your store options configuration data when the plugin is deactivated and uninstalled.
 
 - **Default:** Disabled. Deleting the plugin files leaves your groups and inventory intact so you can update or reinstall without losing data.
-- **When Enabled:** Deleting Smart Product Options and Addons via **Plugins → Installed Plugins → Delete** will trigger a clean-up query that permanently deletes:
+- **When Enabled:** Deleting OptionBay via **Plugins → Installed Plugins → Delete** will trigger a clean-up that permanently deletes:
   - All Option Groups custom posts and post meta records.
-  - All assignment rule mappings in the `wp_smart_product_options_addons_assignments` database table.
-  - All Global Stock Items in the `wp_smart_product_options_addons_inventory` database table.
+  - All assignment rule mappings in the `wp_opopw_assignments` database table.
+  - All Global Stock Items in the `wp_opopw_inventory` database table.
+  - The stock tracking meta stored on WooCommerce order line items.
   - All plugin settings configurations saved in your WordPress options database.
+  - The plugin's activation-time option, its deactivation-feedback log option, and the per-user review-notice dismissal records.
+- **When Disabled:** Nothing is deleted.
+
+The checkbox is labeled **Purge data on plugin deletion**. (`wp_` is your database table prefix and may differ on your site.)
 
 ::: danger Irreversible Data Loss
 Enabling this setting and deleting the plugin will permanently erase your option schemas, historical pricing configurations, and stock counts. There is no undo. Always perform a complete [Configuration Export](/admin/export-import) before deleting the plugin with this setting active.
 :::
+
+### Reactivating the Plugin
+
+Deactivating and reactivating the plugin keeps your saved settings. Only settings that are missing are filled in with defaults. Reactivating also does not create a second set of the six demo Option Groups that ship as drafts: each demo group is marked internally, and a demo group you moved to the trash is not recreated.

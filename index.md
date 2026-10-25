@@ -2,11 +2,11 @@
 layout: home
 
 hero:
-  name: Smart Product Options and Addons
+  name: OptionBay
   tagline: Let customers build the exact product they want.
   image:
     src: /logo.png
-    alt: Smart Product Options and Addons Logo
+    alt: OptionBay Logo
   actions:
     - theme: brand
       text: Get Started

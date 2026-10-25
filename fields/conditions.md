@@ -117,7 +117,7 @@ If a field you are watching is **itself hidden** by its own conditions, its valu
 
 ## Initial Render (No Flicker)
 
-When the product page first loads, Smart Product Options and Addons calculates the initial visibility of every conditional field on the **server** before sending HTML to the browser. Fields that start hidden receive the CSS class `ob-hidden` inline, preventing a visible flash before JavaScript initialises.
+When the product page first loads, OptionBay calculates the initial visibility of every conditional field on the **server** before sending HTML to the browser. Fields that start hidden receive the CSS class `ob-hidden` inline, preventing a visible flash before JavaScript initialises.
 
 ---
 

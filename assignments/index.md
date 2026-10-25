@@ -8,7 +8,7 @@
 
 ## How Assignments Work
 
-When a customer visits a product page, Smart Product Options and Addons queries the `wp_smart_product_options_addons_assignments` database table using a single indexed lookup. The query checks whether any published Option Groups match the current product's ID, category IDs, or tag IDs.
+When a customer visits a product page, OptionBay queries the `wp_opopw_assignments` database table using a single indexed lookup. The query checks whether any published Option Groups match the current product's ID, category IDs, or tag IDs.
 
 The result is a prioritised, deduplicated list of groups to render — resolved in milliseconds even on large stores.
 
@@ -25,7 +25,7 @@ Each assignment rule targets one of four scopes:
 | **Category**         | The group appears on all products in one or more selected categories |
 | **Tag**              | The group appears on all products with one or more selected tags     |
 
-You can add multiple rules of any type. Smart Product Options and Addons evaluates them all together.
+You can add multiple rules of any type. OptionBay evaluates them all together.
 
 ---
 
@@ -57,7 +57,7 @@ Imagine you want a group to appear on all products in the "Jewellery" category *
 | Category | Jewellery   | Include |
 | Product  | Silver Ring | Exclude |
 
-Smart Product Options and Addons processes both rules together. Since the exclusion rule exists for "Silver Ring", the group will not appear on that product even though the category rule would otherwise include it.
+OptionBay processes both rules together. Since the exclusion rule exists for "Silver Ring", the group will not appear on that product even though the category rule would otherwise include it.
 
 ::: tip Exclusions Always Win
 An **exclusion always takes precedence over an inclusion** for the same group — regardless of priority. If any exclusion rule matches the current product (directly, or through one of its categories or tags), the group is hidden on that product even when an inclusion rule would otherwise show it. Priority does **not** let an inclusion override an exclusion.
@@ -102,10 +102,10 @@ A group must have at least one inclusion rule to display on any product page. A 
 
 ## Technical Details
 
-Assignment rules are stored in the `wp_smart_product_options_addons_assignments` custom database table:
+Assignment rules are stored in the `wp_opopw_assignments` custom database table:
 
 ```sql
-CREATE TABLE wp_smart_product_options_addons_assignments (
+CREATE TABLE wp_opopw_assignments (
     id          bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
     group_id    bigint(20) UNSIGNED NOT NULL,   -- CPT post ID
     target_type varchar(20) NOT NULL DEFAULT 'global',  -- global | product | category | tag

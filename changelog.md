@@ -1,8 +1,8 @@
 # Changelog
 
-All notable changes to the Smart Product Options and Addons plugin will be documented in this file.
+All notable changes to the OptionBay plugin will be documented in this file.
 
-## [1.0.3] - 2026-08-27
+## [1.0.3] - 2026-10-25
 
 _Free plugin `1.0.3`, Pro add-on `1.0.2`. Pro 1.0.2 requires the free plugin at 1.0.3 or later._
 
@@ -26,6 +26,12 @@ _Free plugin `1.0.3`, Pro add-on `1.0.2`. Pro 1.0.2 requires the free plugin at 
 - Cart-reserved stock now honours custom reduction formulas, so the availability check and the actual deduction agree.
 - Discount options with a negative price can now be saved.
 - Frontend CSS and JS are now cached by browsers instead of being re-fetched on every page view.
+- Reactivating the plugin no longer resets your saved settings or creates another set of the six draft demo option groups.
+- Uninstall with **delete all data** enabled now also removes the activation-time and deactivation-feedback options and the review-notice dismissal user meta.
+- An empty stock-tracked field no longer blocks add-to-cart when its stock pool has none left.
+- A checkbox value submitted twice is now counted and priced once.
+- Values sent for Separator and Heading fields are ignored by the cart.
+- The live price preview handles negative option prices and never shows a total below zero.
 
 ### Changed
 
@@ -53,7 +59,7 @@ _Free plugin `1.0.2`, Pro add-on `1.0.1`._
 ## [1.0.0] - 2026-05-20
 
 ### Added
-- Initial release of Smart Product Options and Addons.
+- Initial release of OptionBay.
 - Comprehensive Addon Builder with drag-and-drop interface.
 - 13 Field types including Swatches, File Uploads, and Choice fields.
 - 4 Pricing strategies: Flat fee, Percentage, Character Count, and dynamic Math Formulas.

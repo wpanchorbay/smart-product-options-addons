@@ -44,7 +44,7 @@ This allows fine-grained control over your inventory:
 Stock is deducted relative to the number of items the customer adds to the cart.
 
 - **Deduction Formula:** `stock deducted = 1 * cart_quantity`
-- **Example:** You link an option to a `Gift Wrapping Paper` stock pool. The customer adds `3` of the product to their cart with gift wrapping selected. Upon successful checkout, Smart Product Options and Addons deducts exactly `3` units from the stock pool.
+- **Example:** You link an option to a `Gift Wrapping Paper` stock pool. The customer adds `3` of the product to their cart with gift wrapping selected. Upon successful checkout, OptionBay deducts exactly `3` units from the stock pool.
 
 ### Per Line Item
 
@@ -71,9 +71,9 @@ Allows you to calculate stock deduction using a mathematical formula.
 
 ## Cart-Reserved Stock
 
-Smart Product Options and Addons accounts for stock already held in other customers' carts when checking option availability. This real-time reservation system prevents overselling when multiple customers are shopping simultaneously:
+OptionBay accounts for stock already held in other customers' carts when checking option availability. This real-time reservation system prevents overselling when multiple customers are shopping simultaneously:
 
-- **Adding to Cart:** When a customer adds an item with a linked option to their cart, Smart Product Options and Addons reserves those stock units.
+- **Adding to Cart:** When a customer adds an item with a linked option to their cart, OptionBay reserves those stock units.
 - **Live Inventory Check:** If another customer views the product page, the available stock shown and validated is the total stock minus any reserved stock currently in active carts.
 - **Expiration:** If a customer does not checkout, the cart reservation naturally expires (according to your WooCommerce cart expiration settings) and the reserved units are automatically released back to the global pool.
 
@@ -81,10 +81,10 @@ Smart Product Options and Addons accounts for stock already held in other custom
 
 ## Out-of-Stock Behaviour
 
-When a Global Stock Item reaches `0` (or falls below the required amount for a selection) and **Allow Backorders** is disabled for that stock item, Smart Product Options and Addons blocks further orders:
+When a Global Stock Item reaches `0` (or falls below the required amount for a selection) and **Allow Backorders** is disabled for that stock item, OptionBay blocks further orders:
 
 - **On the Product Page:** The linked option is marked visually as unavailable on the frontend. Checkbox or radio choices are disabled and append a `(Out of stock)` label, dropdown items are disabled inside the select box, and swatches are crossed out and unclickable.
-- **Add to Cart Validation:** If a customer bypasses the frontend UI or attempts to submit an out-of-stock selection, Smart Product Options and Addons intercepts the request during the `woocommerce_add_to_cart_validation` hook and blocks the action with a clear error notice.
+- **Add to Cart Validation:** If a customer bypasses the frontend UI or attempts to submit an out-of-stock selection, OptionBay intercepts the request during the `woocommerce_add_to_cart_validation` hook and blocks the action with a clear error notice. Only a filled field is blocked: a stock-tracked field the customer leaves empty does not consume stock, so it never blocks add-to-cart when its pool has `0` left.
 - **Checkout Validation:** A final inventory check is run at checkout. If another customer completed their purchase and depleted the stock pool while the user had the item in their cart, the checkout process is halted with an error notice requesting the customer remove or adjust the option.
 
 ![Frontend view showing an out of stock option selection disabled](/public/stock-frontend-outofstock.png)
@@ -95,10 +95,12 @@ If **Allow Backorders** is enabled on the [Global Stock Item](/stocks/index), th
 
 ---
 
-## Restoring Stock on Cancellation
+## Restoring Stock on Cancellation and Refunds
 
-Smart Product Options and Addons ensures that inventory is never lost when orders are cancelled:
+OptionBay ensures that inventory is never lost when orders are cancelled or refunded:
 
-- **Stock Intents Metadata:** When an order is placed, Smart Product Options and Addons records the exact stock deductions in the order line item metadata under the key `_ob_stock_intents`.
-- **Automatic Restore:** If an order's status is changed to **Cancelled** or **Refunded**, Smart Product Options and Addons hooks into WooCommerce order status transition events, reads the stock intent metadata, and automatically returns the deducted quantities to their respective global stock pools.
-- **Double-Restoration Protection:** To prevent duplicate stock restoration from webhook retries or manual status changes, Smart Product Options and Addons marks the order with a `_ob_stock_restored` flag once stock has been returned. Subsequent status changes will not trigger another restoration.
+- **Stock Intents Metadata:** When an order is placed, OptionBay records the exact stock deductions in the order line item metadata under the key `_opopw_stock_intents`.
+- **Cancelled or Pending:** If an order is cancelled, or set to **Pending** (for example after a failed payment), any stock that was actually deducted is returned to its pool. An order that never deducted stock changes nothing.
+- **Refunds:** When you refund an order and tick **Restock refunded items**, only the refunded share is returned. Repeated partial refunds never return more than was originally deducted.
+- **Deleting a Refund:** Deleting a refund record does not take stock back out of the pool.
+- **Double-Restoration Protection:** OptionBay tracks how much stock has already been released per order line item (`_opopw_stock_ledger`), so webhook retries or repeated status changes never return the same units twice.

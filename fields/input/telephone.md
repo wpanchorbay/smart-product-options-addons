@@ -30,7 +30,7 @@ The field accepts digits and the characters `+`, `-`, `(`, `)`, `.` and spaces, 
 
 It does not enforce a country format, and this is intentional. Phone numbers are written differently everywhere: `+44 20 7946 0958`, `(555) 123-4567` and `555.123.4567` are all valid numbers that a stricter pattern would reject. Rejecting a customer's real phone number is a far more common and costly failure than accepting an oddly formatted one.
 
-Note that the `tel` input type performs **no** validation of its own in any browser — the HTML specification defines no format for it. Every check described here is applied by Smart Product Options and Addons.
+Note that the `tel` input type performs **no** validation of its own in any browser — the HTML specification defines no format for it. Every check described here is applied by OptionBay.
 :::
 
 ---

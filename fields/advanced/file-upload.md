@@ -51,7 +51,7 @@ List extensions with leading dots, comma-separated, with no spaces:
 :::
 
 ::: warning Server Limits Apply
-Your PHP `upload_max_filesize` and `post_max_size` directives are the hard ceiling. Even if you set 50 MB in Smart Product Options and Addons, the server won't accept more than its PHP configuration allows. Check **Tools → Site Health → Info → Server** to verify your hosting limits.
+Your PHP `upload_max_filesize` and `post_max_size` directives are the hard ceiling. Even if you set 50 MB in OptionBay, the server won't accept more than its PHP configuration allows. Check **Tools → Site Health → Info → Server** to verify your hosting limits.
 :::
 
 ---
@@ -68,7 +68,7 @@ Open the **Pricing** tab to apply a flat charge when the customer uploads a file
 - **Price Amount / Formula Expression:** The fee applied when a file is successfully attached to the field.
 
 ::: info Master the Pricing Engine
-Smart Product Options and Addons includes six different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
+OptionBay includes six different pricing strategies, including dynamic math formulas. We've created a dedicated guide to explain all of them in detail.
 
 **[Read the Ultimate Pricing Guide &rarr;](/pricing/index)**
 :::
@@ -114,12 +114,12 @@ With those settings, here is how the field renders on your product page. The all
 
 ![File upload field on a product page: the native file input, filename shown after selection, and the allowed types + max size hint below](/public/field-file-frontend.png)
 
-When a customer attaches a file and adds the product to their cart, the file is submitted with the standard add-to-cart form (multipart/form-data). On the server, Smart Product Options and Addons validates the file's extension, size, and real content type against the field's allowed types before the file is accepted and stored.
+When a customer attaches a file and adds the product to their cart, the file is submitted with the standard add-to-cart form (multipart/form-data). On the server, OptionBay validates the file's extension, size, and real content type against the field's allowed types before the file is accepted and stored.
 
 **File Storage:**
 Files are securely stored in the standard WordPress uploads directory:
 `wp-content/uploads/YYYY/MM/filename.ext`
-_(Note: Smart Product Options and Addons does not clutter your WordPress Media Library with these customer uploads. The raw URL is saved directly to the order metadata)._
+_(Note: OptionBay does not clutter your WordPress Media Library with these customer uploads. The raw URL is saved directly to the order metadata)._
 
 **Cart & WooCommerce Order View:**
 The field label and the file name will appear clearly on the cart page and checkout:

@@ -2,7 +2,7 @@
 
 The **Global Stock** system lets you track and limit inventory for shared resources that are consumed when customers select specific options — independently of WooCommerce's product stock.
 
-Unlike WooCommerce's built-in stock system which tracks inventory per product variant, Smart Product Options and Addons's Global Stock operates at the option level. This makes it possible to manage inventory for shared physical materials, service capacities, or time slots across different products.
+Unlike WooCommerce's built-in stock system which tracks inventory per product variant, OptionBay's Global Stock operates at the option level. This makes it possible to manage inventory for shared physical materials, service capacities, or time slots across different products.
 
 ---
 
@@ -72,9 +72,9 @@ Manage existing stock items directly within the inventory modal table:
 
 ## Stock Depletion Lifecycle
 
-Smart Product Options and Addons manages stock updates at every stage of the customer shopping journey:
+OptionBay manages stock updates at every stage of the customer shopping journey:
 
-- **Step 1 — Cart Reservation:** When a customer selects a linked option and adds the product to their cart, Smart Product Options and Addons reserves that stock. If they empty their cart or the cart session expires, the reservation is released.
+- **Step 1 — Cart Reservation:** When a customer selects a linked option and adds the product to their cart, OptionBay reserves that stock. If they empty their cart or the cart session expires, the reservation is released.
 - **Step 2 — Checkout Check:** During checkout submission, a final check is run. If stock is depleted, the order is blocked. Otherwise, checkout completes and stock is permanently deducted.
 - **Step 3 — Order Status Sync:** When an order is **cancelled**, or returns to **pending** after a failed payment, any add-on stock that was actually deducted is returned to its pool. Stock is only ever given back if it was taken in the first place — an order that was never paid deducted nothing, so cancelling it changes no pool.
 - **Step 4 — Refunds:** When you refund an order and tick **Restock refunded items**, the add-on stock for the refunded units is returned too. Partial refunds return only their own share, and repeated partial refunds never return more than was originally deducted. Refunds made without that box ticked return nothing.
